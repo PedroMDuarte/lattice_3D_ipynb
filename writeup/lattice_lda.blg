@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: lattice_lda.aux
+The style file: osa.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: lattice_lda.bib
+You've used 4 entries,
+            2048 wiz_defined-function locations,
+            529 strings with 4130 characters,
+and the built_in function-call counts, 1064 in all, are:
+= -- 48
+> -- 39
+< -- 0
++ -- 12
+- -- 8
+* -- 77
+:= -- 101
+add.period$ -- 4
+call.type$ -- 4
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 43
+empty$ -- 157
+format.name$ -- 12
+if$ -- 292
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 0
+newline$ -- 15
+num.names$ -- 4
+pop$ -- 32
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 104
+stack$ -- 0
+substring$ -- 25
+swap$ -- 15
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 30
+warning$ -- 0
+while$ -- 6
+width$ -- 5
+write$ -- 22
