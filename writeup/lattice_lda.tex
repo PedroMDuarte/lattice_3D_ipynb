@@ -229,7 +229,7 @@ and when $N$ particles are considered, along with their interactions the hamilto
                             + \frac{\partial^{2}}{\partial y_{l}^{2}}
                             + \frac{\partial^{2}}{\partial z_{l}^{2}} \right)
  + \vo\left( \cos^{2}(kx_{l})  + \cos^{2}(ky_{l}) + \cos^{2}(kz_{l}) \right) \right]\\
-      &  + \frac{1}{2}\sum_{ l,m, l\neq m}^{N} V_{\mathrm{int}}(x_{l},x_{m} \\ 
+      &  + \frac{1}{2}\sum_{ l,m, l\neq m}^{N} V_{\mathrm{int}}(x_{l},x_{m} )\\ 
     = & H_{0} + H_{\text{int}}
  \label{eq:hubbard1st}
 \end{split} 
@@ -550,8 +550,8 @@ find
 \end{equation}
 We observe that there is no amplitude to go between states that are in two different bands, as is indicated by the appereance of $\delta_{nn'}$.   In what follows we will consider only the lowesrt band, $n=0$,  so we will drop the band index altogether.  This simplification imposes two important requirements for our system:
 \begin{enumerate}
-\item The temperature needs to be small compared to the energy gap between the lowest and first excited band.   
-\item The interaction enrgy scale must also be small comapred to the energy gap between the lowest and first excited band. 
+\item The temperature and the Fermi energy need to be small compared to the energy gap between the lowest and first excited band.   
+\item The interaction energy scale must also be small comapred to the energy gap between the lowest and first excited band. 
 \end{enumerate}
 
 In the 3D lattice, the energy $E_{\bv{q}} = \sum_{u=x,y,z} E_{q_{u}}^{u} $, and by inserting this into the sum for $t_{ij}$ above we find 
@@ -628,6 +628,9 @@ In the tight-binding approximation $\Delta_{ij} \in \lbrace -a, a \rbrace$ and $
 \begin{equation}
   E_{q,\text{tb}}^{\text{\tiny 1D}} = -2 t\cos( qa) 
 \end{equation}
+This gives an expression that relates the bandwidth, $W_{\text{1D}}$, of the 1D lattice to
+the tunneling matrix element simply as $W_{\text{1D}}=4t$.  In 3D this becomes
+$W_{\text{3D}}= 12t$.
 
 It is useful to find out the range of lattice depths for which the
 tight-binding approximation is valid in the optical lattice potential.  To do
@@ -654,8 +657,8 @@ where the $\langle \rangle$ denote nearest-neighbors, and the creation operator 
 Notice that up to now we have ignored the spin part of the wavefunction.   We
 can include it easilly by noticing that $H_{0}$ does not act on the spin at
 all, so the states $|i\rangle$ and $|j\rangle$ that we have used in the
-derivation above need to have the same spin.   Including the spin our basis set
-is now larger, so we include it in the sum.   
+derivation above need to have the same spin.   With the spin included, our basis set
+is now larger which can be taken care of by including a sum over spin states.   
 \begin{equation}
   H_{0} = -t \sum_{ \langle ij \rangle, \sigma=\dbl   } a_{i\sigma}^{\dagger}a_{j\sigma} 
 \end{equation}
@@ -663,9 +666,11 @@ is now larger, so we include it in the sum.
 \subsubsection{On-site interaction energy, $U$}
  
 
-\subsection{On-site interactions} 
+
 
 \section{Local density approximation }
+
+This will show up in the next issue
 
 
 
