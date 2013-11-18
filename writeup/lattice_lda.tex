@@ -984,10 +984,15 @@ from the first derivatives of the grand canonical potential, $\Omega$
   \Omega = - \frac{\ln Z}{\beta}
 \end{equation}
 \begin{gather}
-  N = \frac{\partial \Omega}{ \partial \mu } \\
-  D = \frac{\partial \Omega}{ \partial U } \\
-  S = \frac{\partial \Omega}{ \partial T} 
+  N = -\frac{\partial \Omega}{ \partial \mu }\\
+  D = \frac{\partial \Omega}{ \partial U }  \\
+  S = -\frac{\partial \Omega}{ \partial T} 
 \end{gather}
+%\begin{gather}
+%  N = -\frac{\partial \Omega}{ \partial \mu }  = z \frac{\partial}{\partial z} \ln Z\\
+%  D = \frac{\partial \Omega}{ \partial U }  = u \frac{\partial}{\partial u} \ln Z\\
+%  S = -\frac{\partial \Omega}{ \partial T}  = -\beta^{2}  \frac{\partial}{\partial \beta} \ln Z
+%\end{gather}
 Also, from the second derivatives of the grand potential one can obtain the
 fluctuations in any of these quantitites. 
 
@@ -996,7 +1001,8 @@ expanded in a perturbation series~\cite{Henderson1992}
 \begin{equation}
 \begin{split}
   Z = & \text{Tr} e^{-\beta H}  \\
-    = & Z_{0} \left[ 1 + \sum_{n=1}^{\infty} (-1)^{n} 
+    = & Z_{0} \left[ 1 + 
+        \sum_{n=1}^{\infty} (-1)^{n} 
         \int_{0}^{\beta} d\tau_{1} \int_{0}^{\tau_{1}} d\tau_{2} 
         \dotsm \int_{0}^{\tau_{n-1}} d\tau_{n} 
         \langle
@@ -1018,7 +1024,45 @@ for the imaginary time in parenthesis:
 \end{equation}
 Given the series expansion for $Z$, the grand potential is 
 \begin{equation}
-  \Omega = -\frac{k}{\beta}
+ -\beta \Omega = Z_{0} + 
+        \sum_{n=1}^{\infty} (-1)^{n} 
+        \int_{0}^{\beta} d\tau_{1} \int_{0}^{\tau_{1}} d\tau_{2} 
+        \dotsm \int_{0}^{\tau_{n-1}} d\tau_{n} 
+        \langle
+              \tilde{H}_{1}(\tau_{1}) 
+              \tilde{H}_{2}(\tau_{2})  \dotsm
+              \tilde{H}_{n}(\tau_{n})  \rangle 
+\end{equation}
+
+One can see that the $n^{th}$ term in the expansion has $n$ copies of the
+tunneling part of the hamiltonian.  Each  application of $H_{1}$ in the thermal
+average results in a particle tunneling to a neighboring site, so we see that
+there will be a contribution to the expansion only if after $n$ tunneling
+events all the particles come back to their original sites.  A direct
+consequence of this is that the first order term in the expansion vanishes.
+The second order in the expansion corresponds to particles tunneling one site
+over and then coming back.  Higher order terms can be represented by diagrams,
+to make them easier to keep track off.  The contribution from orders up to
+$n=9$ is shown in~\cite{Henderson1992}.  Here we will use up to the second
+order term to illustrate the phases that appear in the system.  
+
+The grand potential to second order is~\cite{Henderson1992,Jordens2010} 
+\begin{equation}
+-\beta \Omega_{2} = k \ln z_{0} + k \left( \frac{\beta t }{z_{0}} \right)^{2} m 
+        \left( z + z^{3} u + 2z^{2} \frac{1-u}{\beta U} \right) 
+\end{equation} 
+where $m$ is the number of nearest neighbors for each lattice site, which in
+the simple cubic case is $m=6$.  We see that the grand potential is
+proportional to the number of lattice sites, so we will obtain all the
+thermodynamic quantities per lattice site. 
+
+The resulting phase diagram is shown in Fig.~\ref{fig:highTphases}. 
+\begin{figure}
+\centering \includegraphics[width=\textwidth]{../HighT_figures/phases2p5.png}
+\caption[High temperature phase diagram of the Fermi-Hubbard model]{\small 
+High temperature phase diagram of the Fermi-Hubbard model calculated using only the second order in the perturbation series. 
+} \label{fig:highTphases}
+\end{figure}
 
 
    
