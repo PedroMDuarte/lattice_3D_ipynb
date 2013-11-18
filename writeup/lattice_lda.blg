@@ -7,44 +7,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: lattice_lda.bib
-You've used 4 entries,
+Warning--We don't use thesis titles in Phys. Rev, see \cite{Jordens2010}
+Warning--We don't use thesis titles in Phys. Rev, see \cite{Mark2012}
+You've used 12 entries,
             2048 wiz_defined-function locations,
-            529 strings with 4130 characters,
-and the built_in function-call counts, 1064 in all, are:
-= -- 48
-> -- 39
+            588 strings with 5191 characters,
+and the built_in function-call counts, 2737 in all, are:
+= -- 135
+> -- 115
 < -- 0
-+ -- 12
-- -- 8
-* -- 77
-:= -- 101
-add.period$ -- 4
-call.type$ -- 4
++ -- 36
+- -- 24
+* -- 252
+:= -- 307
+add.period$ -- 12
+call.type$ -- 12
 change.case$ -- 0
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 43
-empty$ -- 157
-format.name$ -- 12
-if$ -- 292
+cite$ -- 14
+duplicate$ -- 120
+empty$ -- 329
+format.name$ -- 36
+if$ -- 646
 int.to.chr$ -- 0
-int.to.str$ -- 4
+int.to.str$ -- 12
 missing$ -- 0
-newline$ -- 15
-num.names$ -- 4
-pop$ -- 32
+newline$ -- 39
+num.names$ -- 12
+pop$ -- 70
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 104
+skip$ -- 188
 stack$ -- 0
-substring$ -- 25
-swap$ -- 15
+substring$ -- 181
+swap$ -- 64
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 30
-warning$ -- 0
-while$ -- 6
-width$ -- 5
-write$ -- 22
+warning$ -- 2
+while$ -- 26
+width$ -- 14
+write$ -- 60
+(There were 2 warnings)

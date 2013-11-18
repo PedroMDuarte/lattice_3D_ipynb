@@ -1,14 +1,22 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{RevModPhys.78.179}
 O. Morsch and M. Oberthaler, ``Dynamics of Bose-Einstein condensates in optical
   lattices,'' Rev. Mod. Phys. {\bfseries 78,} 179--215 (2006).
+
+\bibitem{PhysRev.87.807}
+J.~C. Slater, ``A Soluble Problem in Energy Bands,'' Phys. Rev. {\bfseries 87,}
+  807--835 (1952).
 
 \bibitem{salomon2013many}
 C. Salomon, G. Shlyapnikov, and L. Cugliandolo, {\em Many-Body Physics with
   Ultracold Gases: Lecture Notes of the Les Houches Summer School: Volume 94,
   July 2010}, {\em Lecture Notes of the Les Houches Summer School} (OUP Oxford,
   2013).
+
+\bibitem{Kohn1959}
+W. Kohn, ``{Analytic Properties of Bloch Waves and Wannier Functions},''
+  Physical Review {\bfseries 115,} 809--821 (1959).
 
 \bibitem{fetter2003quantum}
 A. Fetter and J. Walecka, {\em Quantum Theory of Many-particle Systems}, {\em
@@ -17,5 +25,28 @@ A. Fetter and J. Walecka, {\em Quantum Theory of Many-particle Systems}, {\em
 \bibitem{schwabl2005advanced}
 F. Schwabl, {\em Advanced Quantum Mechanics}, {\em Advanced texts in physics}
   (Springer, 2005).
+
+\bibitem{Bloch2008}
+I. Bloch and W. Zwerger, ``{Many-body physics with ultracold gases},'' Reviews
+  of Modern Physics {\bfseries 80,} 885--964 (2008).
+
+\bibitem{Busch1998}
+T. Busch, B. Englert, K. Rzażewski, and M. Wilkens, ``{Two cold atoms in a
+  harmonic trap},'' Foundations of Physics \ pp.\ 549--559 (1998).
+
+\bibitem{Jordens2010}
+R. J\"{o}rdens, Ph.D. thesis, ETH Z\"{u}rich, 2010.
+
+\bibitem{Mark2012}
+M. Mark, Ph.D. thesis, Innsbruck, 2012.
+
+\bibitem{Henderson1992}
+J. Henderson, J. Oitmaa, and M. Ashley, ``{High-temperature expansion for the
+  single-band Hubbard model},'' Physical Review B {\bfseries 46,} 6328--6337
+  (1992).
+
+\bibitem{PhysRevA.86.023606}
+C.~J.~M. Mathy, D.~A. Huse, and R.~G. Hulet, ``Enlarging and cooling the N\'eel
+  state in an optical lattice,'' Phys. Rev. A {\bfseries 86,} 023606 (2012).
 
 \end{thebibliography}

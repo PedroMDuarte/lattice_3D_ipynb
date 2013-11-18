@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.5.5)  12 NOV 2013 12:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.5.5)  17 NOV 2013 22:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -310,24 +310,24 @@ LaTeX Warning: Unused global option(s):
 (./lattice_lda.aux)
 \openout1 = `lattice_lda.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 37.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
+LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 38.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 38.
  (/usr/share/texlive/texmf-dist/tex/generic/babel/lgrcmr.fd
 File: lgrcmr.fd 2008/06/17 v2.3 Greek Computer Modern
 )
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    ... okay on input line 38.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -419,124 +419,153 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+LaTeX Font Info:    Try loading font information for U+msa on input line 46.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 46.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) [1
+)
+LaTeX Font Info:    Try loading font information for U+bbold on input line 67.
+
+(/usr/share/texlive/texmf-dist/tex/latex/bbold/Ubbold.fd) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<../BandStructure_figures/bands1d.pdf, id=16, 1084.05pt x 361.35pt>
+<../BandStructure_figures/bands1d.pdf, id=17, 1084.05pt x 361.35pt>
 File: ../BandStructure_figures/bands1d.pdf Graphic file (type pdf)
 
 <use ../BandStructure_figures/bands1d.pdf>
 Package pdftex.def Info: ../BandStructure_figures/bands1d.pdf used on input lin
-e 105.
+e 132.
 (pdftex.def)             Requested size: 491.43513pt x 163.8135pt.
 
-<../BandStructure_figures/bands1d_V0.pdf, id=17, 469.755pt x 274.626pt>
+<../BandStructure_figures/bands1d_V0.pdf, id=18, 469.755pt x 274.626pt>
 File: ../BandStructure_figures/bands1d_V0.pdf Graphic file (type pdf)
 
 <use ../BandStructure_figures/bands1d_V0.pdf>
 Package pdftex.def Info: ../BandStructure_figures/bands1d_V0.pdf used on input 
-line 110.
+line 139.
 (pdftex.def)             Requested size: 294.86407pt x 172.38252pt.
- [2 <../BandStructure_figures/bands1d.pdf> <../BandStructure_figures/bands1d_V0
-.pdf
 
-pdfTeX warning: pdflatex (file ../BandStructure_figures/bands1d_V0.pdf): PDF in
-clusion: multiple pdfs with page group included in a single page
->] <../BandStructure_figures/eigenfuns1d.pdf, id=100, 722.7pt x 289.08pt>
+<../BandStructure_figures/eigenfuns1d.pdf, id=19, 722.7pt x 289.08pt>
 File: ../BandStructure_figures/eigenfuns1d.pdf Graphic file (type pdf)
 
 <use ../BandStructure_figures/eigenfuns1d.pdf>
 Package pdftex.def Info: ../BandStructure_figures/eigenfuns1d.pdf used on input
- line 128.
+ line 169.
 (pdftex.def)             Requested size: 491.43513pt x 196.5762pt.
+ [2 <../BandStructure_figures/bands1d.pdf>] [3 <../BandStructure_figures/bands1
+d_V0.pdf> <../BandStructure_figures/eigenfuns1d.pdf
 
-<../BandStructure_figures/wannier1d.pdf, id=101, 722.7pt x 303.534pt>
-File: ../BandStructure_figures/wannier1d.pdf Graphic file (type pdf)
-
-<use ../BandStructure_figures/wannier1d.pdf>
-Package pdftex.def Info: ../BandStructure_figures/wannier1d.pdf used on input l
-ine 161.
-(pdftex.def)             Requested size: 491.43513pt x 206.40501pt.
- [3 <../BandStructure_figures/eigenfuns1d.pdf>]
-<../BandStructure_figures/wannier1d_V0.pdf, id=152, 469.755pt x 289.08pt>
+pdfTeX warning: pdflatex (file ../BandStructure_figures/eigenfuns1d.pdf): PDF i
+nclusion: multiple pdfs with page group included in a single page
+>] <../BandStructure_figures/wannier1d_V0.pdf, id=154, 469.755pt x 289.08pt>
 File: ../BandStructure_figures/wannier1d_V0.pdf Graphic file (type pdf)
 
 <use ../BandStructure_figures/wannier1d_V0.pdf>
 Package pdftex.def Info: ../BandStructure_figures/wannier1d_V0.pdf used on inpu
-t line 186.
+t line 261.
 (pdftex.def)             Requested size: 294.86407pt x 181.45529pt.
 
-<../BandStructure_figures/bands3d_V0.pdf, id=153, 469.755pt x 274.626pt>
+<../BandStructure_figures/wannier1d_bands.pdf, id=155, 491.436pt x 289.08pt>
+File: ../BandStructure_figures/wannier1d_bands.pdf Graphic file (type pdf)
+
+<use ../BandStructure_figures/wannier1d_bands.pdf>
+Package pdftex.def Info: ../BandStructure_figures/wannier1d_bands.pdf used on i
+nput line 272.
+(pdftex.def)             Requested size: 294.86407pt x 173.45815pt.
+
+<../BandStructure_figures/bands3d_V0.pdf, id=156, 469.755pt x 274.626pt>
 File: ../BandStructure_figures/bands3d_V0.pdf Graphic file (type pdf)
 
 <use ../BandStructure_figures/bands3d_V0.pdf>
 Package pdftex.def Info: ../BandStructure_figures/bands3d_V0.pdf used on input 
-line 201.
+line 289.
 (pdftex.def)             Requested size: 294.86407pt x 172.38252pt.
- [4 <../BandStructure_figures/wannier1d.pdf>] [5 <../BandStructure_figures/wann
-ier1d_V0.pdf> <../BandStructure_figures/bands3d_V0.pdf
+ [4] [5 <../BandStructure_figures/wannier1d_V0.pdf> <../BandStructure_figures/w
+annier1d_bands.pdf
+
+pdfTeX warning: pdflatex (file ../BandStructure_figures/wannier1d_bands.pdf): P
+DF inclusion: multiple pdfs with page group included in a single page
+> <../BandStructure_figures/bands3d_V0.pdf
 
 pdfTeX warning: pdflatex (file ../BandStructure_figures/bands3d_V0.pdf): PDF in
 clusion: multiple pdfs with page group included in a single page
 >] [6] [7] [8]
-Overfull \hbox (0.86433pt too wide) in paragraph at lines 459--459
+Overfull \hbox (0.86433pt too wide) in paragraph at lines 578--578
 [] 
  []
 
-[9] [10]
-<../BandStructure_figures/tightbinding_V0_interp.pdf, id=331, 469.755pt x 274.6
+[9] [10] [11]
+<../BandStructure_figures/tightbinding_V0_interp.pdf, id=316, 469.755pt x 274.6
 26pt>
 File: ../BandStructure_figures/tightbinding_V0_interp.pdf Graphic file (type pd
 f)
  <use ../BandStructure_figures/tightbinding_V0_interp.pdf>
 Package pdftex.def Info: ../BandStructure_figures/tightbinding_V0_interp.pdf us
-ed on input line 642.
+ed on input line 779.
 (pdftex.def)             Requested size: 294.86407pt x 172.38252pt.
- [11]
-(./lattice_lda.bbl [12 <../BandStructure_figures/tightbinding_V0_interp.pdf>])
-[13] (./lattice_lda.aux) ) 
+
+<../BandStructure_figures/tunneling_V0_Mathieu.pdf, id=317, 794.97pt x 303.534p
+t>
+File: ../BandStructure_figures/tunneling_V0_Mathieu.pdf Graphic file (type pdf)
+
+ <use ../BandStructure_figures/tunneling_V0_Mathieu.pdf>
+Package pdftex.def Info: ../BandStructure_figures/tunneling_V0_Mathieu.pdf used
+ on input line 801.
+(pdftex.def)             Requested size: 491.43513pt x 187.64261pt.
+ [12 <../BandStructure_figures/tightbinding_V0_interp.pdf>] [13 <../BandStructu
+re_figures/tunneling_V0_Mathieu.pdf>]
+<../BandStructure_figures/wFactor_V0_a0.pdf, id=416, 794.97pt x 303.534pt>
+File: ../BandStructure_figures/wFactor_V0_a0.pdf Graphic file (type pdf)
+
+<use ../BandStructure_figures/wFactor_V0_a0.pdf>
+Package pdftex.def Info: ../BandStructure_figures/wFactor_V0_a0.pdf used on inp
+ut line 927.
+(pdftex.def)             Requested size: 491.43513pt x 187.64261pt.
+ [14] [15 <../BandStructure_figures/wFactor_V0_a0.pdf>] (./lattice_lda.bbl
+Missing character: There is no Å in font cmr10!
+Missing character: There is no ¼ in font cmr10!
+ [16]) [17] (./lattice_lda.aux) ) 
 Here is how much of TeX's memory you used:
- 4442 strings out of 493485
- 62420 string characters out of 3143527
- 138941 words of memory out of 3000000
- 7612 multiletter control sequences out of 15000+200000
- 19536 words of font info for 72 fonts, out of 3000000 for 9000
+ 4485 strings out of 493485
+ 63422 string characters out of 3143527
+ 139025 words of memory out of 3000000
+ 7643 multiletter control sequences out of 15000+200000
+ 20837 words of font info for 79 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,26n,43p,517b,272s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cmextra/cmbsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lattice_lda.pdf (13 pages, 448692 bytes).
+ 38i,26n,43p,541b,272s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/bbold-type1/bbold7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cmextra/cmbsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cme
+x10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on lattice_lda.pdf (17 pages, 544516 bytes).
 PDF statistics:
- 458 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
+ 562 PDF objects out of 1000 (max. 8388607)
+ 257 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
