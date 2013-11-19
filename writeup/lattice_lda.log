@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.5.5)  18 NOV 2013 03:00
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.5.5)  18 NOV 2013 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,7 +307,14 @@ Package: parskip 2001/04/09 non-zero parskip adjustments
 LaTeX Warning: Unused global option(s):
     [letter].
 
-(./lattice_lda.aux)
+(./lattice_lda.aux
+
+LaTeX Warning: Label `fig:fuchs10' multiply defined.
+
+
+LaTeX Warning: Label `fig:fuchs10' multiply defined.
+
+)
 \openout1 = `lattice_lda.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
@@ -328,6 +335,7 @@ LaTeX Font Info:    Try loading font information for LGR+cmr on input line 38.
 File: lgrcmr.fd 2008/06/17 v2.3 Greek Computer Modern
 )
 LaTeX Font Info:    ... okay on input line 38.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -531,49 +539,86 @@ ut line 927.
 File: ../HighT_figures/phases2p5.png Graphic file (type png)
 
 <use ../HighT_figures/phases2p5.png>
-Package pdftex.def Info: ../HighT_figures/phases2p5.png used on input line 1061
+Package pdftex.def Info: ../HighT_figures/phases2p5.png used on input line 1064
 .
 (pdftex.def)             Requested size: 491.43513pt x 357.41449pt.
- (./lattice_lda.bbl [16] [17 <../HighT_figures/phases2p5.png>]
+
+
+LaTeX Warning: Reference `fig:fuchs10, fig:fuchs1, fig:fuchs03' on page 16 unde
+fined on input line 1077.
+
+[16] [17 <../HighT_figures/phases2p5.png>]
+<../HighT_figures/FUCHS_phasesT=100.png, id=485, 794.97pt x 578.16pt>
+File: ../HighT_figures/FUCHS_phasesT=100.png Graphic file (type png)
+
+<use ../HighT_figures/FUCHS_phasesT=100.png>
+Package pdftex.def Info: ../HighT_figures/FUCHS_phasesT=100.png used on input l
+ine 1081.
+(pdftex.def)             Requested size: 491.43513pt x 357.41449pt.
+
+<../HighT_figures/FUCHS_phasesT=10.png, id=486, 794.97pt x 578.16pt>
+File: ../HighT_figures/FUCHS_phasesT=10.png Graphic file (type png)
+
+<use ../HighT_figures/FUCHS_phasesT=10.png>
+Package pdftex.def Info: ../HighT_figures/FUCHS_phasesT=10.png used on input li
+ne 1087.
+(pdftex.def)             Requested size: 491.43513pt x 357.41449pt.
+
+<../HighT_figures/FUCHS_phasesT=3.png, id=487, 794.97pt x 578.16pt>
+File: ../HighT_figures/FUCHS_phasesT=3.png Graphic file (type png)
+
+<use ../HighT_figures/FUCHS_phasesT=3.png>
+Package pdftex.def Info: ../HighT_figures/FUCHS_phasesT=3.png used on input lin
+e 1093.
+(pdftex.def)             Requested size: 491.43513pt x 357.41449pt.
+ [18 <../HighT_figures/FUCHS_phasesT=100.png>] [19 <../HighT_figures/FUCHS_phas
+esT=10.png>] [20 <../HighT_figures/FUCHS_phasesT=3.png>] (./lattice_lda.bbl
 Missing character: There is no Å in font cmr10!
 Missing character: There is no ¼ in font cmr10!
-) [18] (./lattice_lda.aux) ) 
+) [21] (./lattice_lda.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4493 strings out of 493485
- 63612 string characters out of 3143527
- 139035 words of memory out of 3000000
- 7648 multiletter control sequences out of 15000+200000
+ 4511 strings out of 493485
+ 64235 string characters out of 3143527
+ 139089 words of memory out of 3000000
+ 7663 multiletter control sequences out of 15000+200000
  20837 words of font info for 79 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,26n,43p,541b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/b
-bold-type1/bbold7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cmextra/cmbsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on lattice_lda.pdf (18 pages, 1018045 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/bbold-type1/bbold7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy6.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmext
+ra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+symbols/msbm10.pfb>
+Output written on lattice_lda.pdf (21 pages, 1790875 bytes).
 PDF statistics:
- 568 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
+ 584 PDF objects out of 1000 (max. 8388607)
+ 267 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

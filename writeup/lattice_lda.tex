@@ -1056,7 +1056,10 @@ the simple cubic case is $m=6$.  We see that the grand potential is
 proportional to the number of lattice sites, so we will obtain all the
 thermodynamic quantities per lattice site. 
 
-The resulting phase diagram is shown in Fig.~\ref{fig:highTphases}. 
+The resulting phase diagram is shown in Fig.~\ref{fig:highTphases}.  NOTE FOR
+GROUP MEETING:  I intend to write some text that discusses the relevant phases
+in this phase diagram.  I will discuss them in the presentation in the group
+meeting and add the explanatory text in this document later on.  
 \begin{figure}
 \centering \includegraphics[width=\textwidth]{../HighT_figures/phases2p5.png}
 \caption[High temperature phase diagram of the Fermi-Hubbard model]{\small 
@@ -1064,11 +1067,70 @@ High temperature phase diagram of the Fermi-Hubbard model calculated using only 
 } \label{fig:highTphases}
 \end{figure}
 
+\subsection{Thermodynamics at colder temperatures, apparoach to the N\'{e}el transition}
 
+In this section we show the phase diagram for the Fermi-Hubbard model at lower
+temperatures, which are beyond the scope of the perturbation expansion shown in
+the previous section.   The phase diagram was calculated in~\cite{Fuchs2011} by
+using cluster dynamical mean-field theory, and they have made their results
+available in the supplementary material accompanying their paper.  In
+Figures~\ref{fig:fuchs10, fig:fuchs1, fig:fuchs03} we show the resulting phase
+diagram for $T/t=$ 10, 1, and 0.3 respectively.
+
+\begin{figure}
+\centering \includegraphics[width=\textwidth]{../HighT_figures/FUCHS_phasesT=100.png}
+\caption[Low temperature phase diagram of the Fermi-Hubbard model]{\small
+From~\cite{Fuchs2011}} \label{fig:fuchs10}
+\end{figure}
+
+\begin{figure}
+\centering \includegraphics[width=\textwidth]{../HighT_figures/FUCHS_phasesT=10.png}
+\caption[Low temperature phase diagram of the Fermi-Hubbard model]{\small
+From~\cite{Fuchs2011}} \label{fig:fuchs10}
+\end{figure}
    
+\begin{figure}
+\centering \includegraphics[width=\textwidth]{../HighT_figures/FUCHS_phasesT=3.png}
+\caption[Low temperature phase diagram of the Fermi-Hubbard model]{\small
+From~\cite{Fuchs2011}} \label{fig:fuchs10}
+\end{figure}
 
 
 \section{ Local density approximation }
+
+
+
+The phase diagrams calculated in the two previous sections assume a homogeneous
+lattice.  In our experiment the lattice has an underlying confining potential,
+which can be dealt with by considering a local chemical potential at each point
+in the trap given by
+\begin{equation}
+ \mu(\bv{r}) = \mu - V(\bv{r}) 
+\end{equation}
+An homogeneous lattice phase diagram can be used to obtain the local density,
+local entropy, and local double occupancy at any point in our system by using
+as inputs the local chemical potential,  the local value of the tunneling
+matrix element and the local value of the on-site interaction.  
+
+The methods used to calculate the phase diagrams are related to the validity of
+the local density approximation.   We recall that in the high temperature
+series expansion, the $n^{\text{th}}$  term corresponds to a particle staring
+at a certain site, tunneling $n$ times and then coming back to its original
+site.  If $\sqrt{n}$ becomes comparable to the lenght scale of variations in
+the confining potential, then the local density would not be a suitable
+description of the system, because in those $n$ steps the particle can sample a
+very different confining potential.  
+
+Similarly, in the cluster dynamical mean-field theory, results are obtained for
+finite sized clusters of various sizes and then extrapolated to the infinite
+size limit~\cite{Fuchs2011}.  At low temperatures, the system develops
+long-range correlations, so large clusters are required to approximate the
+system.   If the local site energy varies considerably over the size of a
+cluster then the local density approximation will break down.   
+
+\subsection{ Compensated lattice geometry }
+ 
+ 
 
 \cite{PhysRevA.86.023606}
 
