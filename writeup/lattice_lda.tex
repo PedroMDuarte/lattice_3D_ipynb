@@ -635,6 +635,12 @@ together to define the non-interacting part of the hamiltonian
 \end{equation}
 
 \subsubsection{Tunneling matrix element, $t$}
+
+IMPORTANT NOTE: In this section I have already restricted the set of states to
+only the Wannier states in the lowest band.  I should mention somewhere in this
+section that this approximation is taking place. 
+
+
 $H_{0}$ is a single particle operator, so it's second quantized form is 
 \begin{equation}
 \begin{split}
@@ -680,8 +686,10 @@ follows we will consider only the lowesrt band, $n=0$,  so we will drop the
 band index altogether.  This simplification imposes two important requirements
 for our system: 
 \begin{enumerate}
-\item The temperature and the Fermi energy need to be small compared to the energy gap between the lowest and first excited band.   
-\item The interaction energy scale must also be small comapred to the energy gap between the lowest and first excited band. 
+\item The temperature and the Fermi energy need to be small compared to the
+energy gap between the lowest and first excited band.   
+\item The interaction energy scale must also be small comapred to the energy
+gap between the lowest and first excited band. 
 \end{enumerate}
 
 In the 3D lattice, the energy $E_{\bv{q}} = \sum_{u=x,y,z} E_{q_{u}}^{u} $, and by inserting this into the sum for $t_{ij}$ above we find 
@@ -724,12 +732,16 @@ We see that if $i=j$ we have
   -t_{ii} =  \frac{3}{L} 
           \sum_{q} E_{q}^{\text{\tiny 1D}}  
 \end{equation}
-This term just adds an overall energy (proportional to the number of particles
-in the system) to the hamiltonian, so we just ignore it for convenience.  If on
-the other hand $i\neq j$, then we see that we can only consider the posibility
-that one of the $x_{ij}, y_{ij}, z_{ij}$ is non-zero, otherwise all three of
-the terms in the expression above will vanish due to the Kronnecer delta terms.
-The expression for the tunneling matrix elements simplifies to 
+This contribution to $H_{0}$ just adds an overall energy (proportional to the
+number of particles in the system), so we just ignore it for convenience.
+Ignoring this term sets the zero of energy in the problem exactly at the center
+of the lowest band.  This will be important in a later section, when we
+consider the phase diagram as a function of the chemical potential.   
+
+If on the other hand $i\neq j$, then we see that we can only consider the
+posibility that one of the $x_{ij}, y_{ij}, z_{ij}$ is non-zero, otherwise all
+three of the terms in the expression above will vanish due to the Kronnecer
+delta terms.  The expression for the tunneling matrix elements simplifies to 
 \begin{equation}
   t_{ij} = -\frac{1}{L} \sum_{q} E_{q}^{\text{\tiny 1D}} e^{iq \Delta_{ij}} 
 \label{eq:tunneling3D}
@@ -842,17 +854,18 @@ This is a two-particle operator, and its second quantized form is given by
 where 
 \begin{equation}
     \langle ij | V_{\mathrm{int}} | km \rangle =
-    \int \mathrm{d}\bv{r} \int \mathrm{d}\bv{y} \ \  
-    \varphi_{i}^{*}(\bv{r}) \varphi_{j}^{*}(\bv{y}) 
-    V_{\mathrm{int}}(\bv{r},\bv{y}) 
-    \varphi_{k}(\bv{r}) \varphi_{m}(\bv{y}) 
+    \int \mathrm{d}\bv{r}_{1} \int \mathrm{d}\bv{r}_{2} \ \  
+    \varphi_{i}^{*}(\bv{r}_{1}) \varphi_{j}^{*}(\bv{r}_{2}) 
+    V_{\mathrm{int}}(\bv{r}_{1},\bv{r}_{2}) 
+    \varphi_{k}(\bv{r}_{1}) \varphi_{m}(\bv{r}_{2}) 
 \end{equation}
 
 The interaction between ultracold atoms can be described in terms of the
 $s$-wave scattering length, $a$,  and a pseudopotential given
 by~\cite{Bloch2008}
 \begin{equation}
-    V(x,y) = \frac{ 4 \pi \hbar^{2} a } { m } \delta(\bv{r}-\bv{y}) 
+    V_{\mathrm{int}}(\bv{r}_{1},\bv{r}_{2}) 
+    = \frac{ 4 \pi \hbar^{2} a } { m } \delta(\bv{r}_{1}-\bv{r}_{2}) 
 \end{equation}
 so the matrix element above can be written as 
 \begin{equation}
@@ -901,21 +914,19 @@ where now $i$ is an index that runs over lattice sites, and
   \frac{ 4 \pi \hbar^{2} a } { m }
    \prod_{v=x,y,z}  \int  w(v) ^{4} \mathrm{d}v  
 \end{equation}
-In units of $E_{R}$, and keeping in mind that we defined the lattice spacing as
-unity 
+In units of $E_{R}$, 
 \begin{equation}
-  U = \frac{ 8}{ \pi}   a_{s} 
+  U = \frac{ 8}{ \pi}  \frac{ a_{s} }{a}
    \prod_{v=x,y,z}  \int  w(v) ^{4} \mathrm{d}v  
-\end{equation} where now the scattering length $a_{s}$ must be in units of the
-lattice spacing.
-
+\end{equation} 
+where $a$ is the lattice spacing.  
 
 If the Wannier state is approximated by the Gaussian ground state in the local
 oscillator potential of one lattice site, the integral can be carried out
 explicity and one gets
 ~\cite{Bloch2008} 
 \begin{equation} 
-  U  = \sqrt{ 8\pi } a_{s} V_{0}^{3/4} 
+  U  = \sqrt{ 8\pi } \frac{a_{s}}{a} V_{0}^{3/4} 
 \end{equation} 
 where, again, the scattering length must be in units of the lattice spacing.
 
@@ -941,7 +952,19 @@ treat the problem of two atoms intearcting in the local harmonic oscillator
 around a lattice site~\cite{Busch1998}.   Another approach consists of
 redefining the single particle basis states (using linear combinations of
 Wannier states in different bands) such that the interaction matrix element is
-diagonal in the new basis, see for instance~\cite{Jordens2010,Mark2012}.
+diagonal in the new basis, see for instance~\cite{Jordens2010,Mark2012}. In more formal terms one would find states
+\begin{equation}
+ \varphi_{i }^{nm}  =  \sum_{st} c_{st}^{nm} w_{i}^{s}(\bv{r} ) w_{i}^{t}(\bv{r})
+\end{equation}  
+such that 
+\begin{equation}
+  \langle nm | V_{\mathrm{int}} | op \rangle =  \delta_{n,o}\delta_{m,p}
+\end{equation}
+The problem of finding the coefficients $c_{st}^{nm}$ can be tackled
+numerically by using linear combinations of Wannier states in only
+the first few bands. 
+    
+
  
 
 \section{ High-temperature series expansion for the single band Hubbard model }
