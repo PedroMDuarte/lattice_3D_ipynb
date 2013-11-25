@@ -25,7 +25,14 @@ def getHTSEPoints( Temperature, name="density"):
 def getHTSEInterp( Temperature, name='density'):
     U_, mu_, qty_ = getHTSEPoints( Temperature, name=name)
     points = _ndim_coords_from_arrays((U_, mu_))
+    interp = CloughTocher2DInterpolator(points, qty_)
+    return lambda u,mu : interp( np.column_stack(( np.ravel(u),np.ravel(mu) )) ).reshape(u.shape)
+
+def getHTSEInterp2( Temperature, name='density'):
+    U_, mu_, qty_ = getHTSEPoints( Temperature, name=name)
+    points = _ndim_coords_from_arrays((U_, mu_))
     return CloughTocher2DInterpolator(points, qty_)
+
 
 
 doub = {}
@@ -91,6 +98,15 @@ def getFuchsPoints( Temperature, name='density', Uset = [4,6,8,10,12]):
     return U_, mu_, qty_
 
 def getFuchsInterp( Temperature, name='density', Uset = [4,6,8,10,12]):
+    U_, mu_, qty_ = getFuchsPoints( Temperature, name=name, Uset = Uset)
+    points = _ndim_coords_from_arrays((U_, mu_))
+    if len ( Uset) > 1:
+        interp = CloughTocher2DInterpolator(points, qty_)
+        return lambda u,mu : interp( np.column_stack(( np.ravel(u),np.ravel(mu) )) ).reshape(u.shape)
+    else:
+        return None
+
+def getFuchsInterp2( Temperature, name='density', Uset = [4,6,8,10,12]):
     U_, mu_, qty_ = getFuchsPoints( Temperature, name=name, Uset = Uset)
     points = _ndim_coords_from_arrays((U_, mu_))
     if len ( Uset) > 1:
