@@ -1,0 +1,73 @@
+\begin{thebibliography}{10}
+
+\bibitem{Henderson1992}
+J. Henderson, J. Oitmaa, and M. Ashley, ``{High-temperature expansion for the
+  single-band Hubbard model},'' Physical Review B {\bfseries 46,} 6328--6337
+  (1992).
+
+\bibitem{Jordens2010}
+R. J\"{o}rdens, Ph.D. thesis, ETH Z\"{u}rich, 2010.
+
+\bibitem{Scalettar:hubbard7}
+R. Scalettar, ``QUEST: QUantum Electron Simulation Toolbox,'',
+  \url{http://quest.ucdavis.edu/tutorial/hubbard7.pdf}, 2013.
+
+\bibitem{DeLeo2008}
+L. {De Leo}, C. Kollath, A. Georges, M. Ferrero, and O. Parcollet, ``{Trapping
+  and Cooling Fermionic Atoms into Mott and N\'{e}el States},'' Physical Review
+  Letters {\bfseries 101,} 210403 (2008).
+
+\bibitem{DeLeo2011}
+L. {De Leo}, J.-S. Bernier, C. Kollath, A. Georges, and V.~W. Scarola,
+  ``{Thermodynamics of the three-dimensional Hubbard model: Implications for
+  cooling cold atomic gases in optical lattices},'' Physical Review A
+  {\bfseries 83,} 023606 (2011).
+
+\bibitem{Gorelik2010}
+E.~V. Gorelik, I. Titvinidze, W. Hofstetter, M. Snoek, and N. Bl\"{u}mer,
+  ``{N\'{e}el Transition of Lattice Fermions in a Harmonic Trap: A Real-Space
+  Dynamic Mean-Field Study},'' Physical Review Letters {\bfseries 105,} 065301
+  (2010).
+
+\bibitem{Fuchs2011}
+S. Fuchs, E. Gull, L. Pollet, E. Burovski, E. Kozik, T. Pruschke, and M.
+  Troyer, ``{Thermodynamics of the 3D Hubbard Model on Approaching the N\'{e}el
+  Transition},'' Physical Review Letters {\bfseries 106,} 030401 (2011).
+
+\bibitem{Mathy2012}
+C.~J.~M. Mathy, D.~a. Huse, and R.~G. Hulet, ``{Enlarging and cooling the
+  N\'{e}el state in an optical lattice},'' Physical Review A {\bfseries 86,}
+  023606 (2012).
+
+\bibitem{Staudt2000}
+R. Staudt, M. Dzierzawa, and A. Muramatsu, ``{Phase diagram of the
+  three-dimensional Hubbard model at half filling},'' The European Physical
+  Journal B {\bfseries 17,} 411--415 (2000).
+
+\bibitem{Kent2005}
+P. Kent, M. Jarrell, T. Maier, and T. Pruschke, ``{Efficient calculation of the
+  antiferromagnetic phase diagram of the three-dimensional Hubbard model},''
+  Physical Review B {\bfseries 72,} 060411 (2005).
+
+\bibitem{Paiva2011}
+T. Paiva, Y.~L. Loh, M. Randeria, R.~T. Scalettar, and N. Trivedi, ``{Fermions
+  in 3D Optical Lattices: Cooling Protocol to Obtain Antiferromagnetism},''
+  Physical Review Letters {\bfseries 107,} 086401 (2011).
+
+\bibitem{Zurn2013}
+G. Z\"{u}rn, T. Lompe, a.~N. Wenz, S. Jochim, P.~S. Julienne, and J.~M. Hutson,
+  ``{Precise Characterization of \^{6}Li Feshbach Resonances Using
+  Trap-Sideband-Resolved RF Spectroscopy of Weakly Bound Molecules},'' Physical
+  Review Letters {\bfseries 110,} 135301 (2013).
+
+\bibitem{Thalhammer2006}
+G. Thalhammer, K. Winkler, F. Lang, S. Schmid, R. Grimm, and J.~H. Denschlag,
+  ``{Long-Lived Feshbach Molecules in a Three-Dimensional Optical Lattice},''
+  Physical Review Letters {\bfseries 96,} 050402 (2006).
+
+\bibitem{Jordens2010b}
+R. J\"{o}rdens {\itshape et~al.}, ``{Quantitative Determination of Temperature
+  in the Approach to Magnetic Order of Ultracold Fermions in an Optical
+  Lattice},'' Physical Review Letters {\bfseries 104,} 180401 (2010).
+
+\end{thebibliography}

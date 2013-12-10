@@ -302,7 +302,17 @@ each of the three spatial coordinates.  They are defined as
 \end{equation}
 where $L^{3}$ is the total number of sites in the lattice. 
 
-\section{Hubbard Hamiltonian}
+\section{Hubbard hamiltonian}
+
+The many-body Hubbard hamiltonian is 
+\begin{equation}
+  H =  
+-t \sum_{ \langle ij \rangle, \sigma   } 
+          a_{i\sigma}^{\dagger}a_{j\sigma} \\
+         + U\sum_{i} n_{i\spup} n_{i\spdn}  
+\end{equation}
+In what follows we will see how to obtain this many-body form starting from the first quantized version of the hamiltonian for a system of $N$ particles. 
+
 
 The hamiltonian for a single atom in a 3D optical lattice is given by  
 \begin{equation}

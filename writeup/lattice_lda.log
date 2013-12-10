@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.5.5)  18 NOV 2013 23:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.5.5)  26 NOV 2013 00:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -503,7 +503,7 @@ DF inclusion: multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex (file ../BandStructure_figures/bands3d_V0.pdf): PDF in
 clusion: multiple pdfs with page group included in a single page
 >] [6] [7] [8]
-Overfull \hbox (0.86433pt too wide) in paragraph at lines 578--578
+Overfull \hbox (0.86433pt too wide) in paragraph at lines 587--587
 [] 
  []
 
@@ -514,46 +514,45 @@ File: ../BandStructure_figures/tightbinding_V0_interp.pdf Graphic file (type pd
 f)
  <use ../BandStructure_figures/tightbinding_V0_interp.pdf>
 Package pdftex.def Info: ../BandStructure_figures/tightbinding_V0_interp.pdf us
-ed on input line 779.
+ed on input line 800.
 (pdftex.def)             Requested size: 294.86407pt x 172.38252pt.
-
-<../BandStructure_figures/tunneling_V0_Mathieu.pdf, id=317, 794.97pt x 303.534p
+ [12 <../BandStructure_figures/tightbinding_V0_interp.pdf>]
+<../BandStructure_figures/tunneling_V0_Mathieu.pdf, id=365, 794.97pt x 303.534p
 t>
 File: ../BandStructure_figures/tunneling_V0_Mathieu.pdf Graphic file (type pdf)
 
  <use ../BandStructure_figures/tunneling_V0_Mathieu.pdf>
 Package pdftex.def Info: ../BandStructure_figures/tunneling_V0_Mathieu.pdf used
- on input line 801.
+ on input line 822.
 (pdftex.def)             Requested size: 491.43513pt x 187.64261pt.
- [12 <../BandStructure_figures/tightbinding_V0_interp.pdf>] [13 <../BandStructu
-re_figures/tunneling_V0_Mathieu.pdf>]
+ [13 <../BandStructure_figures/tunneling_V0_Mathieu.pdf>]
 <../BandStructure_figures/wFactor_V0_a0.pdf, id=416, 794.97pt x 303.534pt>
 File: ../BandStructure_figures/wFactor_V0_a0.pdf Graphic file (type pdf)
 
 <use ../BandStructure_figures/wFactor_V0_a0.pdf>
 Package pdftex.def Info: ../BandStructure_figures/wFactor_V0_a0.pdf used on inp
-ut line 926.
+ut line 947.
 (pdftex.def)             Requested size: 491.43513pt x 187.64261pt.
- [14] [15 <../BandStructure_figures/wFactor_V0_a0.pdf>]
-<../HighT_figures/phases2p5.png, id=476, 794.97pt x 578.16pt>
+ [14] [15 <../BandStructure_figures/wFactor_V0_a0.pdf>] [16]
+<../HighT_figures/phases2p5.png, id=479, 794.97pt x 578.16pt>
 File: ../HighT_figures/phases2p5.png Graphic file (type png)
 
 <use ../HighT_figures/phases2p5.png>
-Package pdftex.def Info: ../HighT_figures/phases2p5.png used on input line 1075
+Package pdftex.def Info: ../HighT_figures/phases2p5.png used on input line 1096
 .
 (pdftex.def)             Requested size: 491.43513pt x 357.41449pt.
 
 
-LaTeX Warning: Reference `fig:fuchs10, fig:fuchs1, fig:fuchs03' on page 16 unde
-fined on input line 1088.
+LaTeX Warning: Reference `fig:fuchs10, fig:fuchs1, fig:fuchs03' on page 17 unde
+fined on input line 1109.
 
-[16] [17 <../HighT_figures/phases2p5.png>]
+[17 <../HighT_figures/phases2p5.png>]
 <../HighT_figures/FUCHS_phasesT=100.png, id=485, 794.97pt x 578.16pt>
 File: ../HighT_figures/FUCHS_phasesT=100.png Graphic file (type png)
 
 <use ../HighT_figures/FUCHS_phasesT=100.png>
 Package pdftex.def Info: ../HighT_figures/FUCHS_phasesT=100.png used on input l
-ine 1092.
+ine 1113.
 (pdftex.def)             Requested size: 491.43513pt x 357.41449pt.
 
 <../HighT_figures/FUCHS_phasesT=10.png, id=486, 794.97pt x 578.16pt>
@@ -561,7 +560,7 @@ File: ../HighT_figures/FUCHS_phasesT=10.png Graphic file (type png)
 
 <use ../HighT_figures/FUCHS_phasesT=10.png>
 Package pdftex.def Info: ../HighT_figures/FUCHS_phasesT=10.png used on input li
-ne 1098.
+ne 1119.
 (pdftex.def)             Requested size: 491.43513pt x 357.41449pt.
 
 <../HighT_figures/FUCHS_phasesT=3.png, id=487, 794.97pt x 578.16pt>
@@ -569,7 +568,7 @@ File: ../HighT_figures/FUCHS_phasesT=3.png Graphic file (type png)
 
 <use ../HighT_figures/FUCHS_phasesT=3.png>
 Package pdftex.def Info: ../HighT_figures/FUCHS_phasesT=3.png used on input lin
-e 1104.
+e 1125.
 (pdftex.def)             Requested size: 491.43513pt x 357.41449pt.
  [18 <../HighT_figures/FUCHS_phasesT=100.png>] [19 <../HighT_figures/FUCHS_phas
 esT=10.png>] [20 <../HighT_figures/FUCHS_phasesT=3.png>] (./lattice_lda.bbl
@@ -615,7 +614,7 @@ blic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb>
-Output written on lattice_lda.pdf (21 pages, 1791793 bytes).
+Output written on lattice_lda.pdf (21 pages, 1792280 bytes).
 PDF statistics:
  584 PDF objects out of 1000 (max. 8388607)
  267 compressed objects within 3 object streams
