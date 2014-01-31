@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-# <nbformat>3.0</nbformat>
-
-# <markdowncell>
-
-# ## Gauss beam and Lattice beam potentials
-
-# <codecell>
-
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
@@ -14,6 +5,8 @@ import matplotlib
 
 from vec3 import vec3, cross
 import scipy.constants as C 
+
+## Gauss beam and Lattice beam potentials
 
 def beam(xb,yb,zb,wx,wy,wavelen):
     zRx = np.pi * wx**2 / wavelen
@@ -122,13 +115,7 @@ class LatticeBeam(GaussBeam):
         latticeV0  = 4*np.sqrt(self.retro*self.alpha) 
         return np.abs(U2uK(self.l)*intensity * latticeV0)
 
-        
-
-# <markdowncell>
-
-# ## Define the potential class, useful for making plots
-
-# <codecell>
+## Define the potential class, useful for making plots
 
 from mpl_toolkits.mplot3d import axes3d
 
@@ -453,61 +440,8 @@ class potential:
         gs.tight_layout(fig, rect=[0.,0.,1.0,1.0])
         return fig
 
-# <markdowncell>
 
-# ### Show some examples of usage for the potential class
-
-# <codecell>
-
-if __name__ == '__main__':
-    odt = potential([ GaussBeam(mW=38000., waists=(70.,70.), axis=(np.pi/2,30.*np.pi/180.)),
-                      GaussBeam(mW=38000., waists=(70.,70.), axis=(np.pi/2,15.*np.pi/180.)) ])
-    #odt.plotLine()
-    #odt.plotCross(normal=(0.,0.), lims0=(-500,500),lims1=(-500,500),npoints=120)
-    figOdt = odt.plot3Cross(extents=100)
-    figOdt.savefig('Potentials/odt.png', dpi=200)
-    
-    figOdtZoomOut = odt.plot3Cross(extents=800)
-    figOdtZoomOut.savefig('Potentials/odt_ZoomOut.png', dpi=200)
-    
-    
-    
-
-# <codecell>
-
-if __name__ == '__main__':
-    lattTri = potential([ LatticeBeam( axis=(np.pi/2,0) ),
-                         LatticeBeam( axis=(np.pi/2,2*np.pi*(1./3.)) ),
-                         LatticeBeam( axis=(np.pi/2,2*np.pi*(2./3.)) )], units=('$E_{R}$', 1/Erecoil(1.064,6)) )
-    lattTri.plot3Cross()
-
-# <codecell>
-
-if __name__ == '__main__':
-    latt3d = potential([ LatticeBeam( Er=1.0, axis=(np.pi/2,0), waists=(47.,47.), alpha=0. ),
-                         LatticeBeam( Er=1.0, axis=(np.pi/2,np.pi/2), waists=(47.,47.), alpha=0. ),
-                         LatticeBeam( Er=1.0, axis=(0,0), waists=(47.,47.), alpha=0.) ] )
-    #latt3d.plot3Line()
-    #latt3d.plotCross( normal=(0.,0.), lims0=(-50,50), lims1=(-50,50), npoints=240)
-    figDimple = latt3d.plot3Cross(extents=100)
-    figDimple.savefig('Potentials/dimple.png', dpi=200)
-
-# <codecell>
-
-if __name__ == '__main__':
-    latt3d = potential([ LatticeBeam( Er=7.0, axis=(np.pi/2,0), waists=(47.,47.), alpha=1. ),
-                         LatticeBeam( Er=7.0, axis=(np.pi/2,np.pi/2), waists=(47.,47.), alpha=1. ),
-                         LatticeBeam( Er=7.0, axis=(0,0), waists=(47.,47.), alpha=1.) ] )
-    #latt3d.plot3Line()
-    #latt3d.plotCross( normal=(0.,0.), lims0=(-50,50), lims1=(-50,50), npoints=240)
-    figLatt = latt3d.plot3Cross(extents=100)
-    figLatt.savefig('Potentials/lattice.png', dpi=200)
-
-# <markdowncell>
-
-# ## Load the interpolation data for band structure, onsite interactions, and phase diagrams
-
-# <codecell>
+## Load the interpolation data for band structure, onsite interactions, and phase diagrams
 
 # Here the interpolation data for the band structure is loaded from disk
 v0 = np.loadtxt('banddat/interpdat_B3D_v0.dat')
@@ -543,8 +477,6 @@ def bands3dvec( v0, NBand=0 ):
             bandtop += interp0[in1d](v0[i])
     return np.array((bandbot,bandtop))
 
-# <codecell>
-
 #Here the interpolation data for the on-site interactions is loaded from disk
 from scipy.interpolate import interp1d
 wFInterp = interp1d( np.loadtxt('banddat/interpdat_wF_v0.dat'), np.loadtxt('banddat/interpdat_wF_wF.dat'))
@@ -561,7 +493,6 @@ def Onsite( v0,  a_s=300., lattice_spacing=0.532):
     a0a = 5.29e-11 / (lattice_spacing*1e-6)
     return a_s * a0a * np.power(wint, 1./3.)
 
-# <codecell>
 
 # Loading up the phase diagram interpolation functions and some examples of how to use them
 
@@ -589,11 +520,8 @@ if __name__ == '__main__':
     print "Doublons {0:10,.2f}{1:10,.2f}".format( float(fdoub(Uval, muval)), float(fHdoub(Uval, muval)) )
     print "Entropy  {0:10,.2f}{1:10,.2f}".format( float(fentr(Uval, muval)), float(fHentr(Uval, muval)) )    
 
-# <markdowncell>
 
-# ## Define the simpleCubic class, which inherits from the potential class
-
-# <codecell>
+## Define the simpleCubic class, which inherits from the potential class
 
 from scipy import integrate
 from scipy import optimize
@@ -682,8 +610,7 @@ class simpleCubic( potential ):
         # globalMu can be given directly or can be specified via the 
         # number of atoms.  If the Natoms is specified we calculate 
         # the required gMu using this function: 
-        muBrent = kwargs.get('muBrent', (0., 5.))
-        if muBrent is None: muBrent = (0., 5.) 
+        muBrent = kwargs.get('muBrent', (-1, 6.))
         if 'Natoms' in kwargs.keys():
             self.Number = kwargs.get('Natoms', 3e5)
             fN = lambda x : self.getNumber(x)- self.Number
@@ -735,10 +662,10 @@ class simpleCubic( potential ):
         
         self.figlabel = ',  '.join([VLlabel, VGlabel, aslabel, Utlabel, Tlabel])
 
-        Nlabel = r'$N=%.2f\times 10^{5}$' % (self.Number/1e5)
-        Dlabel = r'$D=%.3f$' % ( self.NumberD / self.Number )
-        Slabel = r'$S/N=%.2f$' % ( self.Entropy / self.Number )
-        self.foottext = ',  '.join([Nlabel, Dlabel, Slabel]) 
+        self.Nlabel = r'$N=%.2f\times 10^{5}$' % (self.Number/1e5)
+        self.Dlabel = r'$D=%.3f$' % ( self.NumberD / self.Number )
+        self.Slabel = r'$S/N=%.2f$' % ( self.Entropy / self.Number )
+        self.foottext = ',  '.join([self.Nlabel, self.Dlabel, self.Slabel]) 
         
         
         
@@ -886,15 +813,15 @@ class simpleCubic( potential ):
         gs.tight_layout(fig, rect=[0.,0.08,1.0,0.92])
         return fig
     
-    def CheckInhomog( self ):
+    def CheckInhomog( self, **kwargs ):
         """This function will make a plot along 111 of the model parameters:
            U, t, U/t, v0.  It is useful to assess the degree of inhomogeneity in our system"""
         
         # Prepare the figure
         fig = plt.figure(figsize=(10.,6.))
-        fig.suptitle( self.figlabel )
-        fig.text( 0.05, 0.86, "Sample is divided in 5 bins, all containing the same number of atoms (see plot 2).\n" + \
-                              "Average Fermi-Hubbard parameters are calculated in each bin." )
+        fig.suptitle( ' , '.join([ self.figlabel, self.Nlabel]) )
+        fig.text( 0.05, 0.86, "Sample is divided in 5 bins, all containing the same number of atoms (see panel 2).\n" + \
+                              "Average Fermi-Hubbard parameters $n$ and $U/t$ are calculated in each bin (see panels 1 and 4 )" )
         
         gs = matplotlib.gridspec.GridSpec( 2,3, wspace=0.2,\
                  left=0.1, right=0.9, bottom=0.05, top=0.9)
@@ -908,10 +835,23 @@ class simpleCubic( potential ):
         axv0 = fig.add_subplot(gs[1,1])
         axBGap = fig.add_subplot(gs[1,2])
         
-        
+        # Plot relevant quantities 
         density_111 = self.fHdens( self.onsite_t_111, self.localMu_t_111 )
         axn.plot( self.r111, density_111, lw=2 )
         
+        axUandt.plot( self.r111, self.onsite_t_111 * self.tunneling_111 , lw=2, label='$U$') 
+        axUandt.plot( self.r111, self.tunneling_111, lw=2, label='$t$')
+        axUandt.legend( bbox_to_anchor=(0.06,0.95), \
+            loc='lower left', numpoints=1, labelspacing=0.2,\
+             prop={'size':10}, handlelength=1.1, handletextpad=0.5 )
+        axUt.plot( self.r111, self.onsite_t_111, lw=2)
+        #print "shape of V0 = ", self.V0_111.shape
+        axv0.plot( self.r111, self.V0_111[0], lw=2)
+        bandgap_111 = bands = bands3dvec( self.V0_111, NBand=1 )[0] - bands3dvec( self.V0_111, NBand=0 )[1] 
+        axBGap.plot( self.r111, bandgap_111, lw=2) 
+
+
+        # Define function to calculate cummulative atom number
         
         def NRadius( Radius ):
             # This function calculates the fraction of the atom number 
@@ -927,19 +867,25 @@ class simpleCubic( potential ):
             NInt.append( NRadius( radius ) ) 
         NInt = np.array( NInt ) 
         axnInt.plot( radii, NInt, lw=2) 
-            
-        cutoff = 0.8  
+
+       
+        # Define function to numerically solve for y in a pair of x,y arrays     
         
         def x_solve( x_array, y_array,  yval ):
             # Convert the array to a function and then solve for y==yval
             yf = interp1d( x_array, y_array-yval, kind='cubic') 
             return optimize.brentq( yf, x_array.min(), x_array.max() ) 
+
+        radius1e = x_solve( self.r111[ self.r111 > 0 ] , \
+                            density_111[ self.r111 > 0 ] , density_111.max()/np.exp(1.) ) 
+
         
         # Find the various radii that split the cloud into slots of 20% atom number
         rcut = []
         for Ncut in [0.2, 0.4, 0.6, 0.8 ]:
             rcut.append( x_solve( radii, NInt, Ncut ) )
-        
+
+        # Define functions to average over the shells        
         def y_average( y_array,  x0, x1):
             # Average y_array over the radii x0 to x1,  weighted by density 
             valid = np.logical_and( np.abs(self.r111) < 70., ~np.isnan(density_111) )
@@ -948,7 +894,7 @@ class simpleCubic( potential ):
             dens = density_111[ valid ]
             y    = y_array[ valid ] 
             
-            shell = np.logical_and( r >=x0, r<x1 ) 
+            shell = np.logical_and( r >= x0, r<x1 ) 
             r    = r[shell]
             dens = dens[shell]
             y    = y[shell] 
@@ -963,30 +909,20 @@ class simpleCubic( potential ):
             x = np.abs(x)
             yavg = [] 
             cond = []
-            for x0,x1 in zip( [0.]+rcut,  rcut+[60.]):
+            for x0,x1 in zip( [0.]+rcut,  rcut+[rcut[-1]+20.]):
                 cond.append(np.logical_and( x >= x0 , x<x1 ) )
                 yavg.append( y_average( yqty, x0, x1) ) 
-                
-            return np.piecewise( x, cond, yavg ) 
+              
+            return np.piecewise( x, cond, yavg ), yavg
+
+        dens_binned = binned( self.r111, density_111 ) 
+        Ut_binned   = binned( self.r111, self.onsite_t_111 ) 
+        peak_dens = np.amax( density_111 )
         
-        axUt.plot( self.r111, binned( self.r111, self.onsite_t_111,  ) )
+        axn.plot( self.r111, dens_binned[0] )
+        axUt.plot( self.r111, Ut_binned[0]  )
                          
            
-        
-        
-        
-        axUandt.plot( self.r111, self.onsite_t_111 * self.tunneling_111 , lw=2, label='$U$') 
-        axUandt.plot( self.r111, self.tunneling_111, lw=2, label='$t$')
-        axUandt.legend( bbox_to_anchor=(0.06,0.95), \
-            loc='lower left', numpoints=1, labelspacing=0.2,\
-             prop={'size':10}, handlelength=1.1, handletextpad=0.5 )
-        
-        axUt.plot( self.r111, self.onsite_t_111, lw=2)
-        print "shape of V0 = ", self.V0_111.shape
-        axv0.plot( self.r111, self.V0_111[0], lw=2)
-        
-        bandgap_111 = bands = bands3dvec( self.V0_111, NBand=1 )[0] - bands3dvec( self.V0_111, NBand=0 )[1] 
-        axBGap.plot( self.r111, bandgap_111, lw=2) 
         
         # Set y labels
         axn.set_ylabel(r'$n$')
@@ -1015,7 +951,11 @@ class simpleCubic( potential ):
         
         # Finalize figure
         gs.tight_layout(fig, rect=[0.,0.0,1.0,0.84])
-        return fig
+
+        if kwargs.get('closefig', False):
+            plt.close()
+        
+        return fig, dens_binned[1], Ut_binned[1], peak_dens, radius1e
             
     
     def Bands( self, X, Y, Z, **kwargs):
@@ -1099,9 +1039,6 @@ if __name__ == '__main__':
     #latt3d.plot3Line(func=latt3d.Bands, globalMu=0.23, a_s=300., lines='111')
     latt3d.column( ["density","doublons","entropy"] )
     latt3d.plot3Line(func=latt3d.Bands,  lines='111')
-    
-
-# <codecell>
 
 if __name__ == '__main__':
     scattlen = 589.
@@ -1109,4 +1046,8 @@ if __name__ == '__main__':
     fig100 = latt3d.plot3Line(func=latt3d.Bands,  lines='100')
     fig100.savefig('Ut_Comp/100_as%04d.png'%(scattlen), dpi=200)
     
+    
+
+
+
 
