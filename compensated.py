@@ -131,23 +131,17 @@ class potential:
         for b in self.beams:
             EVAL += b(X,Y,Z)
         return EVAL* self.unitfactor
-        
-    def plotLine(self, **kwargs):
-        gs      = kwargs.get('gs',None)
-        figGS   = kwargs.get('figGS',None)
-        func    = kwargs.get('func',None)
-        origin  = kwargs.get('origin', vec3(0.,0.,0.))
-        direc   = kwargs.get('direc', (np.pi/2, 0.))
-        lims    = kwargs.get('lims', (-80.,80.))
-        extents = kwargs.get('extents',None)
+
+    def line_points( self, **kwargs ):
         npoints = kwargs.get('npoints', 320)
-        
-        if func is None:
-            func = self.evalpotential
-        
+        extents = kwargs.get('extents',None)
+        lims    = kwargs.get('lims', (-80.,80.))
+        direc   = kwargs.get('direc', (np.pi/2, 0.))
+        origin  = kwargs.get('origin', vec3(0.,0.,0.))
+
         if extents is not None:
             lims = (-extents, extents)
-        
+
         # Prepare set of points for plot 
         t = np.linspace( lims[0], lims[1], npoints )
         unit = vec3()
@@ -162,6 +156,19 @@ class potential:
         X = XYZ[:,0]
         Y = XYZ[:,1]
         Z = XYZ[:,2] 
+        return t, X, Y, Z, lims
+        
+        
+    def plotLine(self, **kwargs):
+        gs      = kwargs.get('gs',None)
+        figGS   = kwargs.get('figGS',None)
+        func    = kwargs.get('func',None)
+        
+        if func is None:
+            func = self.evalpotential
+        
+        t, X,Y,Z, lims = self.line_points( **kwargs ) 
+        
         
         if gs is None:
             # Prepare figure
@@ -182,6 +189,10 @@ class potential:
             ax2.set_xlim( lims[0]/2.,lims[1]/2.)
             ax2.grid()
             ax2.set_xlabel('$\mu\mathrm{m}$', fontsize=14)
+
+        y2lims = kwargs.pop('y2lims', None)
+        if y2lims is not None:
+            ax2.set_ylim( *y2lims )
             
             
         ax0.plot(X, Y, Z, c='blue', lw=3)
@@ -440,7 +451,38 @@ class potential:
         gs.tight_layout(fig, rect=[0.,0.,1.0,1.0])
         return fig
 
+    def plotLineQty(self, **kwargs):
+        line_direction  = kwargs.pop('line_direction', '111')
+        direcs = { \
+                   '100':(np.pi/2, 0.), \
+                   '010':(np.pi/2, np.pi/2), \
+                   '001':(0., np.pi), \
+                   '111':(np.arctan(np.sqrt(2)), np.pi/4) } 
 
+        t, X,Y,Z, lims = self.line_points( direc= direcs[line_direction] )
+
+        ax  = kwargs.pop('ax', None)
+        qty = kwargs.pop('qty', 'density')
+
+        if not self.EvalThermo:
+            self.EvalThermoQuantities( X, Y, Z ) 
+
+        if qty == 'density':
+            EVAL = self.density_eval 
+        elif qty == 'doublons':
+            EVAL = self.doublons_eval 
+        elif qty == 'entropy':
+            EVAL = self.entropy_eval
+        elif qty == 'entropy_per_particle':
+            EVAL = self.entropy_eval / self.density_eval
+
+        plotkwargs = kwargs.pop( 'plotkwargs',None)
+        if plotkwargs is not None: 
+            ax.plot( t, EVAL, **plotkwargs )
+        else:
+            ax.plot( t, EVAL )
+                  
+            
 ## Load the interpolation data for band structure, onsite interactions, and phase diagrams
 
 # Here the interpolation data for the band structure is loaded from disk
@@ -538,7 +580,8 @@ class simpleCubic( potential ):
         self.w  = kwargs.get('waists', ((47.,47.), (47.,47.), (47.,47.)) )
         self.r  = kwargs.get('retro', (1.,1.,1.) )
         self.a  = kwargs.get('alpha', (1.,1.,1.) )
-        self.scale = kwargs.get('scale', 10.) 
+        self.scale = kwargs.get('scale', 10.)
+        self.EvalThermo = False 
         
         self.Er0 = Erecoil(self.l, self.m)
         
@@ -628,6 +671,10 @@ class simpleCubic( potential ):
             # When using it in the phase diagram it has to be changed to
             # units of the tunneling
             self.globalMu = kwargs.get('globalMu', 0.15)
+            if  self.globalMu == 'halfMott':
+                self.globalMu = (self.onsite_t_111 * self.tunneling_111).max()/2.
+             
+    
         
         # After the chemical potential is established the local chemical
         # potential along 111 can be defined.  It is used for column density
@@ -645,12 +692,12 @@ class simpleCubic( potential ):
         # MAKE FIGURE LABELS
         # V Lattice
         if len(np.unique(self.Er))==1:
-            VLlabel = '$V_{L}=%.2f$' % self.Er[0] 
+            VLlabel = '$V_{L}=%.1fE_{R}$' % self.Er[0] 
         else:
             VLlabel = '$V_{Lx}=%.1f, V_{Ly}=%.1f, V_{Lz}=%.1f$' % self.Er 
         # V Green
         if len(np.unique(self.GREr))==1:
-            VGlabel = '$V_{G}=%.2f$' % self.GREr[0] 
+            VGlabel = '$V_{G}=%.1fE_{R}$' % self.GREr[0] 
         else:
             VGlabel = '$V_{Gx}=%.1f, V_{Gy}=%.1f, V_{Gz}=%.1f$' % self.GREr 
         # Scattering length
@@ -664,8 +711,61 @@ class simpleCubic( potential ):
 
         self.Nlabel = r'$N=%.2f\times 10^{5}$' % (self.Number/1e5)
         self.Dlabel = r'$D=%.3f$' % ( self.NumberD / self.Number )
-        self.Slabel = r'$S/N=%.2f$' % ( self.Entropy / self.Number )
+        self.Slabel = r'$S/N=%.2fk_{\mathrm{B}}$' % ( self.Entropy / self.Number )
         self.foottext = ',  '.join([self.Nlabel, self.Dlabel, self.Slabel]) 
+
+        # Calculate energies to estimate eta parameter for evaporation
+        self.globalMuZ0 = self.Ezero0_111 + self.globalMu
+
+        # Make a cut line along 100 to calculate the threshold for evaporation
+        direc100 = (np.pi/2, 0.) 
+        unit = vec3(); th = direc100[0]; ph = direc100[1] 
+        unit.set_spherical(1, th, ph); unitArr = np.array(unit)
+        t = np.linspace( -100, 100, 320 )
+        XYZ100 = np.outer( t, unitArr)
+        self.X100 = XYZ100[:,0]
+        self.Y100 = XYZ100[:,1]
+        self.Z100 = XYZ100[:,2]
+        self.V0_100 = self.V0(self.X100,self.Y100,self.Z100) 
+        bandBot_100 = bands3dvec( self.V0_100, NBand = 0)[0] + self.Bottom( self.X100, self.Y100, self.Z100 ) 
+        self.evapTH0_100 = bandBot_100.max() 
+
+
+        self.evapTH0 = bands3dvec( self.V0( 100., 0., 0. ), NBand=0 )[0] + self.Bottom(100.,0.,0.)
+        self.LowestE0 = np.amin( self.bands_111[0] +  self.Bottom_111)
+
+        #  The correct evaporation thresholds is evapTH0_100, this one accounts for
+        #  situations in which there is a local barrier and then the band along 100 goes down
+        #  for large 100 distance 
+
+        #print " evapTH0_100 = %.2f      evapTH0 = %.2f"%(self.evapTH0_100, self.evapTH0)
+
+
+        # Estimation of eta is done below 
+        #print "mu global = %.3g" % self.globalMuZ0 
+        #print "evap th   = %.3g" % self.evapTH0
+        #print "lowest E  = %.3g" % self.LowestE0
+        mu = self.globalMuZ0 - self.LowestE0 
+        th = self.evapTH0_100 - self.LowestE0
+        self.EtaEvap = th/mu 
+        #print "mu = %.3g" % mu
+        #print "th = %.3g" % th
+        #print "eta = %.3g" % (th/mu)
+        #print "th-mu = %.3g" % (th-mu)
+
+
+        # Calculate second derivative of the band bottom to assess whether
+        # or not the potential is a valid potential (no split by compensation )
+        positive_r =  self.r111  >= 0 
+        # absolute energy of the lowest band, elb
+        elb  = (self.bands_111[0] + self.Bottom_111)[ positive_r ]
+            
+        if elb[1] - elb[0] >= 0: 
+            self.bandBot_LocalMin = True
+        else:
+            self.bandBot_LocalMin = False
+
+        
         
         
         
@@ -818,10 +918,10 @@ class simpleCubic( potential ):
            U, t, U/t, v0.  It is useful to assess the degree of inhomogeneity in our system"""
         
         # Prepare the figure
-        fig = plt.figure(figsize=(10.,6.))
+        fig = plt.figure(figsize=(8.,4.8))
         fig.suptitle( ' , '.join([ self.figlabel, self.Nlabel]) )
         fig.text( 0.05, 0.86, "Sample is divided in 5 bins, all containing the same number of atoms (see panel 2).\n" + \
-                              "Average Fermi-Hubbard parameters $n$ and $U/t$ are calculated in each bin (see panels 1 and 4 )" )
+                              "Average Fermi-Hubbard parameters $n$, $U$, $t$, and $U/t$ are calculated in each bin (see panels 1, 3, 4, 5 )" )
         
         gs = matplotlib.gridspec.GridSpec( 2,3, wspace=0.2,\
                  left=0.1, right=0.9, bottom=0.05, top=0.9)
@@ -830,26 +930,45 @@ class simpleCubic( potential ):
         axn  = fig.add_subplot(gs[0,0])
         axnInt = fig.add_subplot(gs[0,1])
         
-        axUandt  = fig.add_subplot(gs[0,2])
-        axUt = fig.add_subplot(gs[1,0]) 
-        axv0 = fig.add_subplot(gs[1,1])
-        axBGap = fig.add_subplot(gs[1,2])
+        axU  = fig.add_subplot(gs[0,2])
+        axt  = fig.add_subplot(gs[1,0])
+        axUt = fig.add_subplot(gs[1,1]) 
+        axv0 = fig.add_subplot(gs[1,2])
+
+        # Set xlim
+        x0 = -60.; x1 = 60.
+        axn.set_xlim( x0, x1)
+        axnInt.set_xlim( 0., x1 )
+        axU.set_xlim( x0, x1 )
+        axU.set_ylim( 0., np.amax( self.onsite_t_111 * self.tunneling_111 *1.05 ) )
+        axt.set_xlim( x0, x1 )
+        axt.set_ylim( 0., 0.3)
+        axUt.set_xlim( x0, x1 )
+        axUt.set_ylim( 0., np.amax( self.onsite_t_111 * 1.05 )) 
+        axv0.set_xlim( x0, x1 )
         
+        lw0 = 2.5
         # Plot relevant quantities 
         density_111 = self.fHdens( self.onsite_t_111, self.localMu_t_111 )
-        axn.plot( self.r111, density_111, lw=2 )
+        axn.plot( self.r111, density_111, lw=lw0 , color='black')
         
-        axUandt.plot( self.r111, self.onsite_t_111 * self.tunneling_111 , lw=2, label='$U$') 
-        axUandt.plot( self.r111, self.tunneling_111, lw=2, label='$t$')
-        axUandt.legend( bbox_to_anchor=(0.06,0.95), \
-            loc='lower left', numpoints=1, labelspacing=0.2,\
-             prop={'size':10}, handlelength=1.1, handletextpad=0.5 )
-        axUt.plot( self.r111, self.onsite_t_111, lw=2)
-        #print "shape of V0 = ", self.V0_111.shape
-        axv0.plot( self.r111, self.V0_111[0], lw=2)
-        bandgap_111 = bands = bands3dvec( self.V0_111, NBand=1 )[0] - bands3dvec( self.V0_111, NBand=0 )[1] 
-        axBGap.plot( self.r111, bandgap_111, lw=2) 
+        axU.plot( self.r111, self.onsite_t_111 * self.tunneling_111 , \
+                      lw=lw0, label='$U$', color='black') 
 
+        axt.plot( self.r111, self.tunneling_111,lw=lw0, label='$t$', \
+                      color='black')
+
+
+        axUt.plot( self.r111, self.onsite_t_111, lw=lw0, color='black')
+        #print "shape of V0 = ", self.V0_111.shape
+        axv0.plot( self.r111, self.V0_111[0], lw=lw0, color='black', label='$V_{0}$')
+        bandgap_111 = bands = bands3dvec( self.V0_111, NBand=1 )[0] \
+                              - bands3dvec( self.V0_111, NBand=0 )[1] 
+        axv0.plot( self.r111, bandgap_111, lw=lw0, linestyle=':', color='black', label='$\mathrm{Band\ gap}$') 
+
+        axv0.legend( bbox_to_anchor=(0.06,0.025), \
+            loc='lower left', numpoints=3, labelspacing=0.2,\
+             prop={'size':7}, handlelength=1.5, handletextpad=0.5 )
 
         # Define function to calculate cummulative atom number
         
@@ -866,7 +985,7 @@ class simpleCubic( potential ):
         for radius in radii:
             NInt.append( NRadius( radius ) ) 
         NInt = np.array( NInt ) 
-        axnInt.plot( radii, NInt, lw=2) 
+        axnInt.plot( radii, NInt, lw=lw0, color='black') 
 
        
         # Define function to numerically solve for y in a pair of x,y arrays     
@@ -915,39 +1034,57 @@ class simpleCubic( potential ):
               
             return np.piecewise( x, cond, yavg ), yavg
 
+        # Calculate and plot the binned quantities
         dens_binned = binned( self.r111, density_111 ) 
-        Ut_binned   = binned( self.r111, self.onsite_t_111 ) 
+        Ut_binned   = binned( self.r111, self.onsite_t_111 )
+        U_binned    = binned( self.r111, self.onsite_t_111 * self.tunneling_111 )
+        t_binned    = binned( self.r111, self.tunneling_111 )
+
         peak_dens = np.amax( density_111 )
+        peak_t = np.amin( self.tunneling_111 )
         
-        axn.plot( self.r111, dens_binned[0] )
-        axUt.plot( self.r111, Ut_binned[0]  )
+        axn.fill_between( self.r111, dens_binned[0], 0., \
+                          lw=2, color='red', facecolor='red', zorder=2, alpha=0.8)
+        axUt.fill_between( self.r111, Ut_binned[0],  0., \
+                          lw=2, color='red', facecolor='red', zorder=2, alpha=0.8  )
+        axU.fill_between( self.r111, U_binned[0], 0., \
+                          lw=2, color='red', facecolor='red',label='$U$', zorder=2, alpha=0.8) 
+        axt.fill_between( self.r111, t_binned[0], 0., \
+                          lw=2, color='red', facecolor='red',linestyle=':',label='$t$', zorder=2, alpha=0.8)
                          
            
         
         # Set y labels
         axn.set_ylabel(r'$n$')
         axnInt.set_ylabel(r'$N_{<R}$')
-        axUandt.set_ylabel(r'$E_{R}$')
+        axU.set_ylabel(r'$U\,(E_{R})$')
+        axt.set_ylabel(r'$t\,(E_{R})$')
         axUt.set_ylabel(r'$U/t$')
-        axv0.set_ylabel(r'$V_{0}\,(E_{R})$')
-        axBGap.set_ylabel(r'$\mathrm{Band\ gap}\ (E_{R})$')
+        axv0.set_ylabel(r'$E_{R}$')
         
-        for i,ax in enumerate([axn, axnInt, axUandt, axUt, axv0, axBGap]):
-            ax.text( 0.92,0.78, '%d'%(i+1), transform=ax.transAxes)
+        for i,ax in enumerate([axn, axnInt, axU, axt, axUt, axv0]):
+            ax.text( 0.08,0.86, '%d'%(i+1), transform=ax.transAxes, fontsize=14)
             ax.yaxis.grid()
             ax.set_xlabel(r'$\mu\mathrm{m}$')
-            for r in rcut:
+            for n,r in enumerate(rcut):
+                if n % 2 == 0:
+                    ax.axvspan( r, rcut[n+1], facecolor='lightgray') 
+                    if i != 1:
+                        ax.axvspan(-rcut[n+1], -r, facecolor='lightgray') 
                 ax.axvline( r, lw=1.0, color='gray', zorder=1 )
                 if i != 1:
                     ax.axvline(-r, lw=1.0, color='gray', zorder=1 )
                 
-            ax.xaxis.set_major_locator( matplotlib.ticker.MultipleLocator(40) ) 
+            ax.xaxis.set_major_locator( matplotlib.ticker.MultipleLocator(20) ) 
             ax.xaxis.set_minor_locator( matplotlib.ticker.MultipleLocator(10) )
             
             #labels = [item.get_text() for item in ax.get_xticklabels()]
             #print labels
             #labels = ['' if float(l) % 40 != 0 else l for l in labels ] 
             #ax.set_xticklabels(labels)
+
+        axnInt.xaxis.set_major_locator( matplotlib.ticker.MultipleLocator(10) ) 
+        axnInt.xaxis.set_minor_locator( matplotlib.ticker.MultipleLocator(5) )
         
         # Finalize figure
         gs.tight_layout(fig, rect=[0.,0.0,1.0,0.84])
@@ -955,9 +1092,56 @@ class simpleCubic( potential ):
         if kwargs.get('closefig', False):
             plt.close()
         
-        return fig, dens_binned[1], Ut_binned[1], peak_dens, radius1e
+        return fig, dens_binned[1], Ut_binned[1], U_binned[1], t_binned[1], peak_dens, radius1e, peak_t
             
     
+    def EvalThermoQuantities( self, X, Y, Z, **kwargs):
+        NBand = kwargs.get('NBand',0.)
+        
+        # Make 1d array with distances 
+        R_unit = vec3( X[-1]-X[0], Y[-1]-Y[0], Z[-1]-Z[0] ); R_unit = R_unit / abs(R_unit)
+        # Below we get the signed distance from the origin
+        self.R = X*R_unit[0]+Y*R_unit[1]+Z*R_unit[2]
+        
+        self.V0_ = self.V0(X,Y,Z) 
+        self.Bottom_ = self.Bottom(X,Y,Z)
+        
+        self.LatticeMod_ = self.Bottom_ + np.amin(self.V0_,axis=0)*\
+                           np.power( np.cos( 2.*np.pi*self.R / self.l / self.scale ), 2)
+            
+        self.bands = bands3dvec( self.V0_, NBand=0 ) 
+        self.excband = bands3dvec( self.V0_, NBand=1 )
+        
+        # The zero of energy for this problem is exactly at the center
+        # of the lowest band.  This comes from the t_{ii} matrix element
+        # which is generally neglected in the Hamiltonian. 
+        self.Ezero = (self.bands[1]+self.bands[0])/2. + self.Bottom_
+        self.Ezero0 = self.Ezero.min()
+
+        
+        # The threshold for evaporation can ge obtaind from 
+        # the bottom of the band going far along one beam
+        self.evapTH = bands3dvec( self.V0( 100., 0., 0. ), NBand=0 )[0] + self.Bottom(100.,0.,0.)
+        self.LowestE = np.amin( self.bands[0] +  self.Bottom_)
+        
+        # Tunneling, onsite interactions, and localMu for phase diagram
+        self.tunneling = (self.bands[1]-self.bands[0])/12. 
+        
+        self.onsite = Onsite( self.V0_, a_s=self.a_s, lattice_spacing= self.l/2. )
+        self.onsite_t = self.onsite / self.tunneling
+        
+        # Offset the chemical potential for use in the phase diagram
+        self.globalMuZ = self.Ezero0 + self.globalMu
+        self.localMu_t = ( self.globalMuZ - self.Ezero )/ self.tunneling
+        
+        # Obtain the thermodynamic quantities
+        self.density_eval  = self.fHdens( self.onsite_t, self.localMu_t ) 
+        self.doublons_eval = self.fHdoub( self.onsite_t, self.localMu_t ) 
+        self.entropy_eval  = self.fHentr( self.onsite_t, self.localMu_t ) 
+
+        self.EvalThermo = True
+        return   
+
     def Bands( self, X, Y, Z, **kwargs):
         NBand = kwargs.get('NBand',0.)
         
@@ -985,6 +1169,7 @@ class simpleCubic( potential ):
         # The threshold for evaporation can ge obtaind from 
         # the bottom of the band going far along one beam
         self.evapTH = bands3dvec( self.V0( 100., 0., 0. ), NBand=0 )[0] + self.Bottom(100.,0.,0.)
+        self.LowestE = np.amin( bands[0] +  self.Bottom_)
         
         # Tunneling, onsite interactions, and localMu for phase diagram
         self.tunneling = (bands[1]-bands[0])/12. 
@@ -1003,7 +1188,7 @@ class simpleCubic( potential ):
     
         
         # Higher zorder puts stuff in front
-        return [ 
+        toplot = [ 
                  {'y':(bands[0] + self.Bottom_, self.Ezero ), 'color':'blue', 'lw':2., \
                   'fill':True, 'fillcolor':'blue', 'fillalpha':0.75,'zorder':10, 'label':'$\mathrm{band\ lower\ half}$'},
                  
@@ -1014,21 +1199,325 @@ class simpleCubic( potential ):
                   'fill':True, 'fillcolor':'pink', 'fillalpha':0.75,'zorder':10, 'label':'$\mathrm{exc\ band}$'},
                  
                  {'y':np.ones_like(X)*self.globalMuZ, 'color':'limegreen','lw':2,'zorder':1.9, 'label':'$\mu_{0}$'},
-                 {'y':np.ones_like(X)*self.evapTH, 'color':'#FF6F00', 'lw':2,'zorder':1.9, 'label':'$\mathrm{evap\ th.}$'},
+                 {'y':np.ones_like(X)*self.evapTH0_100, 'color':'#FF6F00', 'lw':2,'zorder':1.9, 'label':'$\mathrm{evap\ th.}$'},
                  
                  {'y':self.Bottom_,'color':'gray', 'lw':0.5,'alpha':0.5},
-                 {'y':self.LatticeMod_,'color':'gray', 'lw':1.5,'alpha':0.5,'label':r'$\mathrm{lattice\ potential\ \ }\lambda\times10$'},
-                 
+                 {'y':self.LatticeMod_,'color':'gray', 'lw':1.5,'alpha':0.5,'label':r'$\mathrm{lattice\ potential\ \ }\lambda\times10$'}]  
+
+        entropy_per_particle = kwargs.pop('entropy_per_particle', False)
+        if entropy_per_particle:
+            toplot = toplot + [                 
+                 {'y':entropy/density,  'color':'black', 'lw':1.75, 'axis':2, 'label':'$s_{N}$'} ] 
+        else:
+            toplot = toplot + [
                  {'y':density,  'color':'blue', 'lw':1.75, 'axis':2, 'label':'$n$'},
                  {'y':doublons, 'color':'red', 'lw':1.75, 'axis':2, 'label':'$d$'},
-                 {'y':entropy,  'color':'black', 'lw':1.75, 'axis':2, 'label':'$s$'},
-                 {'y':density-2*doublons,  'color':'green', 'lw':1.75, 'axis':2, 'label':'$n-2d$'},
+                 {'y':entropy,  'color':'black', 'lw':1.75, 'axis':2, 'label':'$s_{L}$'},
+                 #{'y':entropy/density,  'color':'black', 'lw':1.75, 'axis':2, 'label':'$s_{N}$'},
+
+                 #{'y':density-2*doublons,  'color':'green', 'lw':1.75, 'axis':2, 'label':'$n-2d$'},
                  #{'y':self.localMu_t,  'color':'cyan', 'lw':1.75, 'axis':2, 'label':r'$\mu$'},
-                 
-                 
-                 
-                 {'figprop':True,'figsuptitle':self.figlabel, 'foottext':self.foottext}
-                  ]
+                 ]
+
+        toplot = toplot + [ {'figprop':True,'figsuptitle':self.figlabel, 'foottext':self.foottext} ] 
+        return toplot  
+        
+
+    def get_eta_evap( self ):
+        print "mu global = %.3g" % self.globalMuZ 
+        print "evap th   = %.3g" % self.evapTH 
+        print "lowest E  = %.3g" % self.LowestE
+        mu = self.globalMuZ - self.LowestE 
+        th = self.evapTH - self.LowestE 
+        print "mu = %.3g" % mu
+        print "th = %.3g" % th
+        print "eta = %.3g" % (th/mu)
+        print "th-mu = %.3g" % (th-mu)
+        return 
+
+
+    def PlotBands( self, **kwargs):
+        figGS = plt.figure(figsize=(6.,5.))
+        gs3Line = matplotlib.gridspec.GridSpec(1,1) 
+        tightrect = [0.,0.06, 1.0, 0.92]
+
+        Ax1 = []; Ax2 = []
+        Ymin =[]; Ymax=[]
+
+        kwargs['direc'] = (np.arctan(np.sqrt(2)), np.pi/4) 
+        kwargs['ax0label']='$\mathbf{111}$'
+        kwargs['suptitleY'] = 0.96
+        kwargs['foottextY'] = 0.04
+
+        t, X,Y,Z, lims = self.line_points( **kwargs ) 
+       
+        gs= gs3Line[0,0] 
+        
+        gsSub0 = matplotlib.gridspec.GridSpecFromSubplotSpec( 2,2, subplot_spec=gs,\
+                     width_ratios=[1,1.6], height_ratios=[1,1],\
+                     wspace=0.25)
+ 
+        ax0 = figGS.add_subplot( gsSub0[0,0], projection='3d')
+        ax1 = figGS.add_subplot( gsSub0[0:2,1] )
+        ax2 = figGS.add_subplot( gsSub0[1,0] )
+        
+        ax1.set_xlim( lims[0],lims[1])
+        ax2.set_xlim( lims[0]/2.,lims[1]/2.)
+        ax2.grid()
+        ax2.set_xlabel('$\mu\mathrm{m}$', fontsize=14)
+            
+            
+        ax0.plot(X, Y, Z, c='blue', lw=3)
+        ax0.set_xlabel('X')
+        ax0.set_ylabel('Y')
+        ax0.set_zlabel('Z')
+        lmin = min([ ax0.get_xlim()[0], ax0.get_ylim()[0], ax0.get_zlim()[0] ] )
+        lmax = max([ ax0.get_xlim()[1], ax0.get_ylim()[1], ax0.get_zlim()[1] ] )
+        ax0.set_xlim( lmin, lmax )
+        ax0.set_ylim( lmin, lmax )
+        ax0.set_zlim( lmin, lmax )
+        LMIN = np.ones_like(X)*lmin
+        LMAX = np.ones_like(X)*lmax
+        ax0.plot(X, Y, LMIN, c='gray', lw=2,alpha=0.3)
+        ax0.plot(LMIN, Y, Z, c='gray', lw=2,alpha=0.3)
+        ax0.plot(X, LMAX, Z, c='gray', lw=2,alpha=0.3)
+        ax0.set_yticklabels([])
+        ax0.set_xticklabels([])
+        ax0.set_zticklabels([])
+        ax0.text2D(0.05, 0.87, kwargs.get('ax0label',None),transform=ax0.transAxes)
+        
+        # Evaluate function at points and make plot
+        EVAL = self.Bands(X,Y,Z, **kwargs)
+        # EVAL can be of various types, handled below
+        Emin =[]; Emax=[]
+        for p in EVAL:
+            if isinstance(p,dict):
+                if 'y' in p.keys():
+                    whichax = p.get('axis',1)
+                    axp = ax2 if whichax ==2 else ax1
+                    porder = p.get('zorder',2)
+                    labelstr = p.get('label',None)
+                    
+                    fill = p.get('fill', False)
+                    if fill:
+                        ydat = p.get('y',None)
+                        if ydat is not None:
+                            axp.plot(t,ydat[0],
+                                     lw=p.get('lw',2.),\
+                                     color=p.get('color','black'),\
+                                     alpha=p.get('fillalpha',0.5),\
+                                     zorder=porder,\
+                                     label=labelstr
+                                     )
+                            axp.fill_between( t, ydat[0], ydat[1],\
+                                              lw=p.get('lw',2.),\
+                                              color=p.get('color','black'),\
+                                              facecolor=p.get('fillcolor','gray'),\
+                                              alpha=p.get('fillalpha',0.5),\
+                                              zorder=porder
+                                            ) 
+                            Emin.append( min( ydat[0].min(), ydat[1].min() ))
+                            Emax.append( max( ydat[0].max(), ydat[1].max() )) 
+                    else:
+                        ydat = p.get('y',None)
+                        if ydat is not None:
+                            axp.plot( t, ydat,\
+                                      lw=p.get('lw',2.),\
+                                      color=p.get('color','black'),\
+                                      alpha=p.get('alpha',1.0),\
+                                      zorder=porder,\
+                                      label=labelstr
+                                    )
+                            Emin.append( ydat.min() ) 
+                            Emax.append( ydat.max() ) 
+                elif 'figprop' in p.keys():
+                    figsuptitle = p.get('figsuptitle',  None)
+                    figGS.suptitle(figsuptitle, y=kwargs.get('suptitleY',1.0),fontsize=14) 
+                    figGS.text(0.5,kwargs.get('foottextY',1.0),p.get('foottext',None),fontsize=14,
+                               ha='center') 
+                      
+            else:
+                ax1.plot(t,p); Emin.append(p.min()); Emax.append(p.max())
+            
+            
+        Emin = min(Emin); Emax=max(Emax)
+        dE = Emax-Emin
+        
+        ax1.grid()
+        ax1.set_xlabel('$\mu\mathrm{m}$', fontsize=14)
+        ax1.set_ylabel( self.unitlabel, rotation=0, fontsize=14, labelpad=-5 )
+        
+        # Finalize figure
+        ax2.xaxis.set_major_locator( matplotlib.ticker.MultipleLocator(20) ) 
+        ax2.xaxis.set_minor_locator( matplotlib.ticker.MultipleLocator(10) ) 
+        ymin, ymax, ax1, ax2 =  Emin-0.05*dE, Emax+0.05*dE, ax1, ax2
+    
+        Ymin.append(ymin); Ymax.append(ymax); Ax1.append(ax1); Ax2.append(ax2)
+
+        Ymin = min(Ymin); Ymax = max(Ymax)
+        for ax in Ax1:
+            ax.set_ylim( Ymin, Ymax)
+            
+        Ax1[0].legend( bbox_to_anchor=(1.06,0.005), \
+            loc='lower right', numpoints=1, labelspacing=0.2,\
+             prop={'size':10}, handlelength=1.1, handletextpad=0.5 )
+        Ax2[0].legend( bbox_to_anchor=(1.10,1.10), \
+            loc='upper right', numpoints=1, labelspacing=0.2, \
+             prop={'size':10}, handlelength=1.1, handletextpad=0.5 )
+            
+        gs3Line.tight_layout(figGS, rect=tightrect)
+        return figGS
+
+    def PlotBandsSimple( self, **kwargs):
+        figGS = plt.figure(figsize=(5.2,3.6))
+        gs3Line = matplotlib.gridspec.GridSpec(2,2,\
+                     width_ratios=[1.6, 1.], height_ratios=[1.8,1],\
+                     wspace=0.25)
+        tightrect = [0.,0.00, 0.95, 0.82]
+
+        Ax1 = []; 
+        Ymin =[]; Ymax=[]
+
+
+        line_direction  = kwargs.pop('line_direction', '111')
+        direcs = { \
+                   '100':(np.pi/2, 0.), \
+                   '010':(np.pi/2, np.pi/2), \
+                   '001':(0., np.pi), \
+                   '111':(np.arctan(np.sqrt(2)), np.pi/4) } 
+        labels = { \
+                   '100':'$\mathbf{111}$', \
+                   '010':'$\mathbf{111}$', \
+                   '001':'$\mathbf{111}$', \
+                   '111':'$\mathbf{111}$' } 
+
+        kwargs['direc'] = direcs[ line_direction ] 
+        kwargs['ax0label']= labels[ line_direction ]   
+
+        #kwargs['direc'] = (np.arctan(np.sqrt(2)), np.pi/4) 
+        #kwargs['ax0label']='$\mathbf{111}$'
+
+        kwargs['suptitleY'] = 0.96
+        kwargs['foottextY'] = 0.84
+
+        t, X,Y,Z, lims = self.line_points( **kwargs ) 
+       
+        
+        ax1 = figGS.add_subplot( gs3Line[0:3,0] )
+        ax1.set_xlim( lims[0],lims[1])
+        ax1.grid()
+        ax1.grid(which='minor')
+        ax1.set_xlabel('$\mu\mathrm{m}$', fontsize=16)
+        ax1.set_ylabel( self.unitlabel, rotation=0, fontsize=16, labelpad=15 )
+        ax1.xaxis.set_major_locator( matplotlib.ticker.MultipleLocator(40) ) 
+        ax1.xaxis.set_minor_locator( matplotlib.ticker.MultipleLocator(20) ) 
+
+
+        ax2 = figGS.add_subplot( gs3Line[0,1] )
+        ax2.set_xlim( lims[0]/2.,lims[1]/2.)
+        y0,y1 = ax2.get_ylim()
+        ax2.set_ylim( y0 , y1 + (y1-y0)*1.1)
+        ax2.grid()
+        ax2.set_xlabel('$\mu\mathrm{m}$', fontsize=14, labelpad=0)
+        #ax2.set_ylabel('$n$', rotation=0, fontsize=14, labelpad=11 )
+        ax2.xaxis.set_major_locator( matplotlib.ticker.MultipleLocator(20) ) 
+        ax2.xaxis.set_minor_locator( matplotlib.ticker.MultipleLocator(10) ) 
+            
+        exclude = ['$\mathrm{exc\ band}$', '$n-2d$', '$d$', '$s$' ]
+        #exclude = ['$n-2d$', '$d$', '$s$' ]
+            
+        # Evaluate function at points and make plot
+        EVAL = self.Bands(X,Y,Z, **kwargs)
+        # EVAL can be of various types, handled below
+        Emin =[]; Emax=[]
+        for p in EVAL:
+            if isinstance(p,dict):
+                if 'y' in p.keys():
+                    whichax = p.get('axis',1)
+                    #if whichax == 2 : continue
+                    axp = ax2 if whichax ==2 else ax1
+
+                    labelstr = p.get('label',None)
+                    if labelstr is not None:
+                        if 'lattice' in labelstr:
+                            labelstr = None
+                    skip = False
+                    for e in exclude:
+                        try:
+                            if e == labelstr: 
+                                skip = True
+                        except:
+                            continue 
+                    if skip: continue
+ 
+                    porder = p.get('zorder',2)
+                    
+                    fill = p.get('fill', False)
+                    if fill:
+                        ydat = p.get('y',None)
+                        if ydat is not None:
+                            axp.plot(t,ydat[0],
+                                     lw=p.get('lw',2.),\
+                                     color=p.get('color','black'),\
+                                     alpha=p.get('fillalpha',0.5),\
+                                     zorder=porder,\
+                                     label=labelstr
+                                     )
+                            axp.fill_between( t, ydat[0], ydat[1],\
+                                              lw=p.get('lw',2.),\
+                                              color=p.get('color','black'),\
+                                              facecolor=p.get('fillcolor','gray'),\
+                                              alpha=p.get('fillalpha',0.5),\
+                                              zorder=porder
+                                            ) 
+                            Emin.append( min( ydat[0].min(), ydat[1].min() ))
+                            Emax.append( max( ydat[0].max(), ydat[1].max() )) 
+                    else:
+                        ydat = p.get('y',None)
+                        if ydat is not None:
+                            axp.plot( t, ydat,\
+                                      lw=p.get('lw',2.),\
+                                      color=p.get('color','black'),\
+                                      alpha=p.get('alpha',1.0),\
+                                      zorder=porder,\
+                                      label=labelstr
+                                    )
+                            Emin.append( ydat.min() ) 
+                            Emax.append( ydat.max() ) 
+                elif 'figprop' in p.keys():
+                    figsuptitle = p.get('figsuptitle',  None)
+                    figGS.suptitle(figsuptitle, y=kwargs.get('suptitleY',1.0),fontsize=14) 
+                    figGS.text(0.5,kwargs.get('foottextY',1.0),p.get('foottext',None),fontsize=14,
+                               ha='center') 
+                      
+            else:
+                ax1.plot(t,p); Emin.append(p.min()); Emax.append(p.max())
+            
+        ax2.legend( bbox_to_anchor=(1.20,1.10), \
+            loc='upper right', numpoints=1, labelspacing=0.2, \
+             prop={'size':10}, handlelength=1.1, handletextpad=0.5 )
+            
+            
+        Emin = min(Emin); Emax=max(Emax)
+        dE = Emax-Emin
+        
+        
+        # Finalize figure
+        ymin, ymax =  Emin-0.05*dE, Emax+0.05*dE
+    
+        Ymin.append(ymin); Ymax.append(ymax); Ax1.append(ax1)
+
+        Ymin = min(Ymin); Ymax = max(Ymax)
+        for ax in Ax1:
+            ax.set_ylim( Ymin, Ymax)
+            
+        Ax1[0].legend( bbox_to_anchor=(1.1,-0.2), \
+            loc='lower left', numpoints=1, labelspacing=0.2,\
+             prop={'size':11}, handlelength=1.1, handletextpad=0.5 )
+            
+        gs3Line.tight_layout(figGS, rect=tightrect)
+        return figGS
+
 
 if __name__ == '__main__':
     latt3d = simpleCubic( allGR=4., Natoms=3.5e5, a_s=650., )
