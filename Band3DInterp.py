@@ -1,13 +1,13 @@
 import numpy as np
 from scipy.interpolate import interp1d
 #Here the interpolation data is loaded from disk
-v0 = np.loadtxt('banddat/interpdat_B3D_v0.dat')
+v0 = np.loadtxt('banddat/interpdat_B1D_v0.dat')
 NPoints = 5
 interp0 = []
 interp1 = []
 for n in range( 2*NPoints+1 ):
-    interp0.append( interp1d(v0, np.loadtxt('banddat/interpdat_B3D_0_%d.dat'%n) ))
-    interp1.append( interp1d(v0, np.loadtxt('banddat/interpdat_B3D_1_%d.dat'%n) ))
+    interp0.append( interp1d(v0, np.loadtxt('banddat/interpdat_B1D_0_%d.dat'%n) ))
+    interp1.append( interp1d(v0, np.loadtxt('banddat/interpdat_B1D_1_%d.dat'%n) ))
     
 def bands3dinterp( v0, NBand=0 ):
     r"""Returns an array of shape (2,) which has the bottom and top of the band energies

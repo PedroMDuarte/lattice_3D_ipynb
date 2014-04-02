@@ -476,6 +476,8 @@ class potential:
         elif qty == 'entropy_per_particle':
             EVAL = self.entropy_eval / self.density_eval
 
+        
+
         plotkwargs = kwargs.pop( 'plotkwargs',None)
         if plotkwargs is not None: 
             ax.plot( t, EVAL, **plotkwargs )
@@ -486,16 +488,16 @@ class potential:
 ## Load the interpolation data for band structure, onsite interactions, and phase diagrams
 
 # Here the interpolation data for the band structure is loaded from disk
-v0 = np.loadtxt('banddat/interpdat_B3D_v0.dat')
+v0 = np.loadtxt('banddat/interpdat_B1D_v0.dat')
 NBands = 3
 from scipy.interpolate import interp1d
 interp0 = []
 interp1 = []
 for n in range( NBands ):
-    interp0.append( interp1d(v0, np.loadtxt('banddat/interpdat_B3D_0_%d.dat'%n) ))
-    interp1.append( interp1d(v0, np.loadtxt('banddat/interpdat_B3D_1_%d.dat'%n) ))
+    interp0.append( interp1d(v0, np.loadtxt('banddat/interpdat_B1D_0_%d.dat'%n) ))
+    interp1.append( interp1d(v0, np.loadtxt('banddat/interpdat_B1D_1_%d.dat'%n) ))
     
-# Using the interolation data calculate a function that will get the bottom and top
+# Using the interpolation data calculate a function that will get the bottom and top
 # of the 3D band in a vectorized way. 
 
 def bands3dvec( v0, NBand=0 ):
@@ -799,15 +801,52 @@ class simpleCubic( potential ):
         Mod = np.amin(V0s, axis=0)
         return self.Bottom(X,Y,Z) + Mod*np.power( np.cos( 2.*np.pi*np.sqrt(X**2 + Y**2 + Z**2 ) / self.l / self.scale ), 2)
     
-    def getNumber( self, gMu):
+    def getNumber( self, gMu, verbose=False):
         gMuZero = self.Ezero0_111 + gMu
         localMu = gMuZero - self.Ezero_111
         localMu_t = localMu / self.tunneling_111
         density = self.fHdens( self.onsite_t_111, localMu_t )
+
+
+        # Under some circumnstances the green compensation can 
+        # cause dips in the density profile
+        # Experimentally we have seen that we do not handle these very
+        # well, so we want to avoid them at all cost 
+
+        # The occurence of this is flagged by a change in the derivative
+        # of the radial density.  This derivative should always be negative
+        # if the derivative is positive it means that the density is 
+        # increasing for larger radii. 
+        #
+        # Here we find the changes of the density for radii larger
+        # that 1/4 of the IR beam waist.  If the density slope is positive
+        # at some point then we report that this is not a valid point 
+        # in parameter space. 
+        # 
+        # find the point at which the density changes derivative
+        radius_check = 0.25 *  \
+                       sum([ (wi[0] + wi[1]) for wi in self.w]  , 0. ) /6. 
+        posradii = self.r111 > radius_check 
+        posdens =  density[ posradii ]
+        neg_slope = np.diff( posdens ) > 1e-4
+        n_neg_slope = np.sum( neg_slope )
+        if n_neg_slope > 0:  
+            msg = "Radial density profile along 111 has a positive slope"
+            if verbose:
+                print "radius check start = ", radius_check
+                print msg
+                print posdens
+                print np.diff( posdens ) > 1e-4
+            raise ValueError(msg) 
+
+        if verbose:
+            print " posdens len = ",len(posdens)
+            print " n_neg_slope = ",n_neg_slope
+         
         dens = density[~np.isnan(density)]
         r = self.r111[~np.isnan(density)]
         return np.power(self.l/2.,-3)*2*np.pi*integrate.simps(dens*(r**2),r)
-    
+
     def getNumberD( self):
         doublons = self.fHdoub( self.onsite_t_111, self.localMu_t_111 ) 
         doub = doublons[~np.isnan(doublons)]

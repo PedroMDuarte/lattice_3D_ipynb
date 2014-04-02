@@ -1,0 +1,970 @@
+\documentclass[11pt,letter]{article}
+\usepackage{etex}
+\usepackage[top=0.65in,bottom=0.9in,left=0.85in,right=0.85in]{geometry}
+
+%\def\baselinestretch{1.25}
+\def\baselinestretch{1.0}
+
+\usepackage[greek, english]{babel}
+%\usepackage{multicol}
+\usepackage[thinlines]{easytable}
+
+%\usepackage[draft]{graphicx}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{setspace}
+
+% The use of the times package forces the use of the type-1 times
+% roman font, but the times roman font does not look nice.
+% Besides the times roman font still does not print correctly on
+% the dopy printer.
+%\usepackage{times}
+
+
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{bbold}
+\usepackage{parskip}
+
+\newcommand{\kb}{\ensuremath{k_{\text{B}}}}
+
+\newcommand{\bv}[1]{\ensuremath{\bm{#1}}}
+\newcommand{\Lc}{\ensuremath{L_{\mathrm{c}}}}
+\newcommand{\dsig}[1]{\ensuremath{ \frac{ d\,\sigma_{#1} }{d\,\Omega} }}
+
+\newcommand{\isat}{\ensuremath{I_{\mathrm{sat}}}}
+\newcommand{\iisat}{\ensuremath{I_{\mathrm{p}}/I_{\mathrm{sat}}}}
+\newcommand{\Iqtof}{\ensuremath{I_{\bv{Q}\infty} }}
+\newcommand{\Itof}[1]{\ensuremath{I_{\bv{#1}\infty} }}
+\newcommand{\Iq}{\ensuremath{I_{\bv{Q}} }}
+\newcommand{\iq}{\ensuremath{i_{\bv{Q}} }}
+\newcommand{\Iqma}{\ensuremath{I_{\bv{Q}_{\text{MA}}} }}
+\newcommand{\Ima}[1]{\ensuremath{I_{\bv{#1}_{\text{MA}}} }}
+\newcommand{\iqma}{\ensuremath{i_{\bv{Q}_{\text{MA}}} }}
+\newcommand{\jqma}{\ensuremath{j_{\bv{Q}_{\text{MA}}} }}
+\newcommand{\Iqmatof}{\ensuremath{I_{\bv{Q}_{\text{MA}\infty}} }}
+\newcommand{\is}{\ensuremath{i_{S}} }
+\newcommand{\iqT}{\ensuremath{i_{\bv{Q}_{T}} }}
+\newcommand{\ipith}{\ensuremath{i_{\bv{\pi}/\bv{\theta}}}}
+\newcommand{\fpith}{\ensuremath{f_{\bv{\pi}/\bv{\theta}}}}
+\newcommand{\iT}[1]{\ensuremath{i_{\bv{#1}_{T}} }}
+\newcommand{\ima}[1]{\ensuremath{i_{\bv{#1}_{\text{MA}}} }}
+\newcommand{\fma}[1]{\ensuremath{f_{\bv{#1}_{\text{MA}}} }}
+\newcommand{\jma}[1]{\ensuremath{j_{\bv{#1}_{\text{MA}}} }}
+
+\newcommand{\pin}{\ensuremath{ P_{\text{i}}} }
+\newcommand{\pret}{\ensuremath{ P_{\text{r}}} }
+\newcommand{\win}{\ensuremath{ w_{\text{in}}} }
+\newcommand{\wret}{\ensuremath{ w_{\text{r}}} }
+\newcommand{\wir}{\ensuremath{ w_{\text{ir}}} }
+
+\newcommand{\pgr}{\ensuremath{ P_{\text{gr}}} }
+\newcommand{\wgr}{\ensuremath{ w_{\text{gr}}} }
+
+\newcommand{\dbl}{\ensuremath{ \uparrow\! \downarrow \, }}
+\newcommand{\spup}{\ensuremath{ \uparrow }}
+\newcommand{\spdn}{\ensuremath{ \downarrow}}
+
+\newcommand{\rdiag}{\ensuremath{ r_{\text{d}} } } 
+
+\begin{document}
+
+\section{ Compensated optical lattice} 
+
+Our experiments take place in a compensated simple cubic optical lattice
+potential, which is formed at the intersection of three orthogonal axes, see
+Fig.~\ref{fig:compensated_lattice_simple_schematic}.  Along each axes, a 1D
+lattice potential is formed by retro-reflecting a red-detuned Gaussian beam, resthis results in a sinusoidal intensity pattern along the beam.  Overlapped onto
+each of the lattice beams we have a compensation beam, which is blue-detuned
+and thus produces a repulsive potential.   The compensation beam is not
+retro-reflected, so it does not form a standing wave potential.  
+Fig.~\ref{fig:compensated_lattice_simple_schematic}.  
+\begin{figure}
+    \centering
+\includegraphics[width=0.8\textwidth]{figures/compensated_lattice_simple_schematic.png}
+\caption{Simplified schematic of the compensated lattice
+setup}\label{fig:compensated_lattice_simple_schematic}
+\end{figure}
+
+The lattice beam that propagates along teh $x$ axis produces a potential of the form 
+\begin{equation}
+ V_{L}( x; y,z) = - s_{0} \exp\left[- 2 \frac{ y^{2} + z^{2} }{w_{L}^{2}} \right]
+  \cos^{2}( k_{L} x ) 
+\end{equation}
+where $s_{0}$ is the lattice depth at the center of the potential,  $w_{L}$ is
+the lattice beam waist and $k_{L} = 2\pi/\lambda_{L}$ is the wavenumber of the
+lattice light.
+The compensation beam that propagates along $x$ produces a potential  
+\begin{equation}
+ V_{C}( x; y, z) = g_{0}  \exp\left[ -2 \frac{ y^{2} + z^{2} }{w_{C}^{2}} \right] 
+\label{eq:Vcomp}
+\end{equation}
+where  $g_{0}$ is the depth (or rather height since it is repulsive) of the
+compensating potential, and $w_{C}$ is the beam waist of the compensation beam. 
+
+The combined potential of lattice plus compensation for the beams propagating
+along $x$ is 
+\begin{equation}
+  V_{1D}( x; y ,z ) = V_{L}(x; y,z) + V_{C}(x; y, z)
+\end{equation}
+
+The total potential for our simple cubic lattice is given by 
+\begin{equation}
+  V_{3D}(x, y, z)  =  V_{1D}( x; y,z) + V_{1D}( y; z,x) + V_{1D}(z; x,y)
+\end{equation}
+
+
+In what follows we will study the properties of a two spin-state mixture of
+fermionic atoms in the compensated optical lattice potential.   We are
+interested in the total entropy capacity of the potential, and also on the
+possibility of evaporative cooling in the lattice potential.   
+
+We use the high-temperature series expansion (HTSE),  an analytical solution to
+the Hubbard model that is valid at high-temperatures\footnote{ The HTSE is very
+good for $T \gg t$ and works down to $T/t \sim 1.8$ }.  This solution gives us
+the thermodynamic quantities (density, double occupancy, entropy per particle,
+etc.)  for a homogeneous system;  we then use the local density approximation
+(LDA) to explore the properties of the sample in the compensated lattice
+potential.  
+
+\section{General aspects of the potential }
+
+Before we go ahead and deploy the full machinery of the LDA we will discuss
+some general aspects of the potential. 
+
+One of the important things to note is that at each point in space $\bv{r}$  we
+will, in general, have three different lattice depths, associated with each of
+the $x,y,$ and $z$ lattice directions.  For this reason the potential is
+difficult to visualize.  To make thinks simpler, we can plot trap profiles
+along the 111 direction.   Along this direction we have that the lattice depth
+\footnote{We will use the letter $s$ for the lattice depth in recoils.  In our
+notation $s$ carries no units, and we will explicitly indicate when a quantity
+is obtained in units of $E_{R}$. } is the same in all three
+directions\footnote{We will use the notation $\rdiag$ to represent the distance
+along the 111 diagonal line.}:
+\begin{equation} 
+  s_{x}( \rdiag ) = s_{y}( \rdiag ) = s_{z}( \rdiag ) = 
+  s_{0} \exp \left[ - \frac{ 4 \rdiag^{2} }{3 w_{L}^{2} } \right]  
+  \equiv s(\rdiag) 
+\end{equation}
+
+The bottom envelope of the lattice potential is given by 
+\begin{equation}
+  \frac{ V_{L,\text{env}}( \rdiag ) }{E_{R}} = -3 s_{0} 
+  \exp \left[ - \frac{ 4 \rdiag^{2} }{3 w_{L}^{2} } \right]  
+\end{equation} 
+
+A plot of the potential envelopes, as well as the lattice potential, is shown
+in Fig.~\ref{fig:lattice_general}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/lattice_general.png}
+    \caption{Diagonal profiles for a 10$E_{R}$ lattice with $w_{L}=47\,\mu$m. }
+\label{fig:lattice_general}
+\end{figure}
+
+In the absence of interactions one can plot the local band structure.  To
+simplify matters for the moment we will use the deep lattice result, where the
+bandwidth, $W$, is given by~\cite{Bloch2008}.
+\begin{equation}
+  \frac{W}{E_{R}} =    \frac{12 t}{E_{R} }  = \frac{48}{\sqrt{\pi}} s^{3/4} e^{-2\sqrt{s}} 
+\end{equation}
+The lowest energy of the band, measured from the potential envelope
+$V_{L,\text{env}}$, is given by the zero-point energy of the 3D harmonic
+oscillator centered at the bottom of each lattice site.   Again, this harmonic
+oscillator result is only valid for deep lattices ($\gtrsim 10\,E_{R}$) but we
+will use it here for illustrative purposes: 
+\begin{equation}
+  \frac{ \frac{3}{2} \hbar \omega_{0} }{ E_{R} } = 3\sqrt{ s } 
+\end{equation} 
+
+The energy of the first excited band corresponds to an excitation along one of
+the lattice directions, which adds an extra $\hbar \omega_{0}$  to the bottom
+of the band.  In Fig.~\ref{fig:lattice_general} we have plotted the lowest band
+(showing its bandwidth) and also the first excited band.    
+
+Also indicated in Fig.~\ref{fig:lattice_general} is the radius, $r_{1}$, at
+which the energy of the lowest band is equal to the $\rdiag = 0 $ band gap. In
+order to stay well within the single band approximation of the Hubbard model,
+our sample needs to have a size that is much smaller than $r_{1}$. 
+
+\subsection{Lattice locking}
+
+On ocassion we will raise the lattice depth suddenly, in order to freeze out any
+further tunneling.   This will be useful to get the maximum possible
+Debye-Waller factor when peforming a Bragg scattering measurement,  or it will
+also be useful to keep the density distribution frozen when sweeping across the
+narrow Feshbach resonance to make doublons.   
+
+For Feshbach sweeps across the narrow resonance we have found that going
+accross from 80\,$a_{0}$ to 61\,$a_{0}$ in 24 ms gives us nearly 100\%
+conversion efficiency. For some measurements we blow away any remaining atoms
+with a resonant light pulse and sweep back across the resonance to dissociate
+the molecules.  For such a procedure we require the density distribution to
+remain locked for times up to 48~ms.  To have less than 0.1 tunneling events
+in 48~ms, the tunneling rate in the lattice should be less than 2~Hz. 
+
+On Fig.~\ref{fig:lattice_lock} we show the tunneling rate as a function of
+lattice depth, and we see that to achieve 2~Hz one needs $\approx 44\,E_{R}$.
+With that in mind we have to consider that as we lock-up the lattice to
+$44\,E_{R}$ we want to stay within the single band Hubbard model as was pointed
+above.   Figure~\ref{fig:lattice_lock} also shows the atom number, $N_{1}$,
+corresponding to a one atom per site sample filled up to $r_{1}$. For atom
+numbers equal or greater than $N_{1}$ the single band approximation breaks
+down.   
+\begin{figure}
+        \centering
+        \begin{subfigure}[t]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{figures/lattice_tunneling.png}
+                \caption{Tunneling rate.}
+                \label{fig:lattice_lockA}
+        \end{subfigure}
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{figures/lattice_lock.png}
+\caption{Maximum atom number to stay in the single band regime.  The dashed
+line includes 3\,$E_{R}$ of compensation, with a compnensation beam waist of
+$w_{C}=40\,\mu$m.}
+                \label{fig:lattice_lockB}
+	\end{subfigure}%
+	\caption{Considerations to be taken when locking the lattice to freeze
+out tunneling.}\label{fig:lattice_lock}
+\end{figure}
+
+Currently, when doing Bragg scattering measurements, we lock the lattice up to
+20\,$E_{R}$.  In the Bragg experiment we use 3\,$E_{R}$ of compensation to
+compensate a 7\,$E_{R}$ lattice.   We lock the lattice up to 20\,$E_{R}$ to
+increase the Debye-Waller factor, and we leave the compensation on during the
+lattice lock.  Having the $3\,E_{R}$ of compensation gives us a maximum atom
+number of $\approx$230,000 atoms to stay in the single band regime.  The
+scenario for our current experiments is shown with a dotted line in
+Fig.~\ref{fig:lattice_lock}.
+
+Unfortunately, we have found that Feshbach molecules scatter green light
+strongly.  If we have any green light on we loose them in just a few
+milliseconds.  This means that, when considering doublon measurements, we
+cannot afford to have any green compensation light on.  This reduces the
+maximum atom number required to stay in the single band regime while locking
+the lattice.  
+
+\subsection{Characteristic energy and characteristic filling}
+
+In the previous subsection we considered the number of atoms required to fill
+up a sample (at a density of one per site) up to a certain radius.    Since the
+band is curved, as shown in Fig.~\ref{fig:lattice_general}, for a given radius
+there is an associated energy of the band.   The exact shape of the potential
+and the number of atoms define this energy, which is referred to as the
+characteristic energy of the trap, $E_{t}$.  We will give the exact definition
+of $E_{t}$ in the paragraphs below.  
+ 
+Traditional lattice setups use large lattice beam waists, so the bandwidth,
+$W$,  is nearly constant as a function of position in the trap.  For a
+reasonable number of atoms ($<$1 million), if the lattice beam waist is large,
+we can safely use the harmonic approximation to obtain
+\begin{equation}
+\begin{split}
+    \frac{ V_{L,\text{env}}( \rdiag ) }{ E_{R} }  & =   
+        -3 s_{0}  + \frac{ 4 s_{0} }{w_{L}^{2}} \rdiag^{2}  \\
+    \frac{ \frac{3}{2}\hbar \omega_{0} }{ E_{R} } & = 
+        3 \sqrt{ s_{0}} - \frac{ 2 \sqrt{s_{0}}}{w_{L}^{2}} \rdiag^{2} 
+\end{split}
+\label{eq:lattice-expand-harmonic}
+\end{equation}
+
+The harmonic approximation to the lowest band in the lattice is then 
+\begin{equation} 
+   \frac{ V_{\text{band}}(\rdiag) }{E_{R} }  = 
+       \left(\frac{ 4 s_{0} - 2 \sqrt{ s_{0} } }{ w_{L}^{2} } \right)\rdiag^{2} 
+       \equiv  \alpha_{\text{t}}  \left( \frac{ \rdiag}{a} \right)^{2}
+\end{equation}
+where $a=\lambda/2$ is the lattice spacing.  The shape of the lowest band
+defines $\alpha_{\text{t}}$,  and for a given $\alpha_{\text{t}}$, the
+characteristic energy of the trap is given by
+\begin{equation} 
+  \frac{ E_{\text{t}} }{E_{R}} =  \alpha_{\text{t}} \left(  \frac{ 3N }{ 8\pi }
+\right)^{2/3} 
+\end{equation}
+where $N$ is the total atom number.  It is seen here that the characteristic
+energy is the energy of the band at a radius given by 
+\begin{equation}
+  \frac{ \rdiag }{ a } =  \left( \frac{ 3N }{ 8 \pi} \right)^{1/3}
+  \ \ \Rightarrow   \ \ 
+  N = \frac{2}{d^{3}} \left(   \frac{4}{3} \pi \rdiag^{3}  \right)
+\end{equation}
+This radius is simply the size occupied by the $N$ atoms at a density of two
+atoms per site.   
+
+
+The characteristic energy is a useful quantity because it provides a
+length-scale-free way of assesing  the level of confinement in the trap.
+Regardless of the waist of the lattice beams, for a given interaction strength
+$U$, a Mott-insulating core  at the center of the sample  can be achieved if
+$E_{\text{t}} \approx U/2 $.   Notice that such a characteristic energy can be
+achieved in either of two ways: changing the confinement, $\alpha_{\text{t}}$,
+or changing the atom number, $N$.  In our compensated lattice setup, the
+compensation beams provide a way to change the confinement.  
+
+As an alternative measure of the same concept, the characteristic filling is
+defined as~\cite{Jordens2010}.
+\begin{equation} 
+    \rho_{\text{t}} = N \left( \frac{ \alpha_{t} }{ 6 t } \right)^{3/2}
+    =  \frac{8\pi}{3} \left( \frac{ E_{\text{t}} }{ 6 t}   \right)^{3/2}  
+\end{equation}
+Using the characteristic filling it is a little bit more cumbersome to quickly
+get an idea of the length-scale-free filling as one has to convert the
+interaction energy to an effective density in order to make a well informed
+comparison.   It is always easier to just compare $U$ to $E_{t}$. 
+
+In actual experiments typically the main constraint is the atom number.  The
+shape and depth of the traps can be adjusted around the achievable atom number
+such that one can get access to the phases of interest.  In our case these are
+the Mott insulator state and the antiferromagnetically ordered Mott-insulator
+which both require a density of one atom per site.  
+
+In order to get a rough idea of what kind of trap do we need to have in order
+to realize the insulating states for a given number of atoms, it is useful to
+introduce an analytic expression for the onsite interaction strength $U$.   For
+a deep lattice ( $\gtrsim 10\,E_{R}$ ) we have 
+\begin{equation}
+  \frac{U}{E_{R}}  =  4 \sqrt{2\pi} \frac{ a_{s} }{\lambda}  s^{3/4} 
+\end{equation} 
+The scattering length is usually expressed in units of the Bohr radius,
+$a_{0}$, so it is useful to keep in mind that for our 1064~nm lattice
+wavelength $\lambda = 20113 a_{0}$.  For a reasonable\footnote{Very large
+scattering lengths are to be avoided because they give rise to fast inelastic
+losses that scale as $a_{s}^{4}$.} scattering length of 650$a_{0}$ and a
+$10\,E_{R}$ lattice we obtain  $U=1.82\,E_{R} = 80 t$.   From the prescription
+above, half-filling would be obtained by setting $E_{\text{t}} \approx U/2 = 40
+t$.  
+
+A plot of $E_{\text{t}}/t$ as a function of lattice beam waist for a fixed atom
+number, $N$=500,000 is shown in Fig.~\ref{fig:Et-waist}.   We see that
+achieving half-filling with the confinement provided only by the red-detuned
+lattice requires a lattice beam waist of $\approx 126\,\mu$m.  
+\begin{figure}
+    \centering \includegraphics[width=0.5\textwidth]{figures/Et-waist.png}
+\caption{Characteristic energy as a function of beam waist for $N=500,000$
+atoms. The black line denotes $U/2t$,  which should be the characteristic
+energy required to obtain a half-filled sample at the center of the potential
+and maximize the likelihood of observing an insulting phase.}
+\label{fig:Et-waist}
+\end{figure}
+
+
+\subsection{Compensation}
+
+As we mentioned above, we are interested in exploring the idea of evaporative
+cooling in a lattice and also the concept of the entropy capacity of the
+lattice system.  We will see that for both these two ideas it will be necessary
+to introduce the concept of compensation.  Compensation is a way of reducing
+$\alpha_{\text{t}}$ for a given lattice beam waist, such that large system
+sizes can be achieved on a smaller beam waist lattice.  
+
+For cooling it is necessary to   have the boundary of the potential as close as
+possible to the edge of the sample and compensation helps achieve that.   For
+entropy redistribution in the sample, one may gain advantage from the
+inhomogeneity in the Hubbard parameters that arises from small lattice beam
+waists.  
+
+With the addition of repulsive compensation beams with depth $g_{0}$ and beam
+waist $w_{C}$,  as in Eq.~\ref{eq:Vcomp},  we have, in the harmonic
+approximation 
+\begin{equation}
+ \frac{ \alpha_{\text{t}}^{2} }{ a^{2} } = 
+ \frac{ 4s_{0} - 2 \sqrt{s_{0}} }{w_{L}^{2} }  
+  - \frac{ 4 g_{0} }{ w_{C}^{2} }   
+\end{equation} 
+If we define  $\alpha = w_{L}/w_{C}$, then we can completely cancel the
+quadratic term of the confinement by choosing 
+\begin{equation}
+ g_{0} = \frac{  4 s_{0} - 2 \sqrt{s_{0}} }{ 4 \alpha^{2} }  \equiv g_{0\text{q}}
+\end{equation}
+A plot of the diagonal profiles of the system in this case is shown in
+Fig.~\ref{fig:lattice_general-comp}.  
+\begin{figure}
+    \centering
+\includegraphics[width=0.7\textwidth]{figures/lattice_general-comp.png}
+\caption{Diagonal profiles for a 10$E_{R}$ lattice with $w_{L}=47\,\mu$m,
+$w_{C}=40\,\mu$m and compensation $g_{0}=6.1\,E_{R}$.}
+\label{fig:lattice_general-comp}
+\end{figure}
+
+When using compensation we will find that we can use smaller beam waists and
+that the potential has the capacity to accomodate a larger number of atoms.
+Since the size of the sample starts becoming comparable to the lattice beam
+waist, we can no longer work in the harmonic approximation.   In later sections
+we will turn to the more precise implementation of the local density
+approximation, and we will calculate the relevant local quantities ($U$, $t$,
+etc. ) numerically, without making any deep lattice or harmonic approximations. 
+ 
+
+
+\section{ Entropy redistribution }
+
+In the quest for producing and antiferromagnetically (AFM) ordered state with
+cold atoms, the entropy per particle is an important metric.  It determines the
+number of quantum states that are accessible to each atom.  At half-filling
+there is an average of one-particle per site\footnote{Notice that half-filling
+corresponds to $n=1$, for this reason sometimes the terms half-filling, unit
+filling, and unit density are used interchangeably.  Here we will restrict the
+terminology to half-filling or we will write explicitly $n=1$ to avoid
+confusion.}.  If the temperature of the system is high, $T\gg U$,  there is an
+equal probability for a site to be empty, singly or doubly occupied.  If  the
+site is  singly occupied, the spin there could be up or down, so at high
+temperatures there are a total of four ( $|0\rangle, |\spup\rangle,
+|\spdn\rangle, |\dbl\rangle$ ) equally probable state at each lattice site,
+giving an entropy per particle\footnote{Notice that at half-filling any
+quantity per particle is the same as per lattice site, since $n=1$} is equal to
+$s/\kb=\ln 4 = 1.38$.
+
+When the temperature is $T<U$, double occupancies and vacancies are suppressed
+and the system enters the Mott insulating state.  In this case the probability
+of having empty sites or doubly occupied sites goes to zero.   At each site, a
+particle can still  be spin-up or spin-down with equal probability, so the
+entropy per particle becomes $s/\kb = \ln 2 = 0.69 $.   
+
+As the temperature of the system goes below the N\'{e}el temperature, the spin
+of the atoms becomes strongly determined by their position in the lattice,  as
+they start to order antiferromagnetically.  At zero temperature each site has
+only one possible quantum state (spin-up or spin-down depending on the lattice
+site) and the entropy per particle goes to zero.   
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{figures/paiva_entropy.png}
+                \caption{Paiva~\cite{Paiva2011}}
+                \label{fig:paiva-entropy3D}
+        \end{subfigure}
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.48\textwidth}
+                \includegraphics[width=\textwidth]{figures/fuchs_entropy.png}
+                \caption{Fuchs~\cite{Fuchs2011}}
+                \label{fig:fuchs-entropy3D}
+        \end{subfigure}%
+        \caption{Calculations of entropy per lattice site versus temperature at half filling.}\label{fig:entropy-Fuchs-Paiva}
+\end{figure}
+For a homogeneous 3D lattice, at the N\'{e}el temperature $T_{N}=0.36t$, the
+entropy per particle is $s=0.4\,\kb$.  As the temperature starts dropping below
+$T_{N}$ the entropy approaches zero very quickly in what is referred to as the
+AFM transition (AFM stands for antiferromagnetic order).  The AFM transition
+has been studied theoretically for homogeneous 3D systems using  quantum
+Monte Carlo (QMC)~\cite{Paiva2011} and the dynamical cluster approximation
+(DCA)~\cite{Fuchs2011}.  The results from these two approaches are shown in
+Figs.~\ref{fig:paiva-entropy3D},\ref{fig:fuchs-entropy3D}.
+
+The theoretical calculations shown correspond to a homogeneous system, but in
+practice  one has samples with a finite number of atoms so one is forced to
+confine them in order to reach half-filling.   Since the confinement is
+typically harmonic (as opposed to a well with hard walls), the density decays
+as a function of distance to the center.   We will show below that this
+inhomogeneity in the density leads to the concept of entropy redistribution.
+We will see that the entropy necessary to achieve a N\'{e}el state can be
+higher in a trapped system that in the homogeneous case. 
+
+
+\subsection{High temperature series expansion for the Hubbard model}
+
+In this section we will plot the thermodynamic properties of the Hubbard model
+obtained using the high temperature series expansion (HTSE) to second
+order~\cite{Henderson1992,Jordens2010}.   The  HTSE allows us to visualize the
+signatures of the Mott insulating state:
+\begin{itemize}
+   \item The density as function of chemical potential has a plateau at $n=1$
+   \item The double occupancy is suppressed 
+   \item The density fluctuations are suppressed 
+   \item The entropy per site as a function of filling has a dip at $n=1$. 
+\end{itemize} 
+
+For the homogeneous Hubbard model, we show in Fig.~\ref{fig:HTSEhomogeneous}
+plots of the density,  double occupancy,  density fluctuations and entropy per
+site.  We can see the signatures of the Mott state if we look at the variation
+of the thermodynamic quantities at $n=1$.  As the temperature gets lower and the
+interaction strength is increased these signatures become more pronounced. 
+\begin{figure}
+        \centering
+        \begin{subfigure}[b]{0.75\textwidth}
+                \includegraphics[width=\textwidth]{figures/HTSE_density_U.png}
+                \caption{Density}
+        \end{subfigure}%
+          %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+
+        \begin{subfigure}[b]{0.75\textwidth}
+                \includegraphics[width=\textwidth]{figures/HTSE_doublons_U.png}
+                \caption{Double occupancy}
+        \end{subfigure}
+ 
+        \begin{subfigure}[b]{0.75\textwidth}
+                \includegraphics[width=\textwidth]{figures/HTSE_densfluc_U.png}
+                \caption{Density fluctuations}
+        \end{subfigure}
+
+        \begin{subfigure}[b]{0.75\textwidth}
+                \includegraphics[width=\textwidth]{figures/HTSE_entropy_U.png}
+                \caption{Entropy per lattice site}
+        \end{subfigure}
+        \caption{Thermodynamic quantities as a function of chemical potential calculated using the HTSE.}\label{fig:HTSEhomogeneous}
+\end{figure}
+
+\subsubsection{Entropy per particle}  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/HTSE_EntropyPerSite_U.png}
+    \caption{Entropy per lattice site versus density.}\label{fig:HTSE_spersite}
+\end{figure}
+The HTSE gives us the result for the entropy per lattice site, which we can
+plot versus the density, as shown in Fig.~\ref{fig:HTSE_spersite}  The
+interesting result arises if we divide the entropy per lattice site by the
+density, in order to obtain the entropy per particle.  This is shown in
+Fig.~\ref{fig:HTSE_sperparticle}. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/HTSE_EntropyPerParticle_U.png}
+    \caption{Entropy per particle versus density.}\label{fig:HTSE_sperparticle}
+\end{figure}
+It is seen there that the entropy per particle rises significantly for lower
+filling values, and most importantly that the value of the entropy per particle
+at low filling \textbf{does not} depend strongly on temperature or interaction
+strength.   This property is referred to as the larger entropy capacity of the
+metallic shell,  which is at the root of the idea of entropy redistribution. 
+
+\subsection{Local density approximation}
+
+In what follows we will use the results from HTSE and the local density
+approximation to calculate trap profiles of the various thermodynamic
+quantities.  A trapped gas with a finite number of atoms has a density that
+inevitably decreases as a function of distance from the center.   As the
+density goes down, the outer shells of the cloud, which are below half-filling,
+will have a large entropy per particle.   The overall entropy per particle of
+the trapped system, $S/N$, will be distributed such that most of it is carried by
+the metallic edges of the cloud.   
+
+\subsubsection{Comparison between a red detuned lattice without and with
+compensation}
+\label{sec:compare-big-small-waist}
+
+\begin{figure}
+        \centering
+        \begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{figures/7Er_red-detuned_no-comp.png}
+\caption{Red detuned lattice without compensation.  The lattice beam waist is
+146\,$\mu$m for all three lattice axes.  The beam waist is chosen such that the
+confinement produces unit filling at the center when there are 350,000 atoms in
+the trap. }
+                \label{fig:HTSE_full-band-profiles_a}
+        \end{subfigure}%
+        ~~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\textwidth]{figures/ir47-gr40_7Er-comp3p642.png}
+\caption{Red detuned lattice with compensation.  The lattice beam waist is
+47\,$\mu$m and the compensation beam waist is 40\,$\mu$m.  These values are
+approximately what we use in our experimental setup.   The compensation depth
+of 3.6\,$E_{R}$ is chosen so that unit filling is achieved at the center for an
+atom number of 350,000.}
+                \label{fig:HTSE_full-band-profiles_b}
+        \end{subfigure}
+	\caption{Full trap profiles of band structure and thermodynamic
+quantities for a lattice without and with compensation.  For both cases the
+atom number is chosen to be 350,000 atoms, and the filling at the center is
+$n=1$.   Not that despite the very different band structure profiles, the
+density profiles are very similar for both cases.  Even though the local
+Hubbard parameters and the filling are set to be the same at the center of the
+sample, the overall entropy per particle can be 1.5 times larger in the
+compensated case (1.94\kb) than in the uncompensated case (1.34\kb). }
+\label{fig:HTSE_full-band-profiles}
+\end{figure}
+Figure~\ref{fig:HTSE_full-band-profiles} shows a comparison of the trap
+profiles for a red detuned lattice without compensation
+(\ref{fig:HTSE_full-band-profiles_a}) and a red detuned lattice with
+compensation (\ref{fig:HTSE_full-band-profiles_b}).    In order to make a
+legitimate comparison, we set the atom number to 350,000 atoms.  In the case
+without compensation we vary the beam waist of the lattice beams such that a
+density of $n=1$ is achieved at the center of the sample.   Lattice beams with
+smaller beam waists will produce a stronger confinement, so in general if you
+have a large amount of atoms and you want to achieve unit filling without
+compensation you must use lattice beams with a large waist.    In the case with
+compensation we use the lattice and compensation beam waists that we currently
+have in our setup:  $w_{L}=47\,\mu$m and $w_{C}=40\,\mu$m.   We then adjust the
+depth of the compensation beams to achieve half filling with 350,000 atoms.  
+
+
+From looking at this figure we can see that even though the band structure
+profiles are very different (in the compensated case the Hubbard parameters
+vary strongly with radial distance),  the trap profiles of the density look
+very similar in both cases.  Despite this similarity in the density,  the
+double occupancy and the entropy per lattice site are slightly different.   The
+important result is that even though in both cases one has the exact same local
+state at the center (same filling, same $U/t$, same $s$)  the overall entropy
+per particle can be larger for the compensated lattice by a factor of 1.5
+(1.94\kb to 1.34\kb).   
+
+This larger capacity of the compensated lattice to redistribute entropy is what
+can make it favorable to achieve an AFM ordered state at the center of the
+sample.   If one looks in more detail, as is shown in
+Fig.~\ref{fig:HTSE_compare-thermo} one realizes that the larger entropy
+capacity comes from a small enhancement of the double occupancy ( on the half-a
+percent level ) which leads to a slightly larger entropy per particle on the
+region from about 5\,$\mu$m to 25\,$\mu$m radius.   This radii encompass a
+large volume of the trap, which can make a difference on the overall entropy
+capacity even though the extra entropy per particle plotted radially looks very
+small.  
+\begin{figure}
+    \centering
+\includegraphics[width=0.65\textwidth]{figures/HTSE_compare-thermo.png}
+\caption{Detailed comparison of the thermodynamic quantities for the large beam
+waist uncompensated lattice and the small beam waist compensated lattice.  The
+density is very similar for both cases.  The double occupancy is quite
+different, which leads to a very slightly larger entropy per particle across a
+large range of radii in the trap. }\label{fig:HTSE_compare-thermo}
+\end{figure}
+
+
+The profiles that are shown in Fig.~\ref{fig:HTSE_full-band-profiles} are
+calculated at a temperature $T=1.8t$, which is near the lowest temperature
+value accessible with the HTSE.   The chemical potential, measured from the
+lowest energy level available to the system (the bottom of the band) is set to
+$\mu=6t +U/2$ to guarantee half-filling at the center.  \footnote{ The $6t$
+here is half the bandwidth.  Note that in typical treatments the chemical
+potential is always measured from the center of the lowest band, so the $6t$
+will be omitted. In that case the chemical potential associated with
+half-filling Will be $U/2$.  Some treatments even shift the zero of energy by
+$U/2$ so that half filling occurs nominally at $\mu$=0 regardless of $U$. } We
+used a value of $U=24.9t$,  given by the scattering length, which is set at
+650$a_{0}$.   
+
+Plugging in these values we obtain $\mu\approx 18 t$  or $T/\mu \approx 1.8/18
+= 0.1 $.  When the temperature is so low, one can safely assume that $\mu
+\approx E_{F}$,  so this system would have  $T/T_{F}=0.06$ at an overall
+entropy per particle of $S/N=1.94\kb$.  If the sample was obtained by ramping
+up the lattice adiabatically starting from a harmonic trap, then the initial
+entropy in the harmonic trap should also be 1.94\kb.  In the harmonic trap this
+corresponds to $T/T_{F} = S/(\pi^{2} N) \approx 0.2$.  
+
+We conclude from these rough estimates that as the sample gets loaded into the
+lattice it gets adiabatically cooled, its value of $T/T_{F}$ is reduced.  This
+is in contrast with the result obtained in~\cite{Kohl2006} where it was
+concluded that loading a gas adiabatically from a harmonic trap to a deep
+optical lattice would adiabatically heat the gas.   In this case we are
+considering interactions and not neglecting the width of the lowest band.  Our
+observation that the gas is adiabatically cooled as it is loaded into the
+lattice are consistent with the results from~\cite{Paiva2011}.   
+
+(NOTE: I NEED TO ASK THEREZA ABOUT THESE REMARKS TO CHECK THAT I AM NOT MAKING
+A MISTAKE. 
+
+The main question is whether it is ok to take $\mu=E_{F}$ since $\mu$ is in
+the Mott gap.   Should one take  $E_{F}=12t$ in that case, since the top of the
+band is the largest energy state that could potentially be occupied?? )
+
+
+\subsubsection{ Enlarging the Mott state}  
+
+In this section we consider our experimental setup
+($w_{\text{L}}=47\,\mu\mathrm{m}$, $w_{\text{C}}=40\,\mu\mathrm{m}$)  and we
+vary the amount of compensation.   What we find is that if no compensation is
+used, then the number of atoms has to be very small in order to achieve
+half-filling at the center.     On the other hand,  when using compensation one
+can still hold a large number of atoms and maintain half-filling.   This leads
+to the concept of enlarging the Mott state ( or N\'{e}el state if your
+temperature is low enough)  which can be a very dramatic effect as was shown in
+the paper by Mathy, Huse and Hulet~\cite{Mathy2012}.  
+
+The effect of enlarging the Mott state is shown in
+Fig.~\ref{fig:HTSE_enlarge-mott}, where we show the relationship between atom
+number and compensation when the filling is set to $n=1$ at the center of the
+cloud. This figure also shows the profile plots for no compensation and a
+compensation of 3.05\,$E_{R}$,  in order to illustrate how the Mott plateau in
+the density profile is enlarged for larger compensation.  
+\begin{figure}
+        \centering
+        \begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth]{figures/ir47-gr40_7Er-comp0p0.png}
+\caption{$w_{L}=47\,\mu$m and $w_{C}=40\,\mu$m without compensation.  }
+                \label{fig:HTSE_enlarge-mott_a}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[t]{0.32\textwidth}
+                \includegraphics[width=\textwidth]{figures/ir47-gr40_7Er-comp3p05.png}
+\caption{$w_{L}=47\,\mu$m and $w_{C}=40\,\mu$m with 3.05\,$E_{R}$ compensation.  }
+                \label{fig:HTSE_enlarge-mott_b}
+        \end{subfigure}
+        ~        
+        \begin{subfigure}[t]{0.32\textwidth}
+                \includegraphics[width=\textwidth]{figures/enlarging_mott_state.png}
+\caption{Atom number as a function of compensation illustrates the concept of enlarging the Mott state. }
+                \label{fig:HSTE_enlarge-mott_c}
+        \end{subfigure}
+	\caption{  Illustrating the idea of enlarging the Mott state. 
+}
+\label{fig:HTSE_enlarge-mott}
+\end{figure}
+
+
+From what was discussed in \S\ref{sec:compare-big-small-waist}  we see that it
+is also possible to reach an large Mott plateau for $N=350,000$ and without
+compensation beams:  you just need to have larger lattice beam waists.  As we
+saw there, the advantage of realizing the large Mott plateau with small lattice
+beam waists and compensating beams is  that this system has a larger entropy
+capacity  than the large-beam-waist-uncompensated counterpart.   
+
+In addition to this entropy capacity advantage, the
+small-beam-waist-compensated setup offers the possibility of evaporative
+cooling since the chemical potential comes much closer to the energy threshold
+for an atom escaping along one of the lattice beams.  We will address this
+point in the following section.  
+
+
+\section{ Evaporative cooling in a lattice }
+
+If we refer back to Fig.~\ref{fig:HTSE_full-band-profiles}  we can see that on
+the energy landscape plot we used an orange line to indicate the evaporation
+threshold, that is the energy necessary for an atom to escape along one of the
+lattice beams.  Comparing the two cases one sees that the small beam waist
+compensated case has a global chemical potential (green line) that is much
+closer to the evaporation threshold.
+
+When evaporative cooling a thermal gas of atoms, one considers the parameter
+$\eta=U_{\text{trap}}/\kb T$, where $U_{\text{trap}}$ is the energy threshold
+for a particle leaving the trap (i.e. the trap depth) and $T$ is the
+temperature of the gas.   The evaporation rate is suppressed by a factor
+$\exp(-\eta)$ where  typically $\eta\sim10$ and, as the gas cools down, the trap
+depth is reduced to force further evaporation~\cite{OHara2001}.  
+
+For a deeply degenerate Fermi gas,  $T \ll T_{F}$, the evaporation rate is
+given by~\cite{OHara2001}.
+\begin{equation}
+  \Gamma_{\text{evap}} \propto \gamma_{\text{coll}} \frac{T}{T_{F}} 
+  \exp\left[ -   
+  \frac{ U_{\text{trap}} - \kb T_{F} }{ \kb T }  \right ] 
+\end{equation}
+where $\gamma_{\text{coll}}$ is the classical collision rate evaluated at the
+Fermi surface.  This can also be written as 
+\begin{equation}
+  \Gamma_{\text{evap}} \propto \gamma_{\text{coll}} \frac{T}{T_{F}}
+  \exp\left[ \frac{1}{T/T_{F}} \right]  
+  \exp\left[ -  \frac{1}{T/T_{F}} \left( \frac{U_{\text{trap}}}{\kb T_{F}} \right) \right] 
+\end{equation}
+We define $ \eta_{F} \equiv U_{\text{trap}}/\kb T_{F}$ and observe that 
+\begin{equation}
+  \Gamma_{\text{evap}} \propto \gamma_{\text{coll}} \frac{T}{T_{F}}
+  \exp\left[ -  \frac{\eta_{F} - 1 }{ T/T_{F} } \right]
+\end{equation}
+For the deeply degenerate gas, the $\eta$ factor which determines the
+exponential suppression of the evaporation due to the trap depth is effectively
+\begin{equation}
+ \eta = \frac{\eta_{F} - 1 }{T/T_{F} } 
+\end{equation}
+Notice that the evaporation rate is additionally suppressed by a factor
+$T/T_{F}$ due to Pauli blocking of one of the final states of a collision, which
+occurs for $T\ll T_{F}$~\cite{OHara2001}.
+
+We start by considering a red-detuned lattice with no extra confinement or
+compensation.  We set  $n=1$ at the center of the sample and vary the waist of
+the lattice beams.    From our knowledge of the potentials we can determine
+$U_{\text{trap}}$, which in this case is the energy required for an atom to
+escape along one of the lattice beams.   At a temperature of $T=1.8t$  we can
+make the approximation $\kb T_{F} \approx \mu$, where $\mu$ is the global
+chemical potential.  Figure~\ref{fig:etaF-no-comp_vary-wIR} shows $\eta_{F}$ as
+a function of lattice beam waist, and also shows the number of atoms
+required to achieve half-filling.   
+\begin{figure}
+    \centering
+\includegraphics[width=0.8\textwidth]{figures/etaF-no-comp_vary-wIR.png}
+\caption{$\eta_{F}$, an indicator of the exponential suppression of evaporation
+is shown as a function of lattice beam waist for a red-detuned lattice without
+any extra confinement or compensation. To determine $\eta_{F}$ the number of
+atoms is adjusted such that filling is $n=1$ at the center.   The required
+number is shown on the right.}\label{fig:etaF-no-comp_vary-wIR}
+\end{figure}
+
+In our experiment we can produce cold samples with $\sim$350,000 atoms.   As
+can be seen in Fig.~\ref{fig:etaF-no-comp_vary-wIR} (and also was already shown
+in Fig.~\ref{fig:HTSE_full-band-profiles_a}),  using a beam waist of
+146\,$\mu$m would produce the confinement necessary to reach half-filling at
+the center with $N=350,000$.  The flip side of this is that, for that beam
+waist $\eta_{F}$ would be $\approx 8.5 $,  which for $T/T_{F}=0.1$ means that
+the rate of evaporation would be suppressed by  
+\begin{equation}
+   \frac{T}{T_{F}}\exp\left[ - \frac{\eta_{F} - 1 }{T/T_{F} } 
+ \right] \equiv \xi_{\text{evap}}\approx 10^{-34} 
+\end{equation} 
+
+Going back to our current setup, which has $w_{L}=47\,\mu$m and
+$w_{C}=40\,\mu$m,  with 350,000 atoms; we can achieve half filling if we use
+3.64$E_{R}$ of compensation.  This yields $\eta_{F} \approx 2.95$.  This is a
+lot better than the large-beam-waist-uncompensated case, however the suppression
+factor for the rate of evaporative cooling is still very small.  For our
+current setup it would be
+\begin{equation}
+ \xi_{\text{evap}} = 3.4\times 10^{-10} 
+\end{equation}
+
+Under typical evaporation conditions $\eta=10$, and for a non-degenerate sample
+we have 
+\begin{equation}
+ \xi_{\text{evap}} = e^{-10} = 4.5\times 10^{-5} 
+\end{equation}
+We conclude that our current setup would  have an evaporation rate \textbf{five
+orders of magnitude smaller} compared to the typical evaporative cooling rate
+for a thermal gas (given the same rate of elastic collisions
+$\gamma_{\text{coll}}$).   In addition, in order to get a more realistic
+estimate we would need to incorporate the implications of the chemical
+potential being in a gapped region of the spectrum (for half-filling the chemical
+potential is at the center of the Mott gap) which should further reduce the
+evaporation rate.  
+
+We now explore the entire parameter space, where we allow the lattice and
+compensation beam waists to vary.   We set the chemical potential so that $n=1$
+at the center of the sample,  we do this because half-filling is a prerequisite
+to achieve Mott or N\'{e}el states.   We attempt to find a compensation such
+that $N=350,000$ atoms.  For some values of the beam waists that is not
+possible because it would lead to either spilling atoms from the
+trap\footnote{In cases when $w_{C}>w_{L}$.} or to the creation of a negative
+curvature in the confinement at the center of our sample\footnote{In cases when
+$w_{C} < w_{L}$.  We also refer to this as making a donut}.  
+\begin{figure}
+    \centering \includegraphics[width=\textwidth]{figures/etaF-wIRwGR.png}
+\caption{$\eta_{F}$ and $S/N$ and $N$ are plotted for various lattice and
+compensation beam waists.  The filling is set to $n=1$ at the center. The
+compensation depth is adjusted so that  $N=350,000$ if it is possible, otherwise
+it is set to maximize the atom number without spilling any atoms form the trap
+or creating a Mexican hat at the center of the potential.  The dotted line in
+the plots corresponds to $w_{L}=w_{C}$.  The current values of our
+experimental setup are shown as gray lines,  such that the intersection between
+these two gray lines represents our current conditions. }
+\label{fig:etaF-wIRwGR}
+\end{figure}
+
+The results of the
+exploration of the beam waist parameter space are shown in
+Fig.~\ref{fig:etaF-wIRwGR}.  The main points that stand out are
+\begin{itemize}
+\item  An optimal value of $\eta_{F}$ is achieved for $w_{L}\approx w_{C}$.  
+\item  At $w_{L} \approx w_{C}$, smaller beam waists give better entropy capacity 
+\item The atom number can only reach 350,000 if $w_{C} < w_{L}$, such as in our
+current setup.  Otherwise the atom number is limited, being smaller for larger
+$w_{C}$.
+\end{itemize}
+
+
+To get another look at the results, on Fig.~\ref{fig:etaF-wIRwGR-lines} we plot
+$\eta_{F}$, $S/N$, and $N$  as a function of $w_{C}$ for three different values
+of $w_{L}$.  The evaporation factor is optimized for nearly equal beam waists
+and the entropy capacity also peaks up around there. 
+\begin{figure}
+    \centering
+\includegraphics[width=\textwidth]{figures/etaF-wIRwGR-lines.png} \caption{
+$\eta_{F}$, $S/N$, and $N$ as a function of $w_{C}$ for various values of $w_{L}$.  }
+\label{fig:etaF-wIRwGR-lines}
+\end{figure}
+Given this observation,  we now set $w_{L}=w_{C}$ and vary both together  to see
+if it is favorable to make smaller or larger beam waists.  This is shown in
+Fig.~\ref{fig:etaF-wIR=wGR}.  The main observations are:
+\begin{itemize}
+\item  For beam waists up to $\approx68\,\mu$m one can keep getting lower
+$\eta_{F}$ by making the beam waists larger.  This trend would continue if we
+had an unlimited number of atoms, however beyond $\approx68\,\mu$m the number
+of atoms required to fill the trap goes above our cap of 350,000 atoms.  
+\item
+For larger beam waists the entropy capacity is always lower, so the choice of
+beam waist will be a compromise between $\eta_{F}$ and the entropy capacity. 
+\end{itemize} 
+\begin{figure}
+    \centering \includegraphics[width=\textwidth]{figures/etaF-wIR=wGR.png}
+\caption{ $\eta_{F}$ and $S/N$ as a function of beam waist for $w_{L}=w_{C}$.
+Results are shown for various atom numbers.  }
+\label{fig:etaF-wIR=wGR}
+\end{figure}
+
+%In my opinion, the choice of beam waist should exploit the number of atoms that
+%we have at our disposal
+
+
+The results shown in Figs.~\ref{fig:etaF-wIR=wGR},~\ref{fig:etaF-wIRwGR-lines}
+show that it is desirable to have equal lattice and compensation beam waists.
+The choice of their value is a compromise between the achievable $\eta_{F}$ and
+the entropy capacity, given by $S/N$.   Another important experimental
+constraint is the available of power at the lattice and compensation
+wavelengths, which is a bigger issue for larger beam waists.  In that case
+larger power is necessary to achieve the required potential depths.   The
+compensation power needed to compensate a 7\,$E_{R}$ lattice and the lattice
+power needed to make a 40\,$E_{R}$ deep lattice\footnote{If we want to freeze
+out tunneling in the lattice we required depths as large as 40\,$E_{R}$ where
+the tunneling rate goes down to 3\,Hz.  We currently ``lock'' the lattice at
+20\,$E_{R}$ for our Bragg scattering measurements.  At 20\,$E_{R}$ the
+tunneling rate is 72\,Hz. This is good enough for Bragg scattering, but not
+good enough for measurements that take longer, such as associating through the
+narrow Feshbach resonance to measure double occupancies. } are shown in
+Fig.~\ref{fig:green-power-wIR=wGR}.   With this in mind and our available
+powers we can safely realize any choice of beam waists below $65\,\mu$m. 
+\begin{figure}
+    \centering
+\includegraphics[width=0.7\textwidth]{figures/green-power-wIR=wGR.png}
+\caption{ Compensation power required to compensate a 7\,$E_{R}$ lattice and
+lattice powered required to achieve a 40\,$E_{R}$ lattice depth.  }
+\label{fig:green-power-wIR=wGR}
+\end{figure}
+
+To fully exploit the atom number that we can produce in our experiment our
+opinion is to go to the larger lattice beam waists,  so we recommend values of
+$w_{L}=w_{C}=65\,\mu$m.   These proposed parameters  would change the
+evaporation factor and entropy capacity and number capacity of our setup
+according to the following table:
+\begin{center}
+\begin{tabular}{ c|c|c|c|c|c}
+   &  $w_{L}\,(\mu\mathrm{m})$ & $w_{C}\,(\mu\mathrm{m})$ 
+   & $\eta_{F}$  & $\xi_{\text{evap}}$ &  $S/N$  \\ \hline 
+ Current setup &  47 & 40  &  2.95 & $3.4\times 10^{-10}$  &   1.94  \\ 
+ Proposed change & 65 & 65  &  1.52 & $1.36\times 10^{-5}$  &   1.99  \\
+\end{tabular}
+\end{center}
+We see that for the optimal beam waist ratio a value of
+$\xi_{\text{evap}}\sim10^{-5}$ may be reached that could lead to reasonable
+rates of evaporation in the lattice.  A comparison of our current setup and
+this proposed scenario is shown in Fig.~\ref{fig:etaF-before-after}. 
+\begin{figure}
+        \centering
+        \begin{subfigure}[t]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/ir47-gr40_7Er-comp3p642.png}
+\caption{ $w_{L} = 47\,\mu$m and $w_{C}=40\,\mu$m.  Compensation is chosen so
+that unit filling is achieved at the center for an atom number of 350,000. }
+        \end{subfigure}
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[t]{0.45\textwidth}
+		\includegraphics[width=\textwidth]{figures/ir65-gr65_7Er-comp4p08.png}
+\caption{ $w_{L} = 65\,\mu$m and $w_{C}=65\,\mu$m.  Atom number maxes out at 284,000 atoms. }
+        \end{subfigure}%
+	\caption{Full trap profiles of band structure and thermodynamic
+quantities for our current setup and the proposed setup with equal beam waists.} 
+\label{fig:etaF-before-after}
+\end{figure}
+
+ 
+
+
+
+ 
+\section{ Conclusions }
+
+
+\bibliographystyle{osa}
+\bibliography{latt_evap}
+
+\end{document}
+
+
+
+

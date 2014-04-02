@@ -1,0 +1,17 @@
+===
+001
+===
+
+This data was generated before I took proper care of the derivative of the density distribution.  In the automation of finding the proper compensation to get 350,000  sometimes the program would put too much compensation and the atoms start accumulating on the wings and one gets the desired 350,000 but off of some wing atoms.   This happens specially if the green beam waist is larger than the IR beam waist.   
+
+So, in short, this data is wrong. 
+
+
+===
+002
+===
+
+In this data I corrected and checked wheter the density had a positive derivative for larger radii (Larger than 25% of the IR beam waist).  This allows me to discard points in the beam waist parameter space.   What the program does is it still counts those points, but we have to keep in mind that the number there will necessarily be less than 3.5e5 at half filling.
+
+This could even be an advantage because those atoms will be shed away by the sample.   
+
