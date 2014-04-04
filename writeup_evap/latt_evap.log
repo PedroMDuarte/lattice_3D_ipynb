@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  1 APR 2014 20:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  4 APR 2014 03:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -396,11 +396,7 @@ Package: parskip 2001/04/09 non-zero parskip adjustments
 LaTeX Warning: Unused global option(s):
     [letter].
 
-(./latt_evap.aux
-
-LaTeX Warning: Label `fig:lattice_general' multiply defined.
-
-)
+(./latt_evap.aux)
 \openout1 = `latt_evap.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
@@ -417,7 +413,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
 LaTeX Font Info:    ... okay on input line 76.
 LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 76.
 LaTeX Font Info:    Try loading font information for LGR+cmr on input line 76.
- (/usr/share/texlive/texmf-dist/tex/generic/babel-greek/lgrcmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-greek/lgrcmr.fd
 File: lgrcmr.fd 2008/06/17 v2.3 Greek Computer Modern
 )
 LaTeX Font Info:    ... okay on input line 76.
@@ -521,271 +518,267 @@ Package caption Info: End \AtBeginDocument code.
 File: figures/compensated_lattice_simple_schematic.png Graphic file (type png)
  <use figures/compensated_lattice_simple_schematic.png>
 Package pdftex.def Info: figures/compensated_lattice_simple_schematic.png used 
-on input line 90.
+on input line 91.
 (pdftex.def)             Requested size: 393.1496pt x 148.40005pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 95.
+LaTeX Font Info:    Try loading font information for U+msa on input line 96.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 95.
+LaTeX Font Info:    Try loading font information for U+msb on input line 96.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./figures/compensated_lattice_simple_schematic.png>] <figures/lattice_general
-.png, id=16, 397.485pt x 209.583pt>
+.png, id=20, 469.755pt x 209.583pt>
 File: figures/lattice_general.png Graphic file (type png)
 
 <use figures/lattice_general.png>
-Package pdftex.def Info: figures/lattice_general.png used on input line 167.
-(pdftex.def)             Requested size: 344.00308pt x 181.38911pt.
- [2 <./figures/lattice_general.png>]
+Package pdftex.def Info: figures/lattice_general.png used on input line 196.
+(pdftex.def)             Requested size: 393.1496pt x 175.40572pt.
+ [2]
 <figures/lattice_tunneling.png, id=28, 274.626pt x 209.583pt>
 File: figures/lattice_tunneling.png Graphic file (type png)
 
 <use figures/lattice_tunneling.png>
-Package pdftex.def Info: figures/lattice_tunneling.png used on input line 224.
+Package pdftex.def Info: figures/lattice_tunneling.png used on input line 237.
 (pdftex.def)             Requested size: 235.88676pt x 180.0172pt.
 
 <figures/lattice_lock.png, id=29, 274.626pt x 209.583pt>
 File: figures/lattice_lock.png Graphic file (type png)
 
 <use figures/lattice_lock.png>
-Package pdftex.def Info: figures/lattice_lock.png used on input line 231.
+Package pdftex.def Info: figures/lattice_lock.png used on input line 245.
 (pdftex.def)             Requested size: 235.88676pt x 180.0172pt.
- [3] [4 <./figures/lattice_tunneling.png> <./figures/lattice_lock.png>] <figure
-s/Et-waist.png, id=41, 231.264pt x 187.902pt>
+ [3 <./figures/lattice_general.png>] [4 <./figures/lattice_tunneling.png> <./fi
+gures/lattice_lock.png>]
+<figures/Et-waist.png, id=40, 231.264pt x 187.902pt>
 File: figures/Et-waist.png Graphic file (type png)
 
 <use figures/Et-waist.png>
-Package pdftex.def Info: figures/Et-waist.png used on input line 352.
+Package pdftex.def Info: figures/Et-waist.png used on input line 401.
 (pdftex.def)             Requested size: 245.71756pt x 199.65685pt.
- [5]
+ [5] [6 <./figures/Et-waist.png>]
+<figures/alpha-evap-optimal.png, id=50, 303.534pt x 187.902pt>
+File: figures/alpha-evap-optimal.png Graphic file (type png)
 
-LaTeX Warning: Reference `fig:lattice_general-comp' on page 6 undefined on inpu
-t line 390.
+<use figures/alpha-evap-optimal.png>
+Package pdftex.def Info: figures/alpha-evap-optimal.png used on input line 513.
 
-<figures/lattice_general-comp.png, id=45, 397.485pt x 209.583pt>
-File: figures/lattice_general-comp.png Graphic file (type png)
-
-<use figures/lattice_general-comp.png>
-Package pdftex.def Info: figures/lattice_general-comp.png used on input line 39
-3.
-(pdftex.def)             Requested size: 344.00308pt x 181.38911pt.
- [6 <./figures/Et-waist.png>]
-<figures/paiva_entropy.png, id=51, 908.39375pt x 1034.86626pt>
+(pdftex.def)             Requested size: 245.71756pt x 152.1109pt.
+ [7 <./figures/alpha-evap-optimal.png>]
+[8] [9] <figures/paiva_entropy.png, id=62, 908.39375pt x 1034.86626pt>
 File: figures/paiva_entropy.png Graphic file (type png)
 
 <use figures/paiva_entropy.png>
-Package pdftex.def Info: figures/paiva_entropy.png used on input line 442.
+Package pdftex.def Info: figures/paiva_entropy.png used on input line 719.
 (pdftex.def)             Requested size: 235.88676pt x 268.72726pt.
 
-<figures/fuchs_entropy.png, id=52, 657.45625pt x 765.86125pt>
+<figures/fuchs_entropy.png, id=63, 657.45625pt x 765.86125pt>
 File: figures/fuchs_entropy.png Graphic file (type png)
 
 <use figures/fuchs_entropy.png>
-Package pdftex.def Info: figures/fuchs_entropy.png used on input line 449.
+Package pdftex.def Info: figures/fuchs_entropy.png used on input line 726.
 (pdftex.def)             Requested size: 235.88676pt x 274.77495pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 481.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 758.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 481.
- [7 <./figures/lattice_general-comp.png>] <figures/HTSE_density_U.png, id=58, 6
-93.792pt x 209.583pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 758.
+ [10]
+<figures/HTSE_density_U.png, id=67, 693.792pt x 209.583pt>
 File: figures/HTSE_density_U.png Graphic file (type png)
 
 <use figures/HTSE_density_U.png>
-Package pdftex.def Info: figures/HTSE_density_U.png used on input line 495.
+Package pdftex.def Info: figures/HTSE_density_U.png used on input line 772.
 (pdftex.def)             Requested size: 368.57634pt x 111.34068pt.
 
-<figures/HTSE_doublons_U.png, id=59, 693.792pt x 209.583pt>
+<figures/HTSE_doublons_U.png, id=68, 693.792pt x 209.583pt>
 File: figures/HTSE_doublons_U.png Graphic file (type png)
 
 <use figures/HTSE_doublons_U.png>
-Package pdftex.def Info: figures/HTSE_doublons_U.png used on input line 502.
+Package pdftex.def Info: figures/HTSE_doublons_U.png used on input line 779.
 (pdftex.def)             Requested size: 368.57634pt x 111.34068pt.
 
-<figures/HTSE_densfluc_U.png, id=60, 693.792pt x 209.583pt>
+<figures/HTSE_densfluc_U.png, id=69, 693.792pt x 209.583pt>
 File: figures/HTSE_densfluc_U.png Graphic file (type png)
 
 <use figures/HTSE_densfluc_U.png>
-Package pdftex.def Info: figures/HTSE_densfluc_U.png used on input line 507.
+Package pdftex.def Info: figures/HTSE_densfluc_U.png used on input line 784.
 (pdftex.def)             Requested size: 368.57634pt x 111.34068pt.
 
-<figures/HTSE_entropy_U.png, id=61, 693.792pt x 209.583pt>
+<figures/HTSE_entropy_U.png, id=70, 693.792pt x 209.583pt>
 File: figures/HTSE_entropy_U.png Graphic file (type png)
 
 <use figures/HTSE_entropy_U.png>
-Package pdftex.def Info: figures/HTSE_entropy_U.png used on input line 512.
+Package pdftex.def Info: figures/HTSE_entropy_U.png used on input line 789.
 (pdftex.def)             Requested size: 368.57634pt x 111.34068pt.
 
-<figures/HTSE_EntropyPerSite_U.png, id=62, 751.608pt x 231.264pt>
+<figures/HTSE_EntropyPerSite_U.png, id=71, 751.608pt x 231.264pt>
 File: figures/HTSE_EntropyPerSite_U.png Graphic file (type png)
 
 <use figures/HTSE_EntropyPerSite_U.png>
-Package pdftex.def Info: figures/HTSE_EntropyPerSite_U.png used on input line 5
-22.
+Package pdftex.def Info: figures/HTSE_EntropyPerSite_U.png used on input line 7
+99.
 (pdftex.def)             Requested size: 393.1496pt x 120.97078pt.
 
-<figures/HTSE_EntropyPerParticle_U.png, id=63, 751.608pt x 231.264pt>
+<figures/HTSE_EntropyPerParticle_U.png, id=72, 751.608pt x 231.264pt>
 File: figures/HTSE_EntropyPerParticle_U.png Graphic file (type png)
 
 <use figures/HTSE_EntropyPerParticle_U.png>
 Package pdftex.def Info: figures/HTSE_EntropyPerParticle_U.png used on input li
-ne 532.
+ne 809.
 (pdftex.def)             Requested size: 393.1496pt x 120.97078pt.
- [8 <./figures/paiva_entropy.png (PNG copy)> <./figures/fuchs_entropy.png (PNG 
-copy)>] [9 <./figures/HTSE_density_U.png> <./figures/HTSE_doublons_U.png> <./fi
-gures/HTSE_densfluc_U.png> <./figures/HTSE_entropy_U.png>]
-<figures/7Er_red-detuned_no-comp.png, id=74, 433.62pt x 361.35pt>
+ [11 <./figures/paiva_entropy.png (PNG copy)> <./figures/fuchs_entropy.png (PNG
+ copy)>] [12 <./figures/HTSE_density_U.png> <./figures/HTSE_doublons_U.png> <./
+figures/HTSE_densfluc_U.png> <./figures/HTSE_entropy_U.png>]
+<figures/7Er_red-detuned_no-comp.png, id=83, 433.62pt x 361.35pt>
 File: figures/7Er_red-detuned_no-comp.png Graphic file (type png)
 
 <use figures/7Er_red-detuned_no-comp.png>
 Package pdftex.def Info: figures/7Er_red-detuned_no-comp.png used on input line
- 559.
+ 836.
 (pdftex.def)             Requested size: 235.88676pt x 196.5762pt.
 
-<figures/ir47-gr40_7Er-comp3p642.png, id=75, 433.62pt x 361.35pt>
+<figures/ir47-gr40_7Er-comp3p642.png, id=84, 433.62pt x 361.35pt>
 File: figures/ir47-gr40_7Er-comp3p642.png Graphic file (type png)
 
 <use figures/ir47-gr40_7Er-comp3p642.png>
 Package pdftex.def Info: figures/ir47-gr40_7Er-comp3p642.png used on input line
- 569.
+ 846.
 (pdftex.def)             Requested size: 235.88676pt x 196.5762pt.
 
-<figures/HTSE_compare-thermo.png, id=76, 433.62pt x 303.534pt>
+<figures/HTSE_compare-thermo.png, id=85, 433.62pt x 303.534pt>
 File: figures/HTSE_compare-thermo.png Graphic file (type png)
 
 <use figures/HTSE_compare-thermo.png>
-Package pdftex.def Info: figures/HTSE_compare-thermo.png used on input line 624
+Package pdftex.def Info: figures/HTSE_compare-thermo.png used on input line 901
 .
 (pdftex.def)             Requested size: 319.42982pt x 223.61122pt.
- [10 <./figures/HTSE_EntropyPerSite_U.png> <./figures/HTSE_EntropyPerParticle_U
-.png>] [11 <./figures/7Er_red-detuned_no-comp.png> <./figures/ir47-gr40_7Er-com
-p3p642.png>] [12 <./figures/HTSE_compare-thermo.png>] <figures/ir47-gr40_7Er-co
-mp0p0.png, id=91, 433.62pt x 361.35pt>
+ [13 <./figures/HTSE_EntropyPerSite_U.png> <./figures/HTSE_EntropyPerParticle_U
+.png>] [14 <./figures/7Er_red-detuned_no-comp.png> <./figures/ir47-gr40_7Er-com
+p3p642.png>] [15 <./figures/HTSE_compare-thermo.png>] <figures/ir47-gr40_7Er-co
+mp0p0.png, id=101, 433.62pt x 361.35pt>
 File: figures/ir47-gr40_7Er-comp0p0.png Graphic file (type png)
 
 <use figures/ir47-gr40_7Er-comp0p0.png>
-Package pdftex.def Info: figures/ir47-gr40_7Er-comp0p0.png used on input line 6
-92.
+Package pdftex.def Info: figures/ir47-gr40_7Er-comp0p0.png used on input line 9
+69.
 (pdftex.def)             Requested size: 157.26283pt x 131.0508pt.
 
-<figures/ir47-gr40_7Er-comp3p05.png, id=92, 433.62pt x 361.35pt>
+<figures/ir47-gr40_7Er-comp3p05.png, id=102, 433.62pt x 361.35pt>
 File: figures/ir47-gr40_7Er-comp3p05.png Graphic file (type png)
 
 <use figures/ir47-gr40_7Er-comp3p05.png>
 Package pdftex.def Info: figures/ir47-gr40_7Er-comp3p05.png used on input line 
-699.
+976.
 (pdftex.def)             Requested size: 157.26283pt x 131.0508pt.
 
-<figures/enlarging_mott_state.png, id=93, 216.81pt x 158.994pt>
+<figures/enlarging_mott_state.png, id=103, 216.81pt x 158.994pt>
 File: figures/enlarging_mott_state.png Graphic file (type png)
 
 <use figures/enlarging_mott_state.png>
-Package pdftex.def Info: figures/enlarging_mott_state.png used on input line 70
-5.
+Package pdftex.def Info: figures/enlarging_mott_state.png used on input line 98
+2.
 (pdftex.def)             Requested size: 157.26283pt x 115.33199pt.
- [13 <./figures/ir47-gr40_7Er-comp0p0.png> <./figures/ir47-gr40_7Er-comp3p05.pn
+ [16 <./figures/ir47-gr40_7Er-comp0p0.png> <./figures/ir47-gr40_7Er-comp3p05.pn
 g> <./figures/enlarging_mott_state.png>]
-<figures/etaF-no-comp_vary-wIR.png, id=101, 433.62pt x 187.902pt>
+<figures/etaF-no-comp_vary-wIR.png, id=110, 433.62pt x 187.902pt>
 File: figures/etaF-no-comp_vary-wIR.png Graphic file (type png)
 
 <use figures/etaF-no-comp_vary-wIR.png>
-Package pdftex.def Info: figures/etaF-no-comp_vary-wIR.png used on input line 7
-84.
+Package pdftex.def Info: figures/etaF-no-comp_vary-wIR.png used on input line 1
+061.
 (pdftex.def)             Requested size: 393.1496pt x 170.37463pt.
- [14 <./figures/etaF-no-comp_vary-wIR.png>] <figures/etaF-wIRwGR.png, id=106, 7
-94.97pt x 216.81pt>
+ [17]
+<figures/etaF-wIRwGR.png, id=114, 794.97pt x 216.81pt>
 File: figures/etaF-wIRwGR.png Graphic file (type png)
 
 <use figures/etaF-wIRwGR.png>
-Package pdftex.def Info: figures/etaF-wIRwGR.png used on input line 838.
+Package pdftex.def Info: figures/etaF-wIRwGR.png used on input line 1115.
 (pdftex.def)             Requested size: 491.43513pt x 134.03043pt.
- [15 <./figures/etaF-wIRwGR.png>]
-<figures/etaF-wIRwGR-lines.png, id=111, 794.97pt x 216.81pt>
+
+<figures/etaF-wIRwGR-lines.png, id=115, 794.97pt x 216.81pt>
 File: figures/etaF-wIRwGR-lines.png Graphic file (type png)
 
 <use figures/etaF-wIRwGR-lines.png>
-Package pdftex.def Info: figures/etaF-wIRwGR-lines.png used on input line 868.
-(pdftex.def)             Requested size: 491.43513pt x 134.03043pt.
+Package pdftex.def Info: figures/etaF-wIRwGR-lines.png used on input line 1145.
 
-<figures/etaF-wIR=wGR.png, id=112, 794.97pt x 216.81pt>
+(pdftex.def)             Requested size: 491.43513pt x 134.03043pt.
+ [18 <./figures/etaF-no-comp_vary-wIR.png>]
+[19 <./figures/etaF-wIRwGR.png> <./figures/etaF-wIRwGR-lines.png>]
+<figures/etaF-wIR=wGR.png, id=126, 794.97pt x 216.81pt>
 File: figures/etaF-wIR=wGR.png Graphic file (type png)
 
 <use figures/etaF-wIR=wGR.png>
-Package pdftex.def Info: figures/etaF-wIR=wGR.png used on input line 885.
+Package pdftex.def Info: figures/etaF-wIR=wGR.png used on input line 1162.
 (pdftex.def)             Requested size: 491.43513pt x 134.03043pt.
 
-<figures/green-power-wIR=wGR.png, id=113, 505.89pt x 216.81pt>
+<figures/green-power-wIR=wGR.png, id=127, 505.89pt x 216.81pt>
 File: figures/green-power-wIR=wGR.png Graphic file (type png)
 
 <use figures/green-power-wIR=wGR.png>
-Package pdftex.def Info: figures/green-power-wIR=wGR.png used on input line 914
-.
+Package pdftex.def Info: figures/green-power-wIR=wGR.png used on input line 119
+1.
 (pdftex.def)             Requested size: 344.00308pt x 147.43214pt.
- [16 <./figures/etaF-wIRwGR-lines.png> <./figures/etaF-wIR=wGR.png>]
 File: figures/ir47-gr40_7Er-comp3p642.png Graphic file (type png)
- <use figures/ir47-gr40_7Er-comp3p642.png>
+
+<use figures/ir47-gr40_7Er-comp3p642.png>
 Package pdftex.def Info: figures/ir47-gr40_7Er-comp3p642.png used on input line
- 940.
+ 1217.
 (pdftex.def)             Requested size: 221.1443pt x 184.28606pt.
 
-<figures/ir65-gr65_7Er-comp4p08.png, id=119, 433.62pt x 361.35pt>
+<figures/ir65-gr65_7Er-comp4p08.png, id=128, 433.62pt x 361.35pt>
 File: figures/ir65-gr65_7Er-comp4p08.png Graphic file (type png)
 
 <use figures/ir65-gr65_7Er-comp4p08.png>
 Package pdftex.def Info: figures/ir65-gr65_7Er-comp4p08.png used on input line 
-947.
+1224.
 (pdftex.def)             Requested size: 221.1443pt x 184.28606pt.
- (./latt_evap.bbl [17 <./figures/green-power-wIR=wGR.png>]
+ [20 <./figures/etaF-wIR=wGR.png> <./figures/green-power-wIR=wGR.png>] (./latt_
+evap.bbl
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-) [18 <./figures/ir65-gr65_7Er-comp4p08.png>]
-(./latt_evap.aux)
+ [21 <./figures/ir65-gr65_7Er-comp4p08.png>]) [22] (./latt_evap.aux)
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 6643 strings out of 493307
- 102242 string characters out of 6139906
- 166566 words of memory out of 5000000
- 9913 multiletter control sequences out of 15000+600000
+ 6647 strings out of 493307
+ 102315 string characters out of 6139906
+ 167573 words of memory out of 5000000
+ 9917 multiletter control sequences out of 15000+600000
  19190 words of font info for 71 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  53i,19n,92p,745b,563s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on latt_evap.pdf (18 pages, 4152572 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on latt_evap.pdf (22 pages, 4105409 bytes).
 PDF statistics:
- 185 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 199 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

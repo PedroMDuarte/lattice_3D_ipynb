@@ -15,3 +15,67 @@ In this data I corrected and checked wheter the density had a positive derivativ
 
 This could even be an advantage because those atoms will be shed away by the sample.   
 
+Data in 002 was run with the constraint of having a max number of atoms equal to 350,000.   This may have biased our results in that for larger wL/wC  one can get an optimal etaF but only with a large number of atoms.  
+
+===
+003
+===
+
+This data is the same as 002, but run with a max atom number constraint of  N=5,000,000
+
+
+===
+004
+===
+
+This data is the same as 002, but run with a max atom number constraint of  N=500,000
+
+
+===
+005
+===
+
+This data is the same as 004,  but in this case I sampled the two different beam waists differntly. 
+
+The previous sampling was 
+
+wIRs = np.arange( 44., 62., 5. )
+wGRs = np.linspace( wIR-16., wIR+20., 16)
+
+The sampling for 005 is 
+
+wIRs = np.arange( 44., 62., 3. )
+wGRs = np.linspace( wIR-16., wIR+12., 10)
+
+===
+006
+===
+
+This is a very fine sampling with N=600,000. 
+
+wIRs = np.arange( 44., 70., 1.)
+wGRs = np.linspace( wIR-12., wIR+8., 10)  
+
+===
+007
+===
+
+Complements the scan of 006 
+
+wGRs = np.arange( 28., wIR-10., 2.)  
+
+===
+008
+===
+
+This is a concatenation of 006 and 007 
+
+===
+009
+===
+
+This one goes to beam waists up to 80 um. 
+
+wIRs = np.arange( 71., 81., 1. )
+wGRs = np.arange( 28., wIR+8., 2.) 
+
