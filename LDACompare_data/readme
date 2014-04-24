@@ -68,7 +68,7 @@ wGRs = np.arange( 28., wIR-10., 2.)
 008
 ===
 
-This is a concatenation of 006 and 007 
+This is a concatenation of 006, 007, and 009
 
 ===
 009
@@ -78,4 +78,15 @@ This one goes to beam waists up to 80 um.
 
 wIRs = np.arange( 71., 81., 1. )
 wGRs = np.arange( 28., wIR+8., 2.) 
+
+
+===
+010
+===
+
+A big set for atom number 6 million. 
+
+wIRs = np.arange( 44., 81., 2. )
+wGRs = np.arange( 28., wIR+8., 2.)
+
 
