@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  23 APR 2014 00:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  23 APR 2014 22:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -541,383 +541,370 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
  <./figures/compensated_lattice_simple_schematic.png>] <figures/lattice_general
-.png, id=18, 469.755pt x 209.583pt>
+.png, id=20, 469.755pt x 209.583pt>
 File: figures/lattice_general.png Graphic file (type png)
 
 <use figures/lattice_general.png>
-Package pdftex.def Info: figures/lattice_general.png used on input line 195.
+Package pdftex.def Info: figures/lattice_general.png used on input line 194.
 (pdftex.def)             Requested size: 393.1496pt x 175.40572pt.
  [2]
 <figures/lattice_tunneling.png, id=28, 274.626pt x 209.583pt>
 File: figures/lattice_tunneling.png Graphic file (type png)
 
 <use figures/lattice_tunneling.png>
-Package pdftex.def Info: figures/lattice_tunneling.png used on input line 264.
+Package pdftex.def Info: figures/lattice_tunneling.png used on input line 263.
 (pdftex.def)             Requested size: 235.88676pt x 180.0172pt.
 
 <figures/lattice_lock.png, id=29, 274.626pt x 209.583pt>
 File: figures/lattice_lock.png Graphic file (type png)
 
 <use figures/lattice_lock.png>
-Package pdftex.def Info: figures/lattice_lock.png used on input line 272.
+Package pdftex.def Info: figures/lattice_lock.png used on input line 271.
 (pdftex.def)             Requested size: 235.88676pt x 180.0172pt.
  [3 <./figures/lattice_general.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 447.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 310.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 447.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 310.
  [4 <./figures/lattice_tunneling.png> <./figures/lattice_lock.png>]
-<figures/lattice_general-comp.png, id=40, 578.16pt x 209.583pt>
+<figures/lattice_general-comp.png, id=41, 578.16pt x 209.583pt>
 File: figures/lattice_general-comp.png Graphic file (type png)
 
 <use figures/lattice_general-comp.png>
-Package pdftex.def Info: figures/lattice_general-comp.png used on input line 51
-2.
+Package pdftex.def Info: figures/lattice_general-comp.png used on input line 37
+6.
 (pdftex.def)             Requested size: 491.43513pt x 178.14317pt.
-
-<figures/alpha-evap-optimal.png, id=41, 303.534pt x 187.902pt>
+ [5 <./figures/lattice_general-comp.png>] <figures/alpha-evap-optimal.png, id=4
+6, 303.534pt x 187.902pt>
 File: figures/alpha-evap-optimal.png Graphic file (type png)
 
 <use figures/alpha-evap-optimal.png>
-Package pdftex.def Info: figures/alpha-evap-optimal.png used on input line 552.
+Package pdftex.def Info: figures/alpha-evap-optimal.png used on input line 419.
 
 (pdftex.def)             Requested size: 344.00308pt x 212.95468pt.
- [5] [6 <./figures/lattice_general-comp.png>] [7 <./figures/alpha-evap-optimal.
-png>] [8]
-<figures_hubbard-lda/harmonic.png, id=58, 433.62pt x 303.534pt>
+ [6 <./figures/alpha-evap-optimal.png>]
+<figures_hubbard-lda/harmonic.png, id=51, 433.62pt x 303.534pt>
 File: figures_hubbard-lda/harmonic.png Graphic file (type png)
 
 <use figures_hubbard-lda/harmonic.png>
-Package pdftex.def Info: figures_hubbard-lda/harmonic.png used on input line 76
-5.
+Package pdftex.def Info: figures_hubbard-lda/harmonic.png used on input line 63
+7.
 (pdftex.def)             Requested size: 368.57634pt x 258.01437pt.
- [9 <./figures_hubbard-lda/harmonic.png>] <figures/bands1d_V0_firstquant.png, i
-d=63, 234.1548pt x 195.129pt>
+ [7]
+<figures/bands1d_V0_firstquant.png, id=56, 234.1548pt x 195.129pt>
 File: figures/bands1d_V0_firstquant.png Graphic file (type png)
 
 <use figures/bands1d_V0_firstquant.png>
-Package pdftex.def Info: figures/bands1d_V0_firstquant.png used on input line 8
-28.
+Package pdftex.def Info: figures/bands1d_V0_firstquant.png used on input line 7
+00.
 (pdftex.def)             Requested size: 196.57104pt x 163.8179pt.
 
-<figures/bands1d_V0_secondquant.png, id=64, 233.97412pt x 195.129pt>
+<figures/bands1d_V0_secondquant.png, id=57, 233.97412pt x 195.129pt>
 File: figures/bands1d_V0_secondquant.png Graphic file (type png)
 
 <use figures/bands1d_V0_secondquant.png>
 Package pdftex.def Info: figures/bands1d_V0_secondquant.png used on input line 
-838.
+710.
 (pdftex.def)             Requested size: 196.57104pt x 163.937pt.
-
-<figures/Ut_eigenvalues_2site.png, id=65, 578.16pt x 289.08pt>
+ [8 <./figures_hubbard-lda/harmonic.png>] <figures/Ut_eigenvalues_2site.png, id
+=62, 578.16pt x 289.08pt>
 File: figures/Ut_eigenvalues_2site.png Graphic file (type png)
 
 <use figures/Ut_eigenvalues_2site.png>
-Package pdftex.def Info: figures/Ut_eigenvalues_2site.png used on input line 86
-4.
+Package pdftex.def Info: figures/Ut_eigenvalues_2site.png used on input line 73
+6.
 (pdftex.def)             Requested size: 393.1496pt x 196.5718pt.
- [10] [11 <./figures/bands1d_V0_firstquant.png> <./figures/bands1d_V0_secondqua
-nt.png> <./figures/Ut_eigenvalues_2site.png>] [12] <figures/paiva_entropy.png, 
-id=78, 908.39375pt x 1034.86626pt>
+ [9 <./figures/bands1d_V0_firstquant.png> <./figures/bands1d_V0_secondquant.png
+>] [10 <./figures/Ut_eigenvalues_2site.png>] <figures/paiva_entropy.png, id=72,
+ 908.39375pt x 1034.86626pt>
 File: figures/paiva_entropy.png Graphic file (type png)
 
 <use figures/paiva_entropy.png>
-Package pdftex.def Info: figures/paiva_entropy.png used on input line 1008.
+Package pdftex.def Info: figures/paiva_entropy.png used on input line 880.
 (pdftex.def)             Requested size: 235.88676pt x 268.72726pt.
 
-<figures/fuchs_entropy.png, id=79, 657.45625pt x 765.86125pt>
+<figures/fuchs_entropy.png, id=73, 657.45625pt x 765.86125pt>
 File: figures/fuchs_entropy.png Graphic file (type png)
 
 <use figures/fuchs_entropy.png>
-Package pdftex.def Info: figures/fuchs_entropy.png used on input line 1015.
+Package pdftex.def Info: figures/fuchs_entropy.png used on input line 887.
 (pdftex.def)             Requested size: 235.88676pt x 274.77495pt.
- [13]
-<figures/HTSE_density_U.png, id=84, 404.3105pt x 158.994pt>
+ [11]
+<figures/HTSE_density_U.png, id=77, 404.3105pt x 158.994pt>
 File: figures/HTSE_density_U.png Graphic file (type png)
 
 <use figures/HTSE_density_U.png>
-Package pdftex.def Info: figures/HTSE_density_U.png used on input line 1063.
+Package pdftex.def Info: figures/HTSE_density_U.png used on input line 935.
 (pdftex.def)             Requested size: 240.80591pt x 94.69843pt.
 
-<figures/HTSE_doublons_U.png, id=85, 404.3105pt x 158.994pt>
+<figures/HTSE_doublons_U.png, id=78, 404.3105pt x 158.994pt>
 File: figures/HTSE_doublons_U.png Graphic file (type png)
 
 <use figures/HTSE_doublons_U.png>
-Package pdftex.def Info: figures/HTSE_doublons_U.png used on input line 1071.
+Package pdftex.def Info: figures/HTSE_doublons_U.png used on input line 943.
 (pdftex.def)             Requested size: 240.80591pt x 94.69843pt.
 
-<figures/HTSE_densfluc_U.png, id=86, 404.3105pt x 158.994pt>
+<figures/HTSE_densfluc_U.png, id=79, 404.3105pt x 158.994pt>
 File: figures/HTSE_densfluc_U.png Graphic file (type png)
 
 <use figures/HTSE_densfluc_U.png>
-Package pdftex.def Info: figures/HTSE_densfluc_U.png used on input line 1077.
+Package pdftex.def Info: figures/HTSE_densfluc_U.png used on input line 949.
 (pdftex.def)             Requested size: 240.80591pt x 94.69843pt.
 
-<figures/HTSE_entropy_U.png, id=87, 404.3105pt x 158.994pt>
+<figures/HTSE_entropy_U.png, id=80, 404.3105pt x 158.994pt>
 File: figures/HTSE_entropy_U.png Graphic file (type png)
 
 <use figures/HTSE_entropy_U.png>
-Package pdftex.def Info: figures/HTSE_entropy_U.png used on input line 1083.
+Package pdftex.def Info: figures/HTSE_entropy_U.png used on input line 955.
 (pdftex.def)             Requested size: 240.80591pt x 94.69843pt.
 
-<figures/HTSE_EntropyPerSite_U.png, id=88, 491.436pt x 187.902pt>
+<figures/HTSE_EntropyPerSite_U.png, id=81, 491.436pt x 187.902pt>
 File: figures/HTSE_EntropyPerSite_U.png Graphic file (type png)
 
 <use figures/HTSE_EntropyPerSite_U.png>
-Package pdftex.def Info: figures/HTSE_EntropyPerSite_U.png used on input line 1
-096.
+Package pdftex.def Info: figures/HTSE_EntropyPerSite_U.png used on input line 9
+68.
 (pdftex.def)             Requested size: 319.42982pt x 122.14058pt.
-
-<figures/HTSE_EntropyPerParticle_U.png, id=89, 491.436pt x 187.902pt>
+ [12 <./figures/paiva_entropy.png (PNG copy)> <./figures/fuchs_entropy.png (PNG
+ copy)>]
+<figures/HTSE_EntropyPerParticle_U.png, id=85, 491.436pt x 187.902pt>
 File: figures/HTSE_EntropyPerParticle_U.png Graphic file (type png)
 
 <use figures/HTSE_EntropyPerParticle_U.png>
 Package pdftex.def Info: figures/HTSE_EntropyPerParticle_U.png used on input li
-ne 1106.
+ne 978.
 (pdftex.def)             Requested size: 319.42982pt x 122.14058pt.
- [14 <./figures/paiva_entropy.png (PNG copy)> <./figures/fuchs_entropy.png (PNG
- copy)>] [15 <./figures/HTSE_density_U.png> <./figures/HTSE_doublons_U.png> <./
-figures/HTSE_densfluc_U.png> <./figures/HTSE_entropy_U.png> <./figures/HTSE_Ent
-ropyPerSite_U.png> <./figures/HTSE_EntropyPerParticle_U.png>]
-<figures_hubbard-lda/etaF-wIRwGR.png, id=102, 578.16pt x 469.755pt>
+ [13 <./figures/HTSE_density_U.png> <./figures/HTSE_doublons_U.png> <./figures/
+HTSE_densfluc_U.png> <./figures/HTSE_entropy_U.png> <./figures/HTSE_EntropyPerS
+ite_U.png>]
+<figures_hubbard-lda/etaF-wIRwGR.png, id=95, 578.16pt x 469.755pt>
 File: figures_hubbard-lda/etaF-wIRwGR.png Graphic file (type png)
 
 <use figures_hubbard-lda/etaF-wIRwGR.png>
 Package pdftex.def Info: figures_hubbard-lda/etaF-wIRwGR.png used on input line
- 1178.
+ 1050.
 (pdftex.def)             Requested size: 319.42982pt x 259.53441pt.
-
-<figures_hubbard-lda/etaF-wIRwGR_cold.png, id=103, 578.16pt x 469.755pt>
+ [14 <./figures/HTSE_EntropyPerParticle_U.png>]
+<figures_hubbard-lda/etaF-wIRwGR_cold.png, id=100, 578.16pt x 469.755pt>
 File: figures_hubbard-lda/etaF-wIRwGR_cold.png Graphic file (type png)
 
 <use figures_hubbard-lda/etaF-wIRwGR_cold.png>
 Package pdftex.def Info: figures_hubbard-lda/etaF-wIRwGR_cold.png used on input
- line 1188.
+ line 1060.
 (pdftex.def)             Requested size: 319.42982pt x 259.53441pt.
- [16] [17 <./figures_hubbard-lda/etaF-wIRwGR.png> <./figures_hubbard-lda/etaF-w
+ [15 <./figures_hubbard-lda/etaF-wIRwGR.png>] [16 <./figures_hubbard-lda/etaF-w
 IRwGR_cold.png>]
-<figures_hubbard-lda/etaF-HWHM-ratio.png, id=112, 289.08pt x 234.8775pt>
+<figures_hubbard-lda/etaF-HWHM-ratio.png, id=109, 289.08pt x 234.8775pt>
 File: figures_hubbard-lda/etaF-HWHM-ratio.png Graphic file (type png)
 
 <use figures_hubbard-lda/etaF-HWHM-ratio.png>
 Package pdftex.def Info: figures_hubbard-lda/etaF-HWHM-ratio.png used on input 
-line 1269.
+line 1141.
 (pdftex.def)             Requested size: 196.57104pt x 159.71458pt.
- [18]
-<figures_hubbard-lda/etaF-wIRwGR_r032.png, id=116, 578.16pt x 469.755pt>
+ [17 <./figures_hubbard-lda/etaF-HWHM-ratio.png>]
+<figures_hubbard-lda/etaF-wIRwGR_r032.png, id=114, 578.16pt x 469.755pt>
 File: figures_hubbard-lda/etaF-wIRwGR_r032.png Graphic file (type png)
 
 <use figures_hubbard-lda/etaF-wIRwGR_r032.png>
 Package pdftex.def Info: figures_hubbard-lda/etaF-wIRwGR_r032.png used on input
- line 1316.
+ line 1188.
 (pdftex.def)             Requested size: 319.42982pt x 259.53441pt.
- [19 <./figures_hubbard-lda/etaF-HWHM-ratio.png>] <figures_hubbard-lda/000.png,
- id=122, 433.62pt x 303.534pt>
+ [18 <./figures_hubbard-lda/etaF-wIRwGR_r032.png>] <figures_hubbard-lda/000.png
+, id=119, 433.62pt x 303.534pt>
 File: figures_hubbard-lda/000.png Graphic file (type png)
 
 <use figures_hubbard-lda/000.png>
-Package pdftex.def Info: figures_hubbard-lda/000.png used on input line 1361.
+Package pdftex.def Info: figures_hubbard-lda/000.png used on input line 1233.
 (pdftex.def)             Requested size: 206.40186pt x 144.48119pt.
 
-<figures_hubbard-lda/001.png, id=123, 433.62pt x 303.534pt>
+<figures_hubbard-lda/001.png, id=120, 433.62pt x 303.534pt>
 File: figures_hubbard-lda/001.png Graphic file (type png)
 
 <use figures_hubbard-lda/001.png>
-Package pdftex.def Info: figures_hubbard-lda/001.png used on input line 1368.
+Package pdftex.def Info: figures_hubbard-lda/001.png used on input line 1240.
 (pdftex.def)             Requested size: 206.40186pt x 144.48119pt.
- [20 <./figures_hubbard-lda/etaF-wIRwGR_r032.png>] <figures_hubbard-lda/002.png
-, id=128, 433.62pt x 303.534pt>
+
+<figures_hubbard-lda/002.png, id=121, 433.62pt x 303.534pt>
 File: figures_hubbard-lda/002.png Graphic file (type png)
 
 <use figures_hubbard-lda/002.png>
-Package pdftex.def Info: figures_hubbard-lda/002.png used on input line 1386.
+Package pdftex.def Info: figures_hubbard-lda/002.png used on input line 1258.
 (pdftex.def)             Requested size: 206.40186pt x 144.48119pt.
 
-<figures_hubbard-lda/003.png, id=129, 433.62pt x 303.534pt>
+<figures_hubbard-lda/003.png, id=122, 433.62pt x 303.534pt>
 File: figures_hubbard-lda/003.png Graphic file (type png)
 
 <use figures_hubbard-lda/003.png>
-Package pdftex.def Info: figures_hubbard-lda/003.png used on input line 1393.
+Package pdftex.def Info: figures_hubbard-lda/003.png used on input line 1265.
 (pdftex.def)             Requested size: 206.40186pt x 144.48119pt.
-
-<figures_hubbard-lda/005.png, id=130, 433.62pt x 303.534pt>
+ [19 <./figures_hubbard-lda/000.png> <./figures_hubbard-lda/001.png>]
+<figures_hubbard-lda/005.png, id=129, 433.62pt x 303.534pt>
 File: figures_hubbard-lda/005.png Graphic file (type png)
 
 <use figures_hubbard-lda/005.png>
-Package pdftex.def Info: figures_hubbard-lda/005.png used on input line 1410.
+Package pdftex.def Info: figures_hubbard-lda/005.png used on input line 1282.
 (pdftex.def)             Requested size: 206.40186pt x 144.48119pt.
- [21 <./figures_hubbard-lda/000.png> <./figures_hubbard-lda/001.png> <./figures
-_hubbard-lda/002.png> <./figures_hubbard-lda/003.png>] <figures_hubbard-lda/006
-.png, id=138, 433.62pt x 303.534pt>
+
+<figures_hubbard-lda/006.png, id=130, 433.62pt x 303.534pt>
 File: figures_hubbard-lda/006.png Graphic file (type png)
 
 <use figures_hubbard-lda/006.png>
-Package pdftex.def Info: figures_hubbard-lda/006.png used on input line 1428.
+Package pdftex.def Info: figures_hubbard-lda/006.png used on input line 1300.
 (pdftex.def)             Requested size: 206.40186pt x 144.48119pt.
 
-<figures_hubbard-lda/007.png, id=139, 433.62pt x 303.534pt>
+<figures_hubbard-lda/007.png, id=131, 433.62pt x 303.534pt>
 File: figures_hubbard-lda/007.png Graphic file (type png)
 
 <use figures_hubbard-lda/007.png>
-Package pdftex.def Info: figures_hubbard-lda/007.png used on input line 1435.
+Package pdftex.def Info: figures_hubbard-lda/007.png used on input line 1307.
 (pdftex.def)             Requested size: 206.40186pt x 144.48119pt.
 
-<figures_hubbard-lda/008.png, id=140, 433.62pt x 303.534pt>
+<figures_hubbard-lda/008.png, id=132, 433.62pt x 303.534pt>
 File: figures_hubbard-lda/008.png Graphic file (type png)
 
 <use figures_hubbard-lda/008.png>
-Package pdftex.def Info: figures_hubbard-lda/008.png used on input line 1441.
+Package pdftex.def Info: figures_hubbard-lda/008.png used on input line 1313.
 (pdftex.def)             Requested size: 206.40186pt x 144.48119pt.
- [22 <./figures_hubbard-lda/005.png> <./figures_hubbard-lda/006.png> <./figures
-_hubbard-lda/007.png> <./figures_hubbard-lda/008.png>] <figures_hubbard-lda/def
-ault.png, id=148, 433.62pt x 303.534pt>
-File: figures_hubbard-lda/default.png Graphic file (type png)
+ [20 <./figures_hubbard-lda/002.png> <./figures_hubbard-lda/003.png> <./figures
+_hubbard-lda/005.png>] [21 <./figures_hubbard-lda/006.png> <./figures_hubbard-l
+da/007.png> <./figures_hubbard-lda/008.png>]
 
-<use figures_hubbard-lda/default.png>
-Package pdftex.def Info: figures_hubbard-lda/default.png used on input line 145
-3.
-(pdftex.def)             Requested size: 491.43513pt x 344.02225pt.
+LaTeX Warning: Reference `fig:HTSE_full-band-profiles' on page 22 undefined on 
+input line 1325.
 
-<figures/7Er_red-detuned_no-comp.png, id=149, 433.62pt x 361.35pt>
-File: figures/7Er_red-detuned_no-comp.png Graphic file (type png)
-
-<use figures/7Er_red-detuned_no-comp.png>
-Package pdftex.def Info: figures/7Er_red-detuned_no-comp.png used on input line
- 1480.
-(pdftex.def)             Requested size: 235.88676pt x 196.5762pt.
-
-<figures/ir47-gr40_7Er-comp3p642.png, id=150, 433.62pt x 361.35pt>
-File: figures/ir47-gr40_7Er-comp3p642.png Graphic file (type png)
-
-<use figures/ir47-gr40_7Er-comp3p642.png>
-Package pdftex.def Info: figures/ir47-gr40_7Er-comp3p642.png used on input line
- 1490.
-(pdftex.def)             Requested size: 235.88676pt x 196.5762pt.
- [23 <./figures_hubbard-lda/default.png>] [24 <./figures/7Er_red-detuned_no-com
-p.png> <./figures/ir47-gr40_7Er-comp3p642.png>] <figures/HTSE_compare-thermo.pn
-g, id=160, 433.62pt x 303.534pt>
-File: figures/HTSE_compare-thermo.png Graphic file (type png)
-
-<use figures/HTSE_compare-thermo.png>
-Package pdftex.def Info: figures/HTSE_compare-thermo.png used on input line 154
-5.
-(pdftex.def)             Requested size: 319.42982pt x 223.61122pt.
- [25 <./figures/HTSE_compare-thermo.png>]
-<figures/ir47-gr40_7Er-comp0p0.png, id=166, 433.62pt x 361.35pt>
+<figures/ir47-gr40_7Er-comp0p0.png, id=145, 433.62pt x 361.35pt>
 File: figures/ir47-gr40_7Er-comp0p0.png Graphic file (type png)
 
 <use figures/ir47-gr40_7Er-comp0p0.png>
 Package pdftex.def Info: figures/ir47-gr40_7Er-comp0p0.png used on input line 1
-613.
+384.
 (pdftex.def)             Requested size: 157.26283pt x 131.0508pt.
 
-<figures/ir47-gr40_7Er-comp3p05.png, id=167, 433.62pt x 361.35pt>
+<figures/ir47-gr40_7Er-comp3p05.png, id=146, 433.62pt x 361.35pt>
 File: figures/ir47-gr40_7Er-comp3p05.png Graphic file (type png)
 
 <use figures/ir47-gr40_7Er-comp3p05.png>
 Package pdftex.def Info: figures/ir47-gr40_7Er-comp3p05.png used on input line 
-1620.
+1391.
 (pdftex.def)             Requested size: 157.26283pt x 131.0508pt.
 
-<figures/enlarging_mott_state.png, id=168, 216.81pt x 158.994pt>
+<figures/enlarging_mott_state.png, id=147, 216.81pt x 158.994pt>
 File: figures/enlarging_mott_state.png Graphic file (type png)
 
 <use figures/enlarging_mott_state.png>
-Package pdftex.def Info: figures/enlarging_mott_state.png used on input line 16
-26.
+Package pdftex.def Info: figures/enlarging_mott_state.png used on input line 13
+97.
 (pdftex.def)             Requested size: 157.26283pt x 115.33199pt.
- [26 <./figures/ir47-gr40_7Er-comp0p0.png> <./figures/ir47-gr40_7Er-comp3p05.pn
-g> <./figures/enlarging_mott_state.png>]
-<figures/etaF-no-comp_vary-wIR.png, id=175, 433.62pt x 187.902pt>
+
+
+LaTeX Warning: Reference `sec:compare-big-small-waist' on page 22 undefined on 
+input line 1407.
+
+
+LaTeX Warning: Reference `fig:HTSE_full-band-profiles' on page 22 undefined on 
+input line 1423.
+
+[22] <figures/etaF-no-comp_vary-wIR.png, id=151, 433.62pt x 187.902pt>
 File: figures/etaF-no-comp_vary-wIR.png Graphic file (type png)
 
 <use figures/etaF-no-comp_vary-wIR.png>
 Package pdftex.def Info: figures/etaF-no-comp_vary-wIR.png used on input line 1
-706.
+477.
 (pdftex.def)             Requested size: 393.1496pt x 170.37463pt.
- [27]
-<figures/etaF-wIRwGR.png, id=179, 794.97pt x 216.81pt>
+ [23 <./figures/ir47-gr40_7Er-comp0p0.png> <./figures/ir47-gr40_7Er-comp3p05.pn
+g> <./figures/enlarging_mott_state.png>]
+
+LaTeX Warning: Reference `fig:HTSE_full-band-profiles_a' on page 24 undefined o
+n input line 1487.
+
+<figures/etaF-wIRwGR.png, id=158, 794.97pt x 216.81pt>
 File: figures/etaF-wIRwGR.png Graphic file (type png)
 
 <use figures/etaF-wIRwGR.png>
-Package pdftex.def Info: figures/etaF-wIRwGR.png used on input line 1760.
+Package pdftex.def Info: figures/etaF-wIRwGR.png used on input line 1531.
 (pdftex.def)             Requested size: 491.43513pt x 134.03043pt.
- [28 <./figures/etaF-no-comp_vary-wIR.png>]
-<figures/etaF-wIRwGR-lines.png, id=184, 794.97pt x 216.81pt>
+ [24 <./figures/etaF-no-comp_vary-wIR.png>]
+<figures/etaF-wIRwGR-lines.png, id=163, 794.97pt x 216.81pt>
 File: figures/etaF-wIRwGR-lines.png Graphic file (type png)
 
 <use figures/etaF-wIRwGR-lines.png>
-Package pdftex.def Info: figures/etaF-wIRwGR-lines.png used on input line 1790.
+Package pdftex.def Info: figures/etaF-wIRwGR-lines.png used on input line 1561.
 
 (pdftex.def)             Requested size: 491.43513pt x 134.03043pt.
-
-<figures/etaF-wIR=wGR.png, id=185, 794.97pt x 216.81pt>
+ [25 <./figures/etaF-wIRwGR.png> <./figures/etaF-wIRwGR-lines.png>]
+<figures/etaF-wIR=wGR.png, id=170, 794.97pt x 216.81pt>
 File: figures/etaF-wIR=wGR.png Graphic file (type png)
 
 <use figures/etaF-wIR=wGR.png>
-Package pdftex.def Info: figures/etaF-wIR=wGR.png used on input line 1807.
+Package pdftex.def Info: figures/etaF-wIR=wGR.png used on input line 1578.
 (pdftex.def)             Requested size: 491.43513pt x 134.03043pt.
 
-<figures/green-power-wIR=wGR.png, id=186, 505.89pt x 216.81pt>
+<figures/green-power-wIR=wGR.png, id=171, 505.89pt x 216.81pt>
 File: figures/green-power-wIR=wGR.png Graphic file (type png)
 
 <use figures/green-power-wIR=wGR.png>
-Package pdftex.def Info: figures/green-power-wIR=wGR.png used on input line 183
-6.
+Package pdftex.def Info: figures/green-power-wIR=wGR.png used on input line 160
+7.
 (pdftex.def)             Requested size: 344.00308pt x 147.43214pt.
- [29 <./figures/etaF-wIRwGR.png> <./figures/etaF-wIRwGR-lines.png>]
+ [26 <./figures/etaF-wIR=wGR.png> <./figures/green-power-wIR=wGR.png>]
+<figures/ir47-gr40_7Er-comp3p642.png, id=177, 433.62pt x 361.35pt>
 File: figures/ir47-gr40_7Er-comp3p642.png Graphic file (type png)
- <use figures/ir47-gr40_7Er-comp3p642.png>
+
+<use figures/ir47-gr40_7Er-comp3p642.png>
 Package pdftex.def Info: figures/ir47-gr40_7Er-comp3p642.png used on input line
- 1862.
+ 1633.
 (pdftex.def)             Requested size: 221.1443pt x 184.28606pt.
 
-<figures/ir65-gr65_7Er-comp4p08.png, id=192, 433.62pt x 361.35pt>
+<figures/ir65-gr65_7Er-comp4p08.png, id=178, 433.62pt x 361.35pt>
 File: figures/ir65-gr65_7Er-comp4p08.png Graphic file (type png)
 
 <use figures/ir65-gr65_7Er-comp4p08.png>
 Package pdftex.def Info: figures/ir65-gr65_7Er-comp4p08.png used on input line 
-1869.
+1640.
 (pdftex.def)             Requested size: 221.1443pt x 184.28606pt.
- [30 <./figures/etaF-wIR=wGR.png> <./figures/green-power-wIR=wGR.png>] [31 <./f
-igures/ir65-gr65_7Er-comp4p08.png>]
-(./latt_evap.bbl
+ [27 <./figures/ir47-gr40_7Er-comp3p642.png> <./figures/ir65-gr65_7Er-comp4p08.
+png>] (./latt_evap.bbl
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
-) [32] (./latt_evap.aux) ) 
+) [28]
+(./latt_evap.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 6825 strings out of 493307
- 106609 string characters out of 6139906
- 170394 words of memory out of 5000000
- 10074 multiletter control sequences out of 15000+600000
+ 6805 strings out of 493307
+ 105955 string characters out of 6139906
+ 169304 words of memory out of 5000000
+ 10057 multiletter control sequences out of 15000+600000
  19190 words of font info for 71 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  53i,11n,92p,977b,574s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cme
-x10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-
-Output written on latt_evap.pdf (32 pages, 8236262 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on latt_evap.pdf (28 pages, 7527028 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
+ 242 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 216 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
